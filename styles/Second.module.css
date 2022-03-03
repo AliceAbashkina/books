@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;700&family=Rubik:wght@700&display=swap');
+.body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(336.9deg, #143787 0%, rgba(8, 8, 8, 0) 64.95%), radial-gradient(66.53% 100% at 73.33% 100%, rgba(110, 5, 193, 0.44) 0%, rgba(53, 19, 149, 0.1) 99.69%), linear-gradient(180.03deg, rgba(8, 8, 8, 0) 50%, rgba(25, 63, 152, 0.41) 99.97%), linear-gradient(270deg, rgba(39, 15, 107, 0.3) 0%, rgba(8, 8, 8, 0) 100%);
+    background-color: #23262F;
+}
+
+.BackHead {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 36px;
+    color: #ecf1ff;
+    top: 10px;
+
+    width: 100%;
+    left: 50%;
+    text-align: center;
+}
+
+.TextBack {
+    position: absolute;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+    width: 100%;
+    top:10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    letter-spacing: -0.011em;
+
+    color: #ECF1FF;
+}
+
+.rel{
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 130%;
+    /* identical to box height, or 47px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.035em;
+
+    color: #FFFFFF;
+}
+
+.square1{
+    position: absolute;
+    left: 46px;
+    top: 50px;
+    z-index: 2;
+}
+
+.square2{
+    position: absolute;
+    left: 196px;
+    top: 50px;
+    z-index: 2;
+}
+
+.square3{
+    position: absolute;
+    left: 46px;
+    top: 200px;
+    z-index: 2;
+}
+
+.square4{
+    position: absolute;
+    left: 196px;
+    top: 200px;
+    z-index: 2;
+}
+
+.square5{
+    position: absolute;
+    left: 46px;
+    top: 350px;
+    z-index: 2;
+}
+
+.square6{
+    position: absolute;
+    left: 202px;
+    top: 350px;
+    z-index: 2;
+}
+
+.text1{
+    position: absolute;
+    width: 18px;
+    height: 47px;
+    left: 46px;
+    top: 35px;
+    z-index: 1;
+}
+
+.text2{
+    position: absolute;
+    width: 18px;
+    height: 47px;
+    left: 50px;
+    top: 35px;
+    z-index: 1;
+}
+
+.text3{
+    position: absolute;
+    width: 18px;
+    height: 47px;
+    left: 50px;
+    top: 35px;
+    z-index: 1;
+}
+
+.text4{
+    position: absolute;
+    width: 18px;
+    height: 47px;
+    left: 50px;
+    top: 35px;
+    z-index: 1;
+}
+
+.text5{
+    position: absolute;
+    width: 18px;
+    height: 47px;
+    left: 50px;
+    top: 35px;
+    z-index: 1;
+}
+
+.text6{
+    position: absolute;
+    width: 18px;
+    height: 47px;
+    left: 50px;
+    top: 35px;
+    z-index: 1;
+}
+
+.progress{
+    position: absolute;
+    width: 137px;
+    height: 36px;
+    left: 119px;
+    top: 63%;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+
+    text-align: center;
+    letter-spacing: -0.011em;
+
+    color: #9C9D9F;
+    z-index: 1;
+}
+
+.Firsticon {
+    position: static;
+    width: 16px;
+    height: 24px;
+
+    display: inline-block;
+}
+
+.Secondicon {
+    position: static;
+    width: 27px;
+    height: 24px;
+
+    display: inline-block;
+
+}
+
+.texticon1 {
+
+    position: static;
+    width: 15px;
+    height: 31px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.035em;
+
+    color: #FFFFFF;
+}
+
+.texticon2 {
+    position: static;
+    width: 15px;
+    height: 31px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.035em;
+
+    color: #FFFFFF;
+}
+
+.fuck {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+

@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;700&family=Rubik:wght@700&display=swap');
+
+.body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(336.9deg, #143787 0%, rgba(8, 8, 8, 0) 64.95%), radial-gradient(66.53% 100% at 73.33% 100%, rgba(110, 5, 193, 0.44) 0%, rgba(53, 19, 149, 0.1) 99.69%), linear-gradient(180.03deg, rgba(8, 8, 8, 0) 50%, rgba(25, 63, 152, 0.41) 99.97%), linear-gradient(270deg, rgba(39, 15, 107, 0.3) 0%, rgba(8, 8, 8, 0) 100%);
+    background-color: #23262F;
+    backdrop-filter: blur(30px);
+}
+
+.headers {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    color: #ECF1FF;
+}
+
+.TextBackQue{
+    position: absolute;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+    width: 100%;
+    top:10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    letter-spacing: -0.011em;
+
+    color: #ECF1FF;
+}
+
+.Firsticon {
+    position: static;
+    width: 16px;
+    height: 24px;
+
+    display: inline-block;
+}
+
+.Secondicon {
+    position: static;
+    width: 27px;
+    height: 24px;
+
+    display: inline-block;
+
+}
+
+.texticon1 {
+
+    position: static;
+    width: 15px;
+    height: 31px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.035em;
+
+    color: #FFFFFF;
+}
+
+.texticon2 {
+    position: static;
+    width: 15px;
+    height: 31px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.035em;
+
+    color: #FFFFFF;
+}
+
+.textQue{
+    position: absolute;
+    width: 325px;
+    height: 128px;
+    left: 28px;
+    top: 7%;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    /* or 150% */
+
+    text-align: center;
+    letter-spacing: -0.011em;
+
+    color: #ECF1FF;
+}
+
+.fuck {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.text{
+    position: absolute;
+    font-family: Inter;
+    width: 100%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+
+    text-align: center;
+    letter-spacing: -0.011em;
+
+    color: #ECF1FF;
+
+}
+
+.fckdiv{
+    position: relative;
+    left:5%;
+    width: 90%;
+}
+
+.rel3 {
+    position: relative;
+    height: 40px;
+    width: 90%;
+    top:20%;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    /* or 23px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    z-index: 3;
+
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 74px;
+    margin-top: 21px;
+}
+
+.fail{
+    position: absolute;
+}
+
+.threebutt{
+    width: 100%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 36px;
+    /* identical to box height, or 200% */
+
+    text-align: center;
+    letter-spacing: -0.011em;
+
+    color: #ECF1FF;
+}
+
+.butt1{
+    position: absolute;
+
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 54px;
+
+    width: 134px;
+    height: 50px;
+
+    top: 64%;
+    margin-left: 5%;
+}
+
+.butt2{
+    position: absolute;
+
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 54px;
+
+    width: 191px;
+    height: 48px;
+
+    top: 64%;
+    right: 5%;
+}
+
+.butt3{
+    position: absolute;
+
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 54px;
+
+    width: 90%;
+    height: 50px;
+
+    top: 73%;
+    left:5%;
+}
+
+.Toast{
+    position: absolute;
+    top:5%;
+    width: 100%;
+    height: 10%;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 54px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    /* identical to box height, or 200% */
+
+    text-align: center;
+    letter-spacing: -0.011em;
+
+    color: #23262F;
+    z-index: 5;
+}
+
+.romb {
+    position: absolute;
+    width: 16px;
+    height: 24px;
+    margin-right: auto;
+}
+
+
+.okButt{
+    position: absolute;
+    width: 100%;
+}
+
+.rel5 {
+    position: relative;
+    height: 40px;
+    width: 40%;
+    top:40%;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    /* or 23px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    z-index: 3;
+
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 74px;
+    margin-top: 21px;
+}
+
+.textFail{
+    position: absolute;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 30%;
+
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 36px;
+    /* or 150% */
+
+    text-align: center;
+    letter-spacing: -0.011em;
+
+    color: #ECF1FF;
+}
+
+.QueText{
+    position: absolute;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+    width: 100%;
+    top:10%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    letter-spacing: -0.011em;
+
+    color: #ECF1FF;
+}

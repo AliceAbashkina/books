@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;700&family=Rubik:wght@700&display=swap');
+
+.body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+
+    background: linear-gradient(336.9deg, #143787 0%, rgba(8, 8, 8, 0) 64.95%), radial-gradient(66.53% 100% at 73.33% 100%, rgba(110, 5, 193, 0.44) 0%, rgba(53, 19, 149, 0.1) 99.69%), linear-gradient(180.03deg, rgba(8, 8, 8, 0) 50%, rgba(25, 63, 152, 0.41) 99.97%), linear-gradient(270deg, rgba(39, 15, 107, 0.3) 0%, rgba(8, 8, 8, 0) 100%);
+    background-color: #23262F;
+
+    font-family: Inter;
+    font-style: normal;
+
+    text-align: center;
+    letter-spacing: -0.011em;
+    color: #ECF1FF;
+}
+
+.headers {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+
+    color: #ECF1FF;
+}
+
+.backtext{
+    position: absolute;
+
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+    width: 100%;
+    top:10px;
+
+    text-align: center;
+    letter-spacing: -0.011em;
+    font-weight: bold;
+
+    color: #ECF1FF;
+}
+
+.nameCat {
+    position: absolute;
+    height: 36px;
+    width: 100%;
+    top: 50%;
+
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: bold;
+
+}
+
+.square{
+    position: relative;
+    width: 90%;
+    height: 10%;
+    top: 55%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(126.885px);
+    z-index: 0;
+    border-radius: 13px;
+}
+
+.textCat {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:40%;
+
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.choiceButton{
+    position: absolute;
+    width: 100%;
+    top: 80%;
+}
+
+.okButtonDes{
+    position: relative;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 130%;
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
+    top: 55%;
+
+    z-index: 3;
+    background: #502ba7;
+    box-shadow: -6px -6px 16px rgba(255, 255, 255, 0.1), 6px 9px 40px rgba(48, 49, 55, 0.54);
+    border-radius: 64px;
+}
+
+.ImageCat{
+    position: absolute;
+    width: 100%;
+    top:5%;
+}
+
+.buttonArrow{
+    display: inline;
+}
+
+.Group {
+    position: relative;
+    top: 55%;
+}

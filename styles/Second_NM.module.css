@@ -1,0 +1,147 @@
+.c {
+    position: absolute;
+    z-index: 0;
+    left: 10%;
+}
+
+.rel{
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 130%;
+    /* identical to box height, or 47px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.035em;
+
+    color: #FFFFFF;
+}
+
+.square1{
+    position: absolute;
+    margin-left: 32%;
+    top: 90px;
+    z-index: 2;
+}
+
+.square2{
+    position: absolute;
+    right: 32%;
+    top: 90px;
+    z-index: 2;
+}
+
+.square3{
+    position: absolute;
+    margin-left: 32%;
+    top: 300px;
+    z-index: 2;
+}
+
+.square4{
+    position: absolute;
+    right: 32%;
+    top: 300px;
+    z-index: 2;
+}
+
+.square5{
+    position: absolute;
+    margin-left: 32%;
+    top: 510px;
+    z-index: 2;
+}
+
+.square6{
+    position: absolute;
+    right: 32%;
+    top: 510px;
+    z-index: 2;
+}
+
+.text1{
+    position: absolute;
+    width: 18px;
+    height: 47px;
+    left: 100px;
+    top: 45px;
+    z-index: 1;
+}
+
+.text2{
+    position: absolute;
+    width: 18px;
+    height: 47px;
+    left: 100px;
+    top: 45px;
+    z-index: 1;
+}
+
+.text3{
+    position: absolute;
+    width: 18px;
+    height: 47px;
+    left: 100px;
+    top: 45px;
+    z-index: 1;
+}
+
+.text4{
+    position: absolute;
+    width: 18px;
+    height: 47px;
+    left: 100px;
+    top: 45px;
+    z-index: 1;
+}
+
+.text5{
+    position: absolute;
+    width: 18px;
+    height: 47px;
+    left: 100px;
+    top: 45px;
+    z-index: 1;
+}
+
+.text6{
+    position: absolute;
+    width: 18px;
+    height: 47px;
+    left: 100px;
+    top: 45px;
+    z-index: 1;
+}
+
+.chel{
+    position: absolute;
+    bottom: -4px;
+}
+
+.TextBack{
+    position: absolute;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 10%;
+
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+
+    text-align: center;
+    letter-spacing: -0.011em;
+
+    color: #ECF1FF;
+}
