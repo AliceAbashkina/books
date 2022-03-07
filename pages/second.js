@@ -6,8 +6,6 @@ import triss from "../styles/Second.module.css";
 import fri from "../styles/Second_NM.module.css";
 import {router} from "next/client";
 import Image from "next/image";
-import {Progress} from "@sberdevices/plasma-web";
-
 
 export function Second(){
     if (device.device == "mobile") {

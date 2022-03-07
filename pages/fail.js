@@ -56,7 +56,7 @@ export function Fail(){
                 </div>
                 <div className={lambert.textFail}>Ты проиграл</div>
                 <div className={lambert.rel5} style={{marginTop: 10}} onClick={() => router.push('/')}>
-                    <Button text={"Окей"} className={lambert.okButt}></Button>
+                    <Button text={"Окей"} className={lambert.okButt}/>
                 </div>
             </div>
         );

@@ -3,12 +3,21 @@ import zoltan from '../styles/Home_NM.module.css';
 import Link from "next/link";
 import Image from "next/image";
 import {global} from "styled-jsx/css";
-import {detectDevice} from "@sberdevices/plasma-ui";
-const deviceKind=detectDevice()
-export default function Home() {
+import {useRouter} from "next/router";
 
+let deviceKind="Sber",srcH=1000;
+if (typeof window !== 'undefined') {
+    srcH = window.innerHeight;
+}
+if(srcH<800){
+    deviceKind="mobile";
+}
+
+export default function Home(){
+    const router = useRouter();
     global.device = {
-        device: detectDevice()
+        device: deviceKind,
+        str: 0
     };
 
     global.score = {
@@ -23,7 +32,19 @@ export default function Home() {
         index: 0
     };
 
-    if(deviceKind=="mobile"){
+    if (typeof window !== 'undefined' && device.str==0) {
+        window.addEventListener('keydown', (event) => {
+            switch (event.code) {
+                case 'Enter':
+                    router.push('/cat');
+                    console.log("bruh");
+                    break;
+            }
+        });
+    }
+
+    if (device.device == "mobile") {
+        device.str=0;
         return (
             <div className={lutik.con}>
                 <div className={lutik.purple}></div>
@@ -71,14 +92,15 @@ export default function Home() {
         );
     }
     else{
-        return (
+        device.str=0;
+        return(
             <div className={zoltan.bodys}>
                 <div className={zoltan.three}>
                     <div className={zoltan.smarts}>
                         Smart
                     </div>
                     <div className={zoltan.runner}>
-                        Runner
+                        {srcH}
                     </div>
                     <div className={zoltan.svet}>Ученье — свет, а неученье — тьма</div>
                 </div>

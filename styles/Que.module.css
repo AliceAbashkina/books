@@ -145,7 +145,7 @@
     position: relative;
     height: 40px;
     width: 90%;
-    top:20%;
+    top:23%;
 
     margin-right: auto;
     margin-left: auto;
@@ -208,7 +208,7 @@
     background: rgba(255, 255, 255, 0.15);
     border-radius: 54px;
 
-    width: 191px;
+    width: 40%;
     height: 48px;
 
     top: 64%;
@@ -259,7 +259,8 @@
 
 .okButt{
     position: absolute;
-    width: 100%;
+    left:5%;
+    width: 90%;
 }
 
 .rel5 {

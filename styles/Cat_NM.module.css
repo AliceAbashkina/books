@@ -19,10 +19,11 @@
     font-size: 18px;
     line-height: 130%;
     width: 20%;
+    height: 48px;
 
     margin-left: auto;
     margin-right: auto;
-    top: 80%;
+    top: 82%;
 
     z-index: 3;
     background: #502ba7;
@@ -61,4 +62,13 @@
     line-height: 36px;
     font-weight: bold;
 
+}
+
+.buttonArrow{
+    display: inline;
+    margin-inline: 100px;
+}
+
+.buttonW{
+    top: 10px;
 }

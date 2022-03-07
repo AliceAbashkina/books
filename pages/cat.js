@@ -17,7 +17,25 @@ export function Cat() {
     const [index,setValue] = useState(0);
     const massIm=["/dog.png","/travel.png"];
 
-
+    device.str=1;
+    if (typeof window !== 'undefined' && device.str==1) {
+        window.addEventListener('keydown', (event) => {
+            switch (event.code) {
+                case 'Enter':
+                    router.push('/level');
+                    console.log("bruh");
+                    break;
+                case 'ArrowLeft':
+                    ClickLeft(event, index, setValue)
+                    console.log(device.str);
+                    break;
+                case 'ArrowRight':
+                    ClickRight(event, index, setValue)
+                    console.log(device.str);
+                    break;
+            }
+        });
+    }
 
     if (device.device == "mobile") {
         return (
@@ -74,10 +92,10 @@ export function Cat() {
                     </div>
                 </div>
                 <div className={eskel.Group}>
-                    <div onClick={() => ClickLeft(event, index, setValue)} className={geralt.buttonArrow}>
+                    <div onClick={() => ClickLeft(event, index, setValue)} className={eskel.buttonArrow}>
                         <Button><IconArrowLeft color={white}/></Button>
                     </div>
-                    <div onClick={() => ClickRight(event, index, setValue)} className={geralt.buttonArrow}>
+                    <div onClick={() => ClickRight(event, index, setValue)} className={eskel.buttonArrow}>
                         <Button><IconArrowRight color={white}/></Button>
                     </div>
                 </div>

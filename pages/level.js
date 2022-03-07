@@ -7,11 +7,47 @@ import {
 } from "@sberdevices/plasma-ui";
 import {router} from "next/client";
 import {useState} from "react";
-import styled from "styled-components";
+import styled, {createGlobalStyle} from "styled-components";
 import { FocusProps, OutlinedProps, addFocus } from '@sberdevices/plasma-ui';
 
-export function Level() {
+const Container1 = styled.div`
+    position: relative;
+    width: 600px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 112px;
 
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(126.885px);
+    border-radius: 13px;
+  &:active {
+    background-color: rgba(255, 108, 64, 0.45);
+    color: white;
+  }
+  `;
+
+const Container2 = styled.div`
+  &:active {
+    background-color: rgba(255, 108, 64, 0.45);
+    color: white;
+  }
+`;
+export function Level() {
+    device.str=2;
+    let smh1="one", smh2="two";
+    if (typeof window !== 'undefined' && device.str==2) {
+        window.addEventListener('keyup', (event) => {
+            switch (event.code) {
+                case 'ArrowUp':
+                    squareQ1()
+                    break;
+                case 'ArrowDown':
+                    squareQ2()
+                    break;
+            }
+        });
+    }
     if (device.device == "mobile") {
     return(
         <div className={ien.bqs}>
@@ -35,7 +71,7 @@ export function Level() {
                 <img src="/heart.png" className={ien.Secondicon}/>
             </div>
 
-                <div className={ien.squareQ1}  onClick={() => router.push('/first')} >
+            <div className={ien.squareQ1}  onClick={() => router.push('/first')} >
                 <div className={ien.text1}>
                     Чем дальше бежишь, тем сложнее вопросы
                 </div>
@@ -50,7 +86,6 @@ export function Level() {
                 </div>
                 <img src="/rect.png" className={ien.bonusIcon}/>
             </div>
-
 
 
             <div className={ien.squareQ2}  onClick={() => router.push('/second')} >
@@ -90,7 +125,7 @@ export function Level() {
                 <img src="/heart.png" className={ien.Secondicon}/>
             </div>
 
-            <div className={vesemir.squareQ1}  onClick={() =>router.push('/first')} id="idSq">
+            <Container1 onClick={() =>squareQ1()}>
                 <div className={ien.text1}>
                     Чем дальше бежишь, тем сложнее вопросы
                 </div>
@@ -104,8 +139,9 @@ export function Level() {
                     +10%
                 </div>
                 <img src="/rect.png" className={ien.bonusIcon}/>
-            </div>
-            <div className={vesemir.squareQ2}  onClick={() =>router.push('/second')} id="idSq2">
+            </Container1>
+
+            <Container2 className={vesemir.squareQ2}  onClick={() =>squareQ2()} >
                 <div className={ien.text21}>
                     Сложность по уровням
                 </div>
@@ -115,11 +151,18 @@ export function Level() {
                 <div className={ien.text23}>
                     По уровням
                 </div>
-            </div>
+            </Container2>
 
         </div>);
     }
 }
 
+function squareQ1(){
+    router.push('/first')
+}
+
+function squareQ2 (){
+        router.push('/second')
+}
 
 export default Level;
