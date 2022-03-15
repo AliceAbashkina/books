@@ -1,5 +1,6 @@
 import ien from "../styles/Level.module.css";
 import vesemir from "../styles/Level_NM.module.css";
+import {COLORS} from "./colors";
 
 import {
     detectDevice,
@@ -8,42 +9,62 @@ import {
 import {router} from "next/client";
 import {useState} from "react";
 import styled, {createGlobalStyle} from "styled-components";
-import { FocusProps, OutlinedProps, addFocus } from '@sberdevices/plasma-ui';
 
-const Container1 = styled.div`
+export function Level() {
+    device.str=2;
+
+    const [colors, setColors]= useState(COLORS.strgrey);
+    const [colors2, setColors2]= useState(COLORS.strgrey);
+
+    let selectQ;
+
+    const Container1 = styled.div`
     position: relative;
     width: 600px;
     height: 300px;
     margin-left: auto;
     margin-right: auto;
     top: 112px;
-
-    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(126.885px);
-    border-radius: 13px;
-  &:active {
-    background-color: rgba(255, 108, 64, 0.45);
-    color: white;
-  }
-  `;
+      border-radius: 13px;
+      background-color: ${ colors };
+      &:active {
+        background-color: rgba(255, 108, 64, 0.45);
+        color: white;
+      }
+      `;
 
-const Container2 = styled.div`
-  &:active {
-    background-color: rgba(255, 108, 64, 0.45);
-    color: white;
-  }
-`;
-export function Level() {
-    device.str=2;
-    let smh1="one", smh2="two";
-    if (typeof window !== 'undefined' && device.str==2) {
+    const Container2 = styled.div`
+      background-color: ${ colors2 };
+      &:active {
+      background-color: rgba(255, 108, 64, 0.45);
+      color: white;
+      }
+      `;
+
+    if (typeof window !== 'undefined' && device.str===2) {
         window.addEventListener('keyup', (event) => {
             switch (event.code) {
                 case 'ArrowUp':
-                    squareQ1()
+                setColors(COLORS.strred);
+                    setColors2(COLORS.strgrey);
+                    selectQ=1;
                     break;
                 case 'ArrowDown':
-                    squareQ2()
+                    setColors(COLORS.strgrey);
+                    setColors2(COLORS.strred);
+                    selectQ=2;
+                    break;
+                case 'Backspace':
+                    router.push('/cat');
+                    break;
+                case 'Enter':
+                    if(selectQ==1){
+                        router.push('/first');
+                    }
+                    else{
+                        router.push('/second');
+                    }
                     break;
             }
         });
@@ -71,7 +92,7 @@ export function Level() {
                 <img src="/heart.png" className={ien.Secondicon}/>
             </div>
 
-            <div className={ien.squareQ1}  onClick={() => router.push('/first')} >
+            <div className={ien.squareQ1}  onClick={() => router.push('/first')}>
                 <div className={ien.text1}>
                     Чем дальше бежишь, тем сложнее вопросы
                 </div>
@@ -125,7 +146,7 @@ export function Level() {
                 <img src="/heart.png" className={ien.Secondicon}/>
             </div>
 
-            <Container1 onClick={() =>squareQ1()}>
+            <Container1 onClick={() =>squareQ1()} >
                 <div className={ien.text1}>
                     Чем дальше бежишь, тем сложнее вопросы
                 </div>

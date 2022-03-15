@@ -32,7 +32,16 @@ export function Que(){
     const [showToast,setToast]=useState(false);
     const [showHelp, setHelp]=useState(false);
 
-
+    device.str=4;
+    if (typeof window !== 'undefined' && device.str===4) {
+        window.addEventListener('keyup', (event) => {
+            switch (event.code) {
+                case 'Backspace':
+                    router.push('/second');
+                    break;
+            }
+        });
+    }
     useEffect(() => {
         assistantRef.current = initialize(() => {});
         assistantRef.current.on('data', ({ action }: any) => {

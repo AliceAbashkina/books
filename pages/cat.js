@@ -18,7 +18,7 @@ export function Cat() {
     const massIm=["/dog.png","/travel.png"];
 
     device.str=1;
-    if (typeof window !== 'undefined' && device.str==1) {
+    if (typeof window !== 'undefined' && device.str===1) {
         window.addEventListener('keydown', (event) => {
             switch (event.code) {
                 case 'Enter':

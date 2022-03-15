@@ -7,7 +7,21 @@ import fri from "../styles/Second_NM.module.css";
 import {router} from "next/client";
 import Image from "next/image";
 
+function Back(){
+    router.push('/level');
+}
+device.str=3;
 export function Second(){
+    if (typeof window !== 'undefined' && device.str===3) {
+        window.addEventListener('keyup', (event) => {
+            switch (event.code) {
+                case 'Backspace':
+                    Back();
+                    console.log("ds");
+                    break;
+            }
+        });
+    }
     if (device.device == "mobile") {
         return (
             <div className={triss.body}>

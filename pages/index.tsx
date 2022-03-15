@@ -2,7 +2,6 @@ import lutik from '../styles/Home.module.css';
 import zoltan from '../styles/Home_NM.module.css';
 import Link from "next/link";
 import Image from "next/image";
-import {global} from "styled-jsx/css";
 import {useRouter} from "next/router";
 
 let deviceKind="Sber",srcH=1000;
@@ -100,7 +99,7 @@ export default function Home(){
                         Smart
                     </div>
                     <div className={zoltan.runner}>
-                        {srcH}
+                        Runner
                     </div>
                     <div className={zoltan.svet}>Ученье — свет, а неученье — тьма</div>
                 </div>
