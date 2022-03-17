@@ -4,6 +4,8 @@ import {
 } from "@sberdevices/plasma-ui";
 import lambert from "../styles/Que.module.css";
 import {router} from "next/client";
+import {COLORS} from "./colors";
+import {useKey} from "./index";
 
 
 export function Fail(){
@@ -35,6 +37,10 @@ export function Fail(){
         );
     }
     else{
+        function handleEnter(){
+            router.push('/');
+        }
+        useKey("Enter",handleEnter);
         return (
             <div className={lambert.body}>
                 <div className={lambert.headers}>

@@ -3,6 +3,9 @@ import zoltan from '../styles/Home_NM.module.css';
 import Link from "next/link";
 import Image from "next/image";
 import {useRouter} from "next/router";
+import {func} from "prop-types";
+import {router} from "next/client";
+import {useEffect, useRef} from "react";
 
 let deviceKind="Sber",srcH=1000;
 if (typeof window !== 'undefined') {
@@ -10,6 +13,23 @@ if (typeof window !== 'undefined') {
 }
 if(srcH<800){
     deviceKind="mobile";
+}
+
+export function useKey(key,cb){
+    const callbackRef=useRef(cb);
+    useEffect(()=>{
+        callbackRef.current=cb;
+    });
+
+    useEffect(()=>{
+        function handle(event){
+            if(event.code===key){
+                callbackRef.current(event);
+            }
+        }
+        document.addEventListener("keydown",handle);
+        return ()=>document.removeEventListener("keydown",handle)
+    },[key]);
 }
 
 export default function Home(){
@@ -30,17 +50,6 @@ export default function Home(){
         text: ["Как хорошо ты знаешь животных?", "Что ты знаешь о других странах?"],
         index: 0
     };
-
-    if (typeof window !== 'undefined' && device.str==0) {
-        window.addEventListener('keydown', (event) => {
-            switch (event.code) {
-                case 'Enter':
-                    router.push('/cat');
-                    console.log("bruh");
-                    break;
-            }
-        });
-    }
 
     if (device.device == "mobile") {
         device.str=0;
@@ -92,6 +101,11 @@ export default function Home(){
     }
     else{
         device.str=0;
+        function handleEnter(){
+            router.push('/cat');
+            console.log("s");
+        }
+        useKey("Enter",handleEnter);
         return(
             <div className={zoltan.bodys}>
                 <div className={zoltan.three}>
@@ -142,6 +156,8 @@ export default function Home(){
                            height={298}/>
                 </div>
             </div>
+
         );
     }
 }
+

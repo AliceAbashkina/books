@@ -1,22 +1,24 @@
 import ien from "../styles/Level.module.css";
 import vesemir from "../styles/Level_NM.module.css";
+import imr from "../styles/Que_NM.module.css";
 import {COLORS} from "./colors";
 
 import {
     detectDevice,
-    Header
+    Header, Toast
 } from "@sberdevices/plasma-ui";
 import {router} from "next/client";
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import styled, {createGlobalStyle} from "styled-components";
+import {useKey} from "./index";
 
+let selectQ=1;
 export function Level() {
     device.str=2;
 
-    const [colors, setColors]= useState(COLORS.strgrey);
+    const [colors, setColors]= useState(COLORS.strred);
     const [colors2, setColors2]= useState(COLORS.strgrey);
-
-    let selectQ;
+    const [showHelp, setHelp]=useState(false);
 
     const Container1 = styled.div`
     position: relative;
@@ -42,33 +44,6 @@ export function Level() {
       }
       `;
 
-    if (typeof window !== 'undefined' && device.str===2) {
-        window.addEventListener('keyup', (event) => {
-            switch (event.code) {
-                case 'ArrowUp':
-                setColors(COLORS.strred);
-                    setColors2(COLORS.strgrey);
-                    selectQ=1;
-                    break;
-                case 'ArrowDown':
-                    setColors(COLORS.strgrey);
-                    setColors2(COLORS.strred);
-                    selectQ=2;
-                    break;
-                case 'Backspace':
-                    router.push('/cat');
-                    break;
-                case 'Enter':
-                    if(selectQ==1){
-                        router.push('/first');
-                    }
-                    else{
-                        router.push('/second');
-                    }
-                    break;
-            }
-        });
-    }
     if (device.device == "mobile") {
     return(
         <div className={ien.bqs}>
@@ -125,7 +100,36 @@ export function Level() {
         </div>
     );}
     else {
-        return (<div className={ien.bqs}>
+        function handleEnter(){
+            if(selectQ==1){
+                setHelp(true);
+                setTimeout(function (){setHelp(false)},2000);
+            }
+            else if(selectQ==2){
+                router.push('/second');
+            }
+        }
+
+        function handleBackspace(){
+            router.push('/cat');
+        }
+        function handleArrowUp(){
+            console.log("s");
+            setColors(COLORS.strred);
+            setColors2(COLORS.strgrey);
+            selectQ=1;
+        }
+        function handleArrowDown(){
+            console.log("s");
+            setColors(COLORS.strgrey);
+            setColors2(COLORS.strred);
+            selectQ=2;
+        }
+        useKey("Enter",handleEnter);
+        useKey("Backspace",handleBackspace);
+        useKey("ArrowUp",handleArrowUp);
+        useKey("ArrowDown",handleArrowDown);
+        return (<div className={ien.bqs} >
             <div className={ien.backtext}>
                 Тип забега
             </div>
@@ -145,7 +149,10 @@ export function Level() {
                 </div>
                 <img src="/heart.png" className={ien.Secondicon}/>
             </div>
-
+            { showHelp?
+                <div className={imr.Toast}>
+                    <Toast text={"В следующей версии("} /> </div>
+                :null}
             <Container1 onClick={() =>squareQ1()} >
                 <div className={ien.text1}>
                     Чем дальше бежишь, тем сложнее вопросы

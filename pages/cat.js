@@ -8,9 +8,8 @@ import Image from "next/image";
 import {router} from "next/client";
 import {IconArrowLeft, IconArrowRight} from "@sberdevices/plasma-icons";
 import {white} from "@sberdevices/plasma-tokens/colors/values";
-import {useState} from "react";
-import styled from "styled-components";
-import {global} from "styled-jsx/css";
+import {useEffect, useRef, useState} from "react";
+import {useKey} from "./index";
 
 export function Cat() {
 
@@ -18,24 +17,6 @@ export function Cat() {
     const massIm=["/dog.png","/travel.png"];
 
     device.str=1;
-    if (typeof window !== 'undefined' && device.str===1) {
-        window.addEventListener('keydown', (event) => {
-            switch (event.code) {
-                case 'Enter':
-                    router.push('/level');
-                    console.log("bruh");
-                    break;
-                case 'ArrowLeft':
-                    ClickLeft(event, index, setValue)
-                    console.log(device.str);
-                    break;
-                case 'ArrowRight':
-                    ClickRight(event, index, setValue)
-                    console.log(device.str);
-                    break;
-            }
-        });
-    }
 
     if (device.device == "mobile") {
         return (
@@ -72,8 +53,23 @@ export function Cat() {
         );
     }
     else {
+        function handleEnter(){
+            router.push('/level');
+            console.log("bruh");
+        }
+        function handleArrowLeft(){
+            ClickLeft(event, index, setValue)
+            console.log(device.str);
+        }
+        function handleArrowRight(){
+            ClickRight(event, index, setValue)
+            console.log(device.str);
+        }
+        useKey("Enter",handleEnter);
+        useKey("ArrowLeft",handleArrowLeft);
+        useKey("ArrowRight",handleArrowRight);
         return(
-            <div className={geralt.body}>
+            <div className={geralt.body} >
                 <Header
                     className={geralt.headers}
                     back={false}

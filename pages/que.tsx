@@ -10,10 +10,15 @@ import {useEffect, useReducer, useRef, useState} from "react";
 import {reducer} from "./store";
 import {createAssistant, createSmartappDebugger} from "@sberdevices/assistant-client";
 import Image from "next/image";
+import {COLORS} from "./colors";
+import {useKey} from "./index";
+import styled from "styled-components";
 
 const initialize  = (getState:any) => {
     return createAssistant({ getState });
 };
+
+let selectSq=1;
 
 export function Que(){
     const [value, setValue] = useState(score.hearts);
@@ -32,26 +37,45 @@ export function Que(){
     const [showToast,setToast]=useState(false);
     const [showHelp, setHelp]=useState(false);
 
-    device.str=4;
-    if (typeof window !== 'undefined' && device.str===4) {
-        window.addEventListener('keyup', (event) => {
-            switch (event.code) {
-                case 'Backspace':
-                    router.push('/second');
-                    break;
-            }
-        });
-    }
-    useEffect(() => {
-        assistantRef.current = initialize(() => {});
-        assistantRef.current.on('data', ({ action }: any) => {
-            if(action){
-                dispatch(action);
-            }
-        });
-    }, []);
+    const [colors1, setColors1]= useState(COLORS.strred);
+    const [colors2, setColors2]= useState(COLORS.strgrey);
+    const [colors3, setColors3]= useState(COLORS.strgrey);
+    const [colors4, setColors4]= useState(COLORS.strgrey);
+
+    const [colors5, setColors5]= useState(COLORS.strgrey);
+    const [colors6, setColors6]= useState(COLORS.strgrey);
+    const [colors7, setColors7]= useState(COLORS.strgrey);
 
     let way,answers,help;
+
+    const Answer1 = styled.div`
+      background-color: ${ colors1 };
+    `;
+
+    const Answer2 = styled.div`
+      background-color: ${ colors2 };
+    `;
+
+    const Answer3 = styled.div`
+      background-color: ${ colors3 };
+    `;
+
+    const Answer4 = styled.div`
+      background-color: ${ colors4 };
+    `;
+
+    const FirstButt = styled.div`
+      background-color: ${ colors5 };
+    `;
+
+    const SecondButt = styled.div`
+      background-color: ${ colors6 };
+    `;
+
+    const ThirdButt = styled.div`
+      background-color: ${ colors7 };
+    `;
+
     switch (cat.items[cat.index]){
         case "Путешествия":
             way=tupik[0].travel[mass].question;
@@ -159,6 +183,219 @@ export function Que(){
         </div>
     );}
     else{
+        function handleEnter(){
+            switch (selectSq) {
+                case 1:
+                    clickMe(event,answers[0].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)
+                    break;
+                case 2:
+                    clickMe(event,answers[1].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)
+                    break;
+                case 3:
+                    clickMe(event,answers[2].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)
+                    break;
+                case 4:
+                    clickMe(event,answers[3].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)
+                    break;
+                case 5:
+                    Fith(event,answers.mass, answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)
+                    break;
+                case 6:
+                    Help(event,setHelp,answers.help)
+                    break;
+                case 7:
+                    Later(event,mass,setVal,setStar,star,setToast,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)
+                    break;
+                default:
+                    console.log('Fara');
+                    break;
+            }
+        }
+        function handleBackspace(){
+            router.push('/second');
+        }
+        function handleArrowUp(){
+            switch (selectSq) {
+                case 6:
+                    selectSq=5;
+                    setColors5(COLORS.strred);
+                    setColors6(COLORS.strgrey);
+                    break;
+                case 7:
+                    if(showResults4==false){
+                        if(showResults3==false){
+                            selectSq=2;
+                            setColors2(COLORS.strred);
+                            setColors7(COLORS.strgrey);
+                        }
+                        else{
+                            selectSq=3;
+                            setColors3(COLORS.strred);
+                            setColors7(COLORS.strgrey);
+                        }
+                    }
+                    else {
+                        selectSq = 4;
+                        setColors4(COLORS.strred);
+                        setColors7(COLORS.strgrey);
+                    }
+                    break;
+                case 4:
+                    if(showResults3==false){
+                        if(showResults2==false){
+                            selectSq=1;
+                            setColors1(COLORS.strred);
+                            setColors4(COLORS.strgrey);
+                        }
+                        else{
+                            selectSq=2;
+                            setColors2(COLORS.strred);
+                            setColors4(COLORS.strgrey);
+                        }
+                    }
+                    else {
+                        selectSq = 3;
+                        setColors3(COLORS.strred);
+                        setColors4(COLORS.strgrey);
+                    }
+                    break;
+                case 3:
+                    if(showResults2==false){
+                        if(showResults==false){
+                        }
+                        else{
+                            selectSq=1;
+                            setColors1(COLORS.strred);
+                            setColors3(COLORS.strgrey);
+                        }
+                    }
+                    else {
+                        selectSq = 2;
+                        setColors2(COLORS.strred);
+                        setColors3(COLORS.strgrey);
+                    }
+                    break;
+                case 2:
+                    if(showResults==false){
+                    }
+                    else {
+                        selectSq = 1;
+                        setColors1(COLORS.strred);
+                        setColors2(COLORS.strgrey);
+                    }
+                    break;
+                default:
+                    console.log('Ana');
+                    break;
+            }
+        }
+        function handleArrowDown(){
+            switch (selectSq) {
+                case 1:
+                    if(showResults2==false){
+                        if(showResults3==false){
+                            selectSq=4;
+                            setColors4(COLORS.strred);
+                            setColors1(COLORS.strgrey);
+                        }
+                        else{
+                            selectSq=3;
+                            setColors3(COLORS.strred);
+                            setColors1(COLORS.strgrey);
+                        }
+                    }
+                    else {
+                        selectSq = 2;
+                        setColors2(COLORS.strred);
+                        setColors1(COLORS.strgrey);
+                    }
+                    break;
+                case 2:
+                    if(showResults3==false){
+                        if(showResults4==false){
+                            selectSq=1;
+                            setColors1(COLORS.strred);
+                            setColors2(COLORS.strgrey);
+                        }
+                        else{
+                            selectSq=4;
+                            setColors4(COLORS.strred);
+                            setColors2(COLORS.strgrey);
+                        }
+                    }
+                    else {
+                        selectSq = 3;
+                        setColors3(COLORS.strred);
+                        setColors2(COLORS.strgrey);
+                    }
+                    break;
+                case 3:
+                    if(showResults4==false){
+                        selectSq = 7;
+                        setColors7(COLORS.strred);
+                        setColors3(COLORS.strgrey);
+                    }
+                    else {
+                        selectSq = 4;
+                        setColors4(COLORS.strred);
+                        setColors3(COLORS.strgrey);
+                    }
+                    break;
+                case 4:
+                    selectSq=7;
+                    setColors7(COLORS.strred);
+                    setColors4(COLORS.strgrey);
+                    break;
+                case 5:
+                    selectSq=6;
+                    setColors6(COLORS.strred);
+                    setColors5(COLORS.strgrey);
+                    break;
+                default:
+                    console.log('Diva');
+                    break;
+            }
+        }
+        function handleArrowLeft(){
+            selectSq=5;
+            setColors1(COLORS.strgrey);
+            setColors2(COLORS.strgrey);
+            setColors3(COLORS.strgrey);
+            setColors4(COLORS.strgrey);
+            setColors7(COLORS.strgrey);
+            setColors5(COLORS.strred);
+        }
+        function handleArrowRight(){
+            if(showResults==false){
+                if(showResults2==false){
+                    selectSq=3;
+                    setColors5(COLORS.strgrey);
+                    setColors6(COLORS.strgrey);
+                    setColors7(COLORS.strgrey);
+                    setColors3(COLORS.strred);
+                }
+                else{
+                    selectSq=2;
+                    setColors5(COLORS.strgrey);
+                    setColors6(COLORS.strgrey);
+                    setColors7(COLORS.strgrey);
+                    setColors2(COLORS.strred);
+                }
+            }
+            else {
+                selectSq = 1;
+                setColors5(COLORS.strgrey);
+                setColors6(COLORS.strgrey);
+                setColors7(COLORS.strgrey);
+                setColors1(COLORS.strred);
+            }
+        }
+        useKey("Enter",handleEnter);
+        useKey("Backspace",handleBackspace);
+        useKey("ArrowUp",handleArrowUp);
+        useKey("ArrowDown",handleArrowDown);
+        useKey("ArrowRight",handleArrowRight);
+        useKey("ArrowLeft", handleArrowLeft);
         return(
             <div className={lambert.body}>
                 <div className={imr.c}>
@@ -195,63 +432,48 @@ export function Que(){
                     <img src="/heart.png" className={lambert.Secondicon}/>
                 </div>
 
-                <form
-                    onSubmit={(event)=>{
-                        event.preventDefault();
-                        dispatch({type:'answer',answer});
-                        setAnswer('');
-                    }}
-                >
-                    <input value={answer}
-                           type={"text"}
-                           onChange={({target: {value}}) => setAnswer(value)}
-                           required={true}
-                           autoFocus={true}
-                    />
-                </form>
-
                 <div className={imr.textQue}>{way}</div>
 
                 {showResults ?
-                    <div onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)}
+                    <Answer1 onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)}
                          className={imr.rel3}>
                         <Button id={[0].toString()} text={answers[0].answer} className={imr.fckdiv}></Button>
-                    </div>
+                    </Answer1>
                     : null}
 
                 {showResults2 ?
-                    <div onClick={() => clickMe(event,answers[1].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)} className={imr.rel3}>
+                    <Answer2 onClick={() => clickMe(event,answers[1].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)} className={imr.rel3}>
                         <Button id={[1].toString()} text={answers[1].answer} className={imr.fckdiv} ></Button>
-                    </div>
+                    </Answer2>
                     : null}
 
                 {showResults3 ?
-                    <div onClick={() => clickMe(event,answers[2].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)} className={imr.rel3}>
+                    <Answer3 onClick={() => clickMe(event,answers[2].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)} className={imr.rel3}>
                         <Button id={[2].toString()}  text={answers[2].answer} className={imr.fckdiv} ></Button>
-                    </div>
+                    </Answer3>
                     : null}
 
                 {showResults4 ?
-                    <div onClick={() => clickMe(event,answers[3].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)} className={imr.rel3}>
+                    <Answer4 onClick={() => clickMe(event,answers[3].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)} className={imr.rel3}>
                         <Button id={[3].toString()}  text={answers[3].answer} className={imr.fckdiv} ></Button>
-                    </div>
+                    </Answer4>
                     : null}
 
                 <div className={imr.threebutt}>
-                    <div className={imr.butt1} onClick={() => Fith(event,answers.mass, answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)}>
+                    <FirstButt className={imr.butt1} onClick={() => Fith(event,answers.mass, answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)}>
                         <Button text="50/50" className={imr.fifthonfifth} ></Button>
-                    </div>
+                    </FirstButt>
 
-                    <div className={imr.butt2}>
+                    <SecondButt className={imr.butt2}>
                         <Button text="Помощь" className={imr.Help} onClick={() => Help(event,setHelp,answers.help)}></Button>
-                    </div>
+                    </SecondButt>
 
-                    <div className={imr.butt3} onClick={() => Later(event,mass,setVal,setStar,star,setToast,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)}>
+                    <ThirdButt className={imr.butt3} onClick={() => Later(event,mass,setVal,setStar,star,setToast,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)}>
                         <div className={imr.Later}>
                             <Button text="Пропустить за 1" className={imr.LaterButt}></Button>
                             <img src="/rect.png" className={imr.romb}/>
                         </div>
-                    </div>
+                    </ThirdButt>
 
                 </div>
             </div>
