@@ -122,21 +122,6 @@ export function Que(){
                 <img src="/heart.png" className={lambert.Secondicon}/>
             </div>
 
-            <form
-                onSubmit={(event)=>{
-                    event.preventDefault();
-                    dispatch({type:'answer',answer});
-                    setAnswer('');
-                }}
-            >
-                <input value={answer}
-                       type={"text"}
-                       onChange={({target: {value}}) => setAnswer(value)}
-                       required={true}
-                       autoFocus={true}
-                />
-            </form>
-
             <div className={lambert.textQue}>{way}</div>
 
             {showResults ?

@@ -1,0 +1,210 @@
+[
+  {
+      "animals":
+      [
+        {
+          "question": "Cколько весит сердце голубого кита?",
+          "answerOptions": [
+            { "answer": "В 2 раза больше мозга" },
+            { "answer": "600-700 гр." },
+            { "answer": "600-700 кг.", "isCorrect": true },
+            { "answer": "600-700 т." }
+          ],
+          "help": "Сокращение величины - 2  буквы"
+        },
+        {
+          "question": "Животное соучастник открытия Йода?",
+          "answerOptions": [
+            { "answer": "Кролик" },
+            { "answer": "Мышь" },
+            { "answer": "Кот", "isCorrect": true },
+            { "answer": "Собака" }
+          ],
+          "help": "Они всегда лезут куда не надо"
+        },
+        {
+          "question": "Самый крупный олень в России?",
+          "answerOptions": [
+            { "answer": "Лось", "isCorrect": true },
+            { "answer": "Мунтжак" },
+            { "answer": "Лохматый" },
+            { "answer": "Косатый" }
+          ],
+          "help": "Существительное"
+        },
+        {
+          "question": "Самая маленькая среди антилоп?",
+          "answerOptions": [
+            { "answer": "Четырёхрогая" },
+            { "answer": "Горбатая" },
+            { "answer": "Карликовая", "isCorrect": true },
+            { "answer": "Гну" }
+          ],
+          "help": "Не на 'Г'"
+        },
+        {
+          "question": "Как называют детёныша гренландского тюленя в возрасте 1 и 2 года?",
+          "answerOptions": [
+            { "answer": "Краснопят" },
+            { "answer": "Темнопят" },
+            { "answer": "Серун", "isCorrect": true },
+            { "answer": "Пепелюн" }
+          ],
+          "help": "Без пяток"
+        },
+        {
+          "question": "Животное, которое держит рекорд по способности обходится без воды?",
+          "answerOptions": [
+            { "answer": "Белка", "isCorrect": true },
+            { "answer": "Верблюд" },
+            { "answer": "Сайгак" },
+            { "answer": "Лев" }
+          ],
+          "help": "Не думай про верблюда!"
+        },
+        {
+          "question": "Гнездо белки?",
+          "answerOptions": [
+            { "answer": "Гайно", "isCorrect": true },
+            { "answer": "Гайё" },
+            { "answer": "Гнездо"},
+            { "answer": "Гийа" }
+          ],
+          "help": "С 'O'"
+        },
+        {
+          "question": "Самый крупный грызун из современных грызунов?",
+          "answerOptions": [
+            { "answer": "Дикобраз" },
+            { "answer": "Бобёр" },
+            { "answer": "Суслик" },
+            { "answer": "Капибара", "isCorrect": true }
+          ],
+          "help": "Самое милое название"
+        },
+        {
+          "question": "Какое млекопитающее даёт самое жирное молоко?",
+          "answerOptions": [
+            { "answer": "Олень" },
+            { "answer": "Акула" },
+            { "answer": "Тюлень", "isCorrect": true },
+            { "answer": "Корова" }
+          ],
+          "help": "На согласную"
+        },
+        {
+          "question": "Какое млекопитающее даёт самое жирное молоко?",
+          "answerOptions": [
+            { "answer": "Олень" },
+            { "answer": "Акула" },
+            { "answer": "Тюлень", "isCorrect": true },
+            { "answer": "Корова" }
+          ],
+          "help": "На согласную"
+        }
+      ],
+          "travel": [
+              {
+                "question": "В какой стране находится город Цинциннати?",
+                "answerOptions": [
+                  { "answer": "Испания" },
+                  { "answer": "Италия" },
+                  { "answer": "США", "isCorrect": true },
+                  { "answer": "Канада" }
+                ],
+                "help": "Что-то индейское",
+                "imagess": "/fut.png"
+              },
+            {
+              "question": "Какая пустыня расположена в южном полушарии?",
+              "answerOptions": [
+                { "answer": "Атакама", "isCorrect": true },
+                { "answer": "Сахара" },
+                { "answer": "Кара-Кум" },
+                { "answer": "Гоби" }
+              ],
+              "help": "Первые два"
+            },
+              {
+                "question": "Какой остров самый большой в мире?",
+                "answerOptions": [
+                  { "answer": "Мадагаскар" },
+                  { "answer": "Бали"},
+                  { "answer": "Гренландия", "isCorrect": true },
+                  { "answer": "Новая Гвинея" }
+                ],
+                "help": "Холодно"
+              },
+              {
+                "question": "Какая из этих стран имеет выход к Каспийскому морю?",
+                "answerOptions": [
+                  { "answer": "Таджикистан" },
+                  { "answer": "Россия" },
+                  { "answer": "Туркменистан", "isCorrect": true },
+                  { "answer": "Афганистан" }
+                ],
+                "help": "На 'T'"
+              },
+              {
+                "question": "В какой стране находится город Шлиссельбург?",
+                "answerOptions": [
+                  { "answer": "Германия" },
+                  { "answer": "Россия", "isCorrect": true },
+                  { "answer": "США" },
+                  { "answer": "Польша" }
+                ],
+                "help": "Самая неожиданная страна в этом списке"
+              },
+              {
+                "question": "Какое из этих озер находится в Европе?",
+                "answerOptions": [
+                  { "answer": "Балатон", "isCorrect": true },
+                  { "answer": "Байкал" },
+                  { "answer": "Виктория" },
+                  { "answer": "Онтарио" }
+                ],
+                "help": "На букву 'Б'"
+              },
+              {
+                "question": "С какой из этих стран Франция не имеет общей границы?",
+                "answerOptions": [
+                  { "answer": "Бразилия" },
+                  { "answer": "Германия" },
+                  { "answer": "Испания"},
+                  { "answer": "Нидерланды", "isCorrect": true }
+                ],
+                "help": "Европа"
+              },
+              {
+                "question": "В какой стране находится Стоунхедж?",
+                "answerOptions": [
+                  { "answer": "Англия", "isCorrect": true },
+                  { "answer": "Шотландия" },
+                  { "answer": "Ирландия" },
+                  { "answer": "Уэльс" }
+                ],
+                "help": "На гласную букву"
+              },
+              {
+                "question": "Что такое Титикака?",
+                "answerOptions": [
+                  { "answer": "Озеро", "isCorrect": true },
+                  { "answer": "Пролив" },
+                  { "answer": "Река" },
+                  { "answer": "Водопад" }
+                ],
+                "help": "Спокойная вода"
+              },
+              {
+                "question": "Какой из этих городов расположен в Южной Америке?",
+                "answerOptions": [
+                  { "answer": "Акапулько" },
+                  { "answer": "Мехико" },
+                  { "answer": "Сан-Сальвадор" },
+                  { "answer": "Кито", "isCorrect": true }
+                ],
+                "imagess": "На глухую 'K'"
+              }
+            ]
+  }
+]

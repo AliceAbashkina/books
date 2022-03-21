@@ -107,8 +107,7 @@
 
 .chel {
   position: absolute;
-  left: -60px;
-  top: 450px;
+  left: -230px;
 
   z-index: 3;
 }
@@ -129,12 +128,11 @@
 
 .square{
   position: absolute;
-  width: 70%;
+  width: 280px;
   height: 280px;
   margin-left:41%;
-  top: 435px;
   background-image: url("./png/square.png");
-  z-index: 2;
+  z-index: 5;
 }
 
 .play {
@@ -145,10 +143,10 @@
 
 .border0 {
   position: absolute;
-  top: 330px;
+  top: 200px;
   height: 0px;
   width: 815px;
-  left: -370px;
+  left: -500px;
 
   border: 1px solid rgba(80, 43, 167, 0.4);
   transform: rotate(-90deg);
@@ -157,10 +155,10 @@
 
 .border1 {
   position: absolute;
-  top: 330px;
+  top: 200px;
   height: 0px;
   width: 815px;
-  left: -302px;
+  left: -420px;
 
   border: 1px solid rgba(80, 43, 167, 0.4);
   transform: rotate(-90deg);
@@ -169,10 +167,10 @@
 
 .border2 {
   position: absolute;
-  top: 330px;
+  top: 200px;
   height: 0px;
   width: 815px;
-  left: -234px;
+  left: -340px;
 
   border: 1px solid rgba(80, 43, 167, 0.4);
   transform: rotate(-90deg);
@@ -181,10 +179,10 @@
 
 .border3 {
   position: absolute;
-  top: 330px;
+  top: 200px;
   height: 0px;
   width: 815px;
-  left: -166px;
+  left: -260px;
 
   border: 1px solid rgba(80, 43, 167, 0.4);
   transform: rotate(-90deg);
@@ -193,7 +191,7 @@
 
 .border4 {
   position: absolute;
-  top: 330px;
+  top:0;
   height: 0px;
   width: 815px;
   left: -98px;

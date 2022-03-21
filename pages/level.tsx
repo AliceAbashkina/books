@@ -102,8 +102,7 @@ export function Level() {
     else {
         function handleEnter(){
             if(selectQ==1){
-                setHelp(true);
-                setTimeout(function (){setHelp(false)},2000);
+                router.push('/first');
             }
             else if(selectQ==2){
                 router.push('/second');

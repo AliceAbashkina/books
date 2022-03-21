@@ -19,6 +19,11 @@ function Back(){
 function Enter(){
     router.push('/que');
 }
+
+function Fail(setHelp){
+    setHelp(true);
+    setTimeout(function (){setHelp(false)},2000);
+}
 let selectSq=1;
 
 export function Second(){
@@ -279,23 +284,23 @@ export function Second(){
                 </div>
                 <div className={fri.rel}>
                     <Square1 className={fri.square1}>
-                    <div  onClick={() => router.push('/que')}>
+                    <div onClick={Enter}>
                         <div className={fri.text1}>1</div>
                     </div>
                     </Square1>
-                    <Square2 className={fri.square2}>
+                    <Square2 className={fri.square2}  onClick={()=>Fail(setHelp)}>
                         <div className={fri.text2}>2</div>
                     </Square2>
-                    <Square3 className={fri.square3}>
+                    <Square3 className={fri.square3}  onClick={()=>Fail(setHelp)}>
                         <div className={fri.text3}>3</div>
                     </Square3>
-                    <Square4 className={fri.square4}>
+                    <Square4 className={fri.square4}  onClick={()=>Fail(setHelp)}>
                         <div className={fri.text4}>4</div>
                     </Square4>
-                    <Square5 className={fri.square5}>
+                    <Square5 className={fri.square5} onClick={()=>Fail(setHelp)}>
                         <div className={fri.text5}>5</div>
                     </Square5>
-                    <Square6 className={fri.square6}>
+                    <Square6 className={fri.square6}  onClick={()=>Fail(setHelp)}>
                         <div className={fri.text6}>6</div>
                     </Square6>
 

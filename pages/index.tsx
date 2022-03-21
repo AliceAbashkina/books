@@ -6,14 +6,12 @@ import {useRouter} from "next/router";
 import {func} from "prop-types";
 import {router} from "next/client";
 import {useEffect, useRef} from "react";
+import {detectDevice} from "@sberdevices/plasma-ui";
 
-let deviceKind="Sber",srcH=1000;
-if (typeof window !== 'undefined') {
-    srcH = window.innerHeight;
-}
-if(srcH<800){
-    deviceKind="mobile";
-}
+let srcH=1000;
+//let deviceKind=detectDevice();
+let deviceKind='sds';
+console.log(deviceKind)
 
 export function useKey(key,cb){
     const callbackRef=useRef(cb);
@@ -51,10 +49,11 @@ export default function Home(){
         index: 0
     };
 
-    if (device.device == "mobile") {
+    if (device.device === 'mobile') {
         device.str=0;
         return (
             <div className={lutik.con}>
+
                 <div className={lutik.purple}></div>
                 <div className={lutik.rel2}>
                     <div className={lutik.smart}>
@@ -64,22 +63,6 @@ export default function Home(){
                         Runner
                     </div>
                     <div className={lutik.svet}>Ученье — свет, а неученье — тьма</div>
-                </div>
-                <div className={lutik.rel1}>
-                    <div className={lutik.chel}>
-                        <Image src="/chel.png" width={231}
-                               height={297}/>
-                    </div>
-                    <Link href="/cat">
-                        <div>
-                            <button className={lutik.square}>
-                                <div className={lutik.play}>
-                                    <Image src="/play.png" width={85} height={102}/>
-                                </div>
-                                <div className={lutik.Go}>Начать</div>
-                            </button>
-                        </div>
-                    </Link>
                 </div>
                 <div className={lutik.rel3}>
                     <div className={lutik.border0}/>
@@ -96,6 +79,23 @@ export default function Home(){
                                height={30}/>
                     </div>
                 </div>
+                <div className={lutik.rel1}>
+                    <div className={lutik.chel}>
+                        <img src="/chel.png" width={250}
+                               height={300}/>
+                    </div>
+                    <Link href="/cat">
+                        <div>
+                            <button className={lutik.square}>
+                                <div className={lutik.play}>
+                                    <Image src="/play.png" width={85} height={102}/>
+                                </div>
+                                <div className={lutik.Go}>Начать</div>
+                            </button>
+                        </div>
+                    </Link>
+                </div>
+
             </div>
         );
     }

@@ -12,11 +12,8 @@ import {useEffect, useRef, useState} from "react";
 import {useKey} from "./index";
 
 export function Cat() {
-
     const [index,setValue] = useState(0);
     const massIm=["/dog.png","/travel.png"];
-
-    device.str=1;
 
     if (device.device == "mobile") {
         return (

@@ -30,7 +30,7 @@ export function Fail(){
                     <img src="/heart.png" className={lambert.Secondicon}/>
                 </div>
                 <div className={lambert.textQue}>Ты проиграл</div>
-                <div className={lambert.rel3} style={{marginTop: 10}} onClick={() => router.push('/')}>
+                <div className={lambert.rel3} style={{marginTop: 10}} onClick={() => router.push('/cat')}>
                     <Button text={"Окей"} className={lambert.fckdiv}></Button>
                 </div>
             </div>
