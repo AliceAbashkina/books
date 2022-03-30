@@ -471,8 +471,9 @@ export function Que(){
     else{
         // @ts-ignore
         function handleEnter(){
-            // @ts-ignore
-            switch (selectSq1) {
+            switch (
+                // @ts-ignore
+                selectSq1) {
                 case 1:
                     clickMe(event,answers[0].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,0)
                     break;
