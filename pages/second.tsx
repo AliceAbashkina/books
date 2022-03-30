@@ -162,7 +162,7 @@ export function Second(){
     const router=useRouter();
     function Back(){
         router.push('/level');
-        globalThis.selectQ=1;
+        selectQ=1;
     }
 
     function Enter(levels){

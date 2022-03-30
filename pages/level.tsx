@@ -84,7 +84,7 @@ export function Level() {
         else if(
             // @ts-ignore
             selectQ==2){
-            globalThis.selectSq2=1;
+            selectSq2=1;
             router.push('/second');
         }
     }
@@ -96,14 +96,14 @@ export function Level() {
         setColors(COLORS.strred);
         setColors2(COLORS.strgrey);
         // @ts-ignore
-        globalThis.selectQ=1;
+        selectQ=1;
     }
     function handleArrowDown(){
         console.log("s");
         setColors(COLORS.strgrey);
         setColors2(COLORS.strred);
         // @ts-ignore
-        globalThis.selectQ=2;
+        selectQ=2;
     }
 
     if (indexVar.device == "mobile") {
