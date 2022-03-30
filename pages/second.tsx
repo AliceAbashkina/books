@@ -162,6 +162,7 @@ export function Second(){
     const router=useRouter();
     function Back(){
         router.push('/level');
+        // @ts-ignore
         selectQ=1;
     }
 
