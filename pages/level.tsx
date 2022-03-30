@@ -76,10 +76,14 @@ export function Level() {
     useKey("ArrowDown",handleArrowDown);
 
     function handleEnter(){
-        if(selectQ==1){
+        if(
+            // @ts-ignore
+            selectQ==1){
             router.push('/first');
         }
-        else if(selectQ==2){
+        else if(
+            // @ts-ignore
+            selectQ==2){
             globalThis.selectSq2=1;
             router.push('/second');
         }
