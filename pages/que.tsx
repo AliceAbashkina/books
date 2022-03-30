@@ -362,6 +362,7 @@ export function Que(){
             break;
     }}
     else{
+        // @ts-ignore
         switch (items[index]){
             case "Путешествия":
                 way=tupik2[0].travel[mass].question;
