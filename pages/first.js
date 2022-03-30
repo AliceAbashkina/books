@@ -529,7 +529,7 @@ export function Level() {
         }
     }
     function handleBackspace(){
-        globalThis.selectSq=-1;
+        selectSq=-1;
         router.push('/level');
     }
     function handleArrowUp(){
