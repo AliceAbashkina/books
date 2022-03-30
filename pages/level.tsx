@@ -89,7 +89,7 @@ export function Level() {
                 </div>
                 <img src="/rect.png" className={ien.Firsticon}/>
                 <div className={ien.texticon2}>
-                    {
+                    {// @ts-ignore
                         hearts}
                 </div>
                 <img src="/heart.png" className={ien.Secondicon}/>
