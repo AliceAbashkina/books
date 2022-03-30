@@ -84,6 +84,7 @@ export function Level() {
         else if(
             // @ts-ignore
             selectQ==2){
+            // @ts-ignore
             selectSq2=1;
             router.push('/second');
         }
