@@ -792,26 +792,34 @@ export function Que(){
                 <div className={imr.textQue}>{way}</div>
 
                 {showResults ?
-                    <Answer1 onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,0)}
+                    <Answer1 onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                        // @ts-ignore
+                        selectSq1,0)}
                          className={imr.rel3}>
                         <Button id={[0].toString()} text={answers[0].answer} className={imr.fckdiv}></Button>
                     </Answer1>
                     : null}
 
                 {showResults2 ?
-                    <Answer2 onClick={() => clickMe(event,answers[1].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,0)} className={imr.rel3}>
+                    <Answer2 onClick={() => clickMe(event,answers[1].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                        // @ts-ignore
+                        selectSq1,0)} className={imr.rel3}>
                         <Button id={[1].toString()} text={answers[1].answer} className={imr.fckdiv} ></Button>
                     </Answer2>
                     : null}
 
                 {showResults3 ?
-                    <Answer3 onClick={() => clickMe(event,answers[2].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,0)} className={imr.rel3}>
+                    <Answer3 onClick={() => clickMe(event,answers[2].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                        // @ts-ignore
+                        selectSq1,0)} className={imr.rel3}>
                         <Button id={[2].toString()}  text={answers[2].answer} className={imr.fckdiv} ></Button>
                     </Answer3>
                     : null}
 
                 {showResults4 ?
-                    <Answer4 onClick={() => clickMe(event,answers[3].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,0)} className={imr.rel3}>
+                    <Answer4 onClick={() => clickMe(event,answers[3].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                        // @ts-ignore
+                        selectSq1,0)} className={imr.rel3}>
                         <Button id={[3].toString()}  text={answers[3].answer} className={imr.fckdiv} ></Button>
                     </Answer4>
                     : null}
