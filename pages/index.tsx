@@ -66,6 +66,7 @@ export default function Home(){
         });
     });
     if (deviceKind === 'mobile') {
+        // @ts-ignore
         str=0;
         return (
             <div className={lutik.con}>
