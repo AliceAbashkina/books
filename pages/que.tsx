@@ -475,16 +475,24 @@ export function Que(){
                 // @ts-ignore
                 selectSq1) {
                 case 1:
-                    clickMe(event,answers[0].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,0)
+                    clickMe(event,answers[0].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                        // @ts-ignore
+                        selectSq1,0)
                     break;
                 case 2:
-                    clickMe(event,answers[1].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,0)
+                    clickMe(event,answers[1].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                        // @ts-ignore
+                        selectSq1,0)
                     break;
                 case 3:
-                    clickMe(event,answers[2].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,0)
+                    clickMe(event,answers[2].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                        // @ts-ignore
+                        selectSq1,0)
                     break;
                 case 4:
-                    clickMe(event,answers[3].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,0)
+                    clickMe(event,answers[3].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                        // @ts-ignore
+                        selectSq1,0)
                     break;
                 case 5:
                     Fith(event,answers.mass, answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)
