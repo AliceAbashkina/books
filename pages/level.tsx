@@ -69,6 +69,39 @@ export function Level() {
       color: white;
       }
       `;
+
+    useKey("Enter",handleEnter);
+    useKey("Backspace",handleBackspace);
+    useKey("ArrowUp",handleArrowUp);
+    useKey("ArrowDown",handleArrowDown);
+
+    function handleEnter(){
+        if(selectQ==1){
+            router.push('/first');
+        }
+        else if(selectQ==2){
+            globalThis.selectSq2=1;
+            router.push('/second');
+        }
+    }
+    function handleBackspace(){
+        router.push('/cat');
+    }
+    function handleArrowUp(){
+        console.log("s");
+        setColors(COLORS.strred);
+        setColors2(COLORS.strgrey);
+        // @ts-ignore
+        globalThis.selectQ=1;
+    }
+    function handleArrowDown(){
+        console.log("s");
+        setColors(COLORS.strgrey);
+        setColors2(COLORS.strred);
+        // @ts-ignore
+        globalThis.selectQ=2;
+    }
+
     if (indexVar.device == "mobile") {
         return(
         <div className={ien.bqs}>
@@ -129,47 +162,9 @@ export function Level() {
         </div>
     );}
     else {
-        // @ts-ignore
-        function handleEnter(){
-            // @ts-ignore
-            if(selectQ==1){
-                router.push('/first');
-            }
-            // @ts-ignore
-            else if(selectQ==2){
-                globalThis.selectSq2=1;
-                router.push('/second');
-            }
-        }
-        // @ts-ignore
-        function handleBackspace(){
-            router.push('/cat');
-        }
-        // @ts-ignore
-        function handleArrowUp(){
-            console.log("s");
-            setColors(COLORS.strred);
-            setColors2(COLORS.strgrey);
-            // @ts-ignore
-            globalThis.selectQ=1;
-        }
-        // @ts-ignore
-        function handleArrowDown(){
-            console.log("s");
-            setColors(COLORS.strgrey);
-            setColors2(COLORS.strred);
-            // @ts-ignore
-            globalThis.selectQ=2;
-        }
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useKey("Enter",handleEnter);
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useKey("Backspace",handleBackspace);
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useKey("ArrowUp",handleArrowUp);
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useKey("ArrowDown",handleArrowDown);
-        return (<div className={ien.bqs} >
+        return (
+
+            <div className={ien.bqs} >
             <div className={ien.backtext}>
                 Тип забега
             </div>
