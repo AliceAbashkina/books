@@ -131,11 +131,13 @@ export function Level() {
     else {
         // @ts-ignore
         function handleEnter(){
-            if(global.selectQ==1){
+            // @ts-ignore
+            if(selectQ==1){
                 router.push('/first');
             }
+            // @ts-ignore
             else if(selectQ==2){
-                selectSq2=1;
+                globalThis.selectSq2=1;
                 router.push('/second');
             }
         }
@@ -148,14 +150,16 @@ export function Level() {
             console.log("s");
             setColors(COLORS.strred);
             setColors2(COLORS.strgrey);
-            selectQ=1;
+            // @ts-ignore
+            globalThis.selectQ=1;
         }
         // @ts-ignore
         function handleArrowDown(){
             console.log("s");
             setColors(COLORS.strgrey);
             setColors2(COLORS.strred);
-            selectQ=2;
+            // @ts-ignore
+            globalThis.selectQ=2;
         }
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("Enter",handleEnter);
@@ -177,12 +181,12 @@ export function Level() {
             </Header>
             <div className={ien.fuck}>
                 <div className={ien.texticon1}>
-                    {
+                    { // @ts-ignore
                         triangle}
                 </div>
                 <img src="/rect.png" className={ien.Firsticon}/>
                 <div className={ien.texticon2}>
-                    {
+                    {   // @ts-ignore
                         hearts}
                 </div>
                 <img src="/heart.png" className={ien.Secondicon}/>

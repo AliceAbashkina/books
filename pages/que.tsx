@@ -485,7 +485,7 @@ export function Que(){
                 case 6:
                     if(showResults55==false){}
                     else {
-                        selectSq1 = 5;
+                        globalThis.selectSq1 = 5;
                         setColors5(COLORS.secgrey);
                         setColors6(COLORS.strgrey);
                     }
@@ -493,18 +493,18 @@ export function Que(){
                 case 7:
                     if(showResults4==false){
                         if(showResults3==false){
-                            selectSq1=2;
+                            globalThis.selectSq1=2;
                             setColors2(COLORS.secgrey);
                             setColors7(COLORS.strgrey);
                         }
                         else{
-                            selectSq1=3;
+                            globalThis.selectSq1=3;
                             setColors3(COLORS.secgrey);
                             setColors7(COLORS.strgrey);
                         }
                     }
                     else {
-                        selectSq1 = 4;
+                        globalThis.selectSq1 = 4;
                         setColors4(COLORS.secgrey);
                         setColors7(COLORS.strgrey);
                     }
@@ -512,18 +512,18 @@ export function Que(){
                 case 4:
                     if(showResults3==false){
                         if(showResults2==false){
-                            selectSq1=1;
+                            globalThis.selectSq1=1;
                             setColors1(COLORS.secgrey);
                             setColors4(COLORS.strgrey);
                         }
                         else{
-                            selectSq1=2;
+                            globalThis.selectSq1=2;
                             setColors2(COLORS.secgrey);
                             setColors4(COLORS.strgrey);
                         }
                     }
                     else {
-                        selectSq1 = 3;
+                        globalThis.selectSq1 = 3;
                         setColors3(COLORS.secgrey);
                         setColors4(COLORS.strgrey);
                     }
@@ -533,13 +533,13 @@ export function Que(){
                         if(showResults==false){
                         }
                         else{
-                            selectSq1=1;
+                            globalThis.selectSq1=1;
                             setColors1(COLORS.secgrey);
                             setColors3(COLORS.strgrey);
                         }
                     }
                     else {
-                        selectSq1 = 2;
+                        globalThis.selectSq1 = 2;
                         setColors2(COLORS.secgrey);
                         setColors3(COLORS.strgrey);
                     }
@@ -548,7 +548,7 @@ export function Que(){
                     if(showResults==false){
                     }
                     else {
-                        selectSq1 = 1;
+                        globalThis.selectSq1 = 1;
                         setColors1(COLORS.secgrey);
                         setColors2(COLORS.strgrey);
                     }
@@ -565,18 +565,18 @@ export function Que(){
                 case 1:
                     if(showResults2==false){
                         if(showResults3==false){
-                            selectSq1=4;
+                            globalThis.selectSq1=4;
                             setColors4(COLORS.secgrey);
                             setColors1(COLORS.strgrey);
                         }
                         else{
-                            selectSq1=3;
+                            globalThis.selectSq1=3;
                             setColors3(COLORS.secgrey);
                             setColors1(COLORS.strgrey);
                         }
                     }
                     else {
-                        selectSq1 = 2;
+                        globalThis.selectSq1 = 2;
                         setColors2(COLORS.secgrey);
                         setColors1(COLORS.strgrey);
                     }
@@ -655,7 +655,7 @@ export function Que(){
             if(selectSq1>4&&selectSq1!=7) {
                 if (showResults == false) {
                     if (showResults2 == false) {
-                        selectSq1 = 3;
+                        globalThis.selectSq1 = 3;
                         setColors5(COLORS.strgrey);
                         setColors6(COLORS.strgrey);
                         setColors7(COLORS.strgrey);
