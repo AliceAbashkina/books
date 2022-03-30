@@ -12,7 +12,6 @@ import {useRouter} from "next/router";
 import * as indexVar from './index';
 
 export function Second(){
-    console.log(selectSq2)
     function Fail(setHelp){
         setHelp(true);
         setTimeout(function (){setHelp(false)},2000);
@@ -180,8 +179,10 @@ export function Second(){
     else{
         // @ts-ignore
         function handleEnter(){
-            if(selectSq2<3){
-                Enter(selectSq2);
+            if( // @ts-ignore
+                selectSq2<3){
+                Enter( // @ts-ignore
+                    selectSq2);
             }
             else {
                 setHelp(true);
@@ -194,23 +195,29 @@ export function Second(){
         }
         // @ts-ignore
         function handleArrowUp(){
-            switch (selectSq2) {
+            switch (
+                // @ts-ignore
+                selectSq2) {
                 case 3:
+                    // @ts-ignore
                     globalThis.selectSq2=1;
                     setColors1(COLORS.strred);
                     setColors3(COLORS.strgrey);
                     break;
                 case 4:
+                    // @ts-ignore
                     globalThis.selectSq2=2;
                     setColors2(COLORS.strred);
                     setColors4(COLORS.strgrey);
                     break;
                 case 5:
+                    // @ts-ignore
                     globalThis.selectSq2=3;
                     setColors3(COLORS.strred);
                     setColors5(COLORS.strgrey);
                     break;
                 case 6:
+                    // @ts-ignore
                     globalThis.selectSq2=4;
                     setColors4(COLORS.strred);
                     setColors6(COLORS.strgrey);
@@ -222,23 +229,29 @@ export function Second(){
         }
         // @ts-ignore
         function handleArrowDown(){
-            switch (selectSq2) {
+            switch (
+                // @ts-ignore
+                selectSq2) {
                 case 1:
+                    // @ts-ignore
                     globalThis.selectSq2=3;
                     setColors3(COLORS.strred);
                     setColors1(COLORS.strgrey);
                     break;
                 case 2:
+                    // @ts-ignore
                     globalThis.selectSq2=4;
                     setColors4(COLORS.strred);
                     setColors2(COLORS.strgrey);
                     break;
                 case 3:
+                    // @ts-ignore
                     globalThis.selectSq2=5;
                     setColors5(COLORS.strred);
                     setColors3(COLORS.strgrey);
                     break;
                 case 4:
+                    // @ts-ignore
                     globalThis.selectSq2=6;
                     setColors6(COLORS.strred);
                     setColors4(COLORS.strgrey);
@@ -251,18 +264,23 @@ export function Second(){
         // @ts-ignore
         function handleArrowRight(){
 
-            switch (selectSq2) {
+            switch (
+                // @ts-ignore
+                selectSq2) {
                 case 1:
+                    // @ts-ignore
                     globalThis.selectSq2=2;
                     setColors2(COLORS.strred);
                     setColors1(COLORS.strgrey);
                     break;
                 case 3:
+                    // @ts-ignore
                     globalThis.selectSq2=4;
                     setColors4(COLORS.strred);
                     setColors3(COLORS.strgrey);
                     break;
                 case 5:
+                    // @ts-ignore
                     globalThis.selectSq2=6;
                     setColors6(COLORS.strred);
                     setColors5(COLORS.strgrey);
@@ -274,18 +292,23 @@ export function Second(){
         }
         // @ts-ignore
         function handleArrowLeft(){
-            switch (selectSq2) {
+            switch (
+                // @ts-ignore
+                selectSq2) {
                 case 2:
+                    // @ts-ignore
                     globalThis.selectSq2=1;
                     setColors1(COLORS.strred);
                     setColors2(COLORS.strgrey);
                     break;
                 case 4:
+                    // @ts-ignore
                     globalThis.selectSq2=3;
                     setColors3(COLORS.strred);
                     setColors4(COLORS.strgrey);
                     break;
                 case 6:
+                    // @ts-ignore
                     globalThis.selectSq2=5;
                     setColors5(COLORS.strred);
                     setColors6(COLORS.strgrey);
@@ -323,11 +346,15 @@ export function Second(){
                 </div>
                 <div className={triss.fuck}>
                     <div className={triss.texticon1}>
-                        {triangle}
+                        {
+                            // @ts-ignore
+                            triangle}
                     </div>
                     <img src="/rect.png" className={triss.Firsticon}/>
                     <div className={triss.texticon2}>
-                        {hearts}
+                        {
+                            // @ts-ignore
+                            hearts}
                     </div>
                     <img src="/heart.png" className={triss.Secondicon}/>
                 </div>
