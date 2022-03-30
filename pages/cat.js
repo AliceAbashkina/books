@@ -4,18 +4,35 @@ import {
     Header,
     Button
 } from "@sberdevices/plasma-ui";
-import Image from "next/image";
-import {router} from "next/client";
 import {IconArrowLeft, IconArrowRight} from "@sberdevices/plasma-icons";
 import {white} from "@sberdevices/plasma-tokens/colors/values";
 import {useEffect, useRef, useState} from "react";
-import {useKey} from "./index";
+import {useRouter} from "next/router";
+import * as indexVar from './index';
 
 export function Cat() {
+const router = useRouter();
+    function useKey(key,cb){
+        const callbackRef=useRef(cb);
+        useEffect(()=>{
+            callbackRef.current=cb;
+        });
+
+        useEffect(()=>{
+            function handle(event){
+                if(event.code===key){
+                    callbackRef.current(event);
+                }
+            }
+            document.addEventListener("keydown",handle);
+            return ()=>document.removeEventListener("keydown",handle)
+        },[key]);
+    }
+
     const [index,setValue] = useState(0);
     const massIm=["/dog.png","/travel.png"];
 
-    if (device.device == "mobile") {
+    if (indexVar.device == "mobile") {
         return (
             <div className={geralt.body}>
                 <Header
@@ -24,23 +41,25 @@ export function Cat() {
                 >
                     <div className={geralt.backtext}>Выбери категорию</div>
                 </Header>
-                <div className={geralt.ImageCat}>
-                    <Image src={massIm[index]} width={400} height={400}></Image>
-                </div>
-                <div className={geralt.nameCat}>
-                    {cat.items[index]}
-                </div>
-                <div className={geralt.square}>
-                    <div className={geralt.textCat}>
-                        {cat.text[index]}
-                    </div>
-                </div>
                 <div className={geralt.Group}>
+                    <div className={geralt.ImageCat}>
+                        <img src={massIm[index]} width={400} height={400}></img>
+                    </div>
+                    <div className={geralt.nameCat}>
+                        {items[index]}
+                    </div>
+                    <div className={geralt.square}>
+                        <div className={geralt.textCat}>
+                            {text[index]}
+                        </div>
+                    </div>
+                    <div className={geralt.arrow}>
                     <div onClick={() => ClickLeft(event, index, setValue)} className={geralt.buttonArrow}>
                         <Button><IconArrowLeft color={white}/></Button>
                     </div>
                     <div onClick={() => ClickRight(event, index, setValue)} className={geralt.buttonArrow}>
                         <Button><IconArrowRight color={white}/></Button>
+                    </div>
                     </div>
                 </div>
                 <div className={geralt.okButtonDes} onClick={() => router.push('/level')}>
@@ -56,14 +75,15 @@ export function Cat() {
         }
         function handleArrowLeft(){
             ClickLeft(event, index, setValue)
-            console.log(device.str);
         }
         function handleArrowRight(){
             ClickRight(event, index, setValue)
-            console.log(device.str);
         }
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("Enter",handleEnter);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("ArrowLeft",handleArrowLeft);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("ArrowRight",handleArrowRight);
         return(
             <div className={geralt.body} >
@@ -74,14 +94,14 @@ export function Cat() {
                     <div className={geralt.backtext}>Выбери категорию</div>
                 </Header>
                 <div className={eskel.ImageCat}>
-                    <Image src={massIm[index]} width={600} height={600}></Image>
+                    <img src={massIm[index]} width={600} height={600}></img>
                 </div>
                 <div className={eskel.nameCat}>
-                    {cat.items[index]}
+                    {items[index]}
                 </div>
                 <div className={eskel.square}>
                     <div className={eskel.textCat}>
-                        {cat.text[index]}
+                        {text[index]}
                     </div>
                 </div>
                 <div className={eskel.Group}>
@@ -104,12 +124,12 @@ function ClickLeft(event,index,setValue)
 {
    if(index==1){
        index=0;
-       cat.index=0;
+       globalThis.index=0;
        setValue(index);
    }
    else{
        index++;
-       cat.index=index;
+       globalThis.index=index;
        setValue(index);
    }
     console.log(index);
@@ -119,12 +139,12 @@ function ClickLeft(event,index,setValue)
 function ClickRight(event,index,setValue){
     if(index==0){
         index=1;
-        cat.index=index;
+        globalThis.index=index;
         setValue(index);
     }
     else{
         index--;
-        cat.index=index;
+        globalThis.index=index;
         setValue(index);
     }
     console.log(index);

@@ -1,28 +1,65 @@
 import shani from "../styles/First.module.css";
 import ciri from "../styles/First_NM.module.css";
 import {Button, Header, Image, Toast} from "@sberdevices/plasma-ui";
-import {router} from "next/client";
-import styled, {keyframes} from "styled-components";
-import {useRef, useState} from "react";
-import {COLORS2} from "./colors";
+import styled from "styled-components";
+import {useEffect, useRef, useState} from "react";
+import {COLORS, COLORS2} from "../public/colors";
 import lambert from "../styles/Que.module.css";
 import tupik from "../public/sa2.json";
-import {useKey} from "./index";
 import imr from "../styles/Que_NM.module.css";
+import * as indexVar from './index';
+import {useRouter} from "next/router";
+import { keyframes } from 'styled-components'
 
-let selectSq=-1;
+globalThis.selectSq=-1;
+
+const city = keyframes `
+        from { background-position: 1920px 100%; }
+        to { background-position: 0 100%, 0 0;}
+    `
+const Body = styled.div `
+    height: 100%;
+    width: 100%;
+    background: url(/townie.png) repeat-x 0 100% fixed;
+    animation: ${city} 30s linear infinite;
+    background-size: cover;
+    z-index: 3;
+    overflow: hidden;
+      animation-fill-mode: forwards;
+    `;
 
 export function Level() {
-    const [value, setValue] = useState(score.hearts);
-    const [star,setStar]=useState(score.triangle);
+    const router = useRouter();
+    function useKey(key,cb){
+        const callbackRef=useRef(cb);
+        useEffect(()=>{
+            callbackRef.current=cb;
+        });
+
+        useEffect(()=>{
+            function handle(event){
+                if(event.code===key){
+                    callbackRef.current(event);
+                }
+            }
+            document.addEventListener("keydown",handle);
+            return ()=>document.removeEventListener("keydown",handle)
+        },[key]);
+    }
+
+
+    const [value, setValue] = useState(hearts);
+    const [star,setStar]=useState(triangle);
     const [mass=0, setVal] = useState(0);
     const [answer, setAnswer]=useState("");
 
+    const [showResultsQ, setShowResultsQ] = useState(false); //q
     const [showResults, setShowResults] = useState(false); //1st answer
     const [showResults2, setShowResults2] = useState(false);
     const [showResults3, setShowResults3] = useState(false);
     const [showResults4, setShowResults4] = useState(false); //4th answer
     const [showResults10, setShowResults10] = useState(false); //buttons
+    const [showResults55, setShowResults55] = useState(true); //50\50
 
     const [showResults11, setShowResults11] = useState(false); //books
     const [showResults12, setShowResults12] = useState(true); //ready hook
@@ -34,10 +71,15 @@ export function Level() {
     const [showHelp, setHelp]=useState(false);
 
     const [Books, setBooks]=useState(ciri.books); //active or paused books
-    const [colors1, setColors1]= useState(COLORS2.strgrey);
+    const [colors1, setColors1]= useState(COLORS2.vid); //no-mob
     const [colors2, setColors2]= useState(COLORS2.strgrey);
     const [colors3, setColors3]= useState(COLORS2.strgrey);
     const [colors4, setColors4]= useState(COLORS2.strgrey);
+
+    const [colors11, setColors11]= useState(COLORS2.strgrey);
+    const [colors12, setColors12]= useState(COLORS2.strgrey);
+    const [colors13, setColors13]= useState(COLORS2.strgrey);
+    const [colors14, setColors14]= useState(COLORS2.strgrey);
 
     const [colors5, setColors5]= useState(COLORS2.strgrey);
     const [colors6, setColors6]= useState(COLORS2.strgrey);
@@ -73,7 +115,24 @@ export function Level() {
       background-color: ${ colors7 };
     `;
 
-    switch (cat.items[cat.index]){
+    const MobAn1 = styled.div`
+      background-color: ${ colors11 };
+    `;
+
+    const MobAn2 = styled.div`
+      background-color: ${ colors12 };
+    `;
+
+    const MobAn3 = styled.div`
+      background-color: ${ colors13 };
+    `;
+
+    const MobAn4 = styled.div`
+      background-color: ${ colors14 };
+    `;
+
+
+    switch (items[index]){
         case "Путешествия":
             way=tupik[0].travel[mass].question;
             answers=tupik[0].travel[mass].answerOptions;
@@ -128,8 +187,8 @@ export function Level() {
 
             if (timeLeft === 0) {
                 onTimesUp();
-                let value = score.hearts;
-                score.hearts=--value;
+                let value = hearts;
+                globalThis.hearts=--value;
                 console.log(setValue)
                 if(mass==9){
                     router.push('/level');
@@ -156,18 +215,6 @@ export function Level() {
         return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
     }
 
-
-
-
-    function Pew(setShowResults,setShowResults2,setShowResults3,setShowResults4,setShowResults9,setShowResults10) {
-        setShowResults(true);
-        setShowResults2(true);
-        setShowResults3(true);
-        setShowResults4(true);
-        setShowResults9(false);
-        setShowResults10(true);
-    }
-
     function Prom(){
         return new Promise(resolve => {
             setTimeout(() => {
@@ -176,6 +223,7 @@ export function Level() {
         });
     }
     function Question(setShowResults,setShowResults2,setShowResults3,setShowResults4,setShowResults10,setShowResults13,setShowResults11,setShowResults15,mass,setValue,setVal,value) {
+        setShowResultsQ(true);
         setShowResults(true);
         setShowResults2(true);
         setShowResults3(true);
@@ -188,8 +236,8 @@ export function Level() {
        // startTimer(mass,setValue,setVal,value);
     }
 
-    async function Start(setShowResults11,setShowResults12,setShowResults14,setShowResults,setShowResults2,setShowResults3,setShowResults4,setBooks,setShowResults10,setShowResults13,setShowResults15,mass,setValue,setVal,value) {
-        selectSq=1;
+    async function Start() {
+        globalThis.selectSq=1;
         setShowResults11(true);
         setShowResults12(false);
         setShowResults14(false);
@@ -210,16 +258,31 @@ export function Level() {
 
     function Later(event,mass,setVal,setStar,star,setToast,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp){
         if(star>0){
+            setColors11(COLORS2.strgrey)
+            setColors12(COLORS2.strgrey)
+            setColors13(COLORS2.strgrey)
+            setColors14(COLORS2.strgrey)
+            setShowResultsQ(true);
             setShowResults(true);
             setShowResults2(true);
             setShowResults3(true);
             setShowResults4(true);
             setHelp(false)
-            mass++
-            setVal(mass);
             star--;
-            score.triangle=star;
+            globalThis.triangle=star;
             setStar(star);
+            mass++
+            if(mass==9){
+                router.push('/win');
+                setStar(5);
+            }
+            else{
+                setVal(mass);
+                setColors7(COLORS2.strgrey)
+                setColors1(COLORS2.vid)
+                selectSq=1;
+                setShowResults55(true)
+            }
         }
         else{
             setToast(true);
@@ -233,20 +296,71 @@ export function Level() {
         setTimeout(function (){setHelp(false)},2000);
     }
 
-    function clickMe(event, isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,setShowResults11,setShowResults12,setShowResults14,setBooks,setShowResults10,setShowResults13,setShowResults15){
+    function Proma(){
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve('resolved');
+            }, 100);
+        });
+    }
+
+
+    async function clickMe(event, isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,setShowResults11,setShowResults12,setShowResults14,setBooks,setShowResults10,setShowResults13,setShowResults15,tr){
         if (isCorrect == true) {
+            switch(globalThis.selectSq) {
+                case 1:
+                    setColors1(COLORS.strtrue)
+                    break;
+                case 2:
+                    setColors2(COLORS.strtrue)
+                    break;
+                case 3:
+                    setColors3(COLORS.strtrue)
+                    break;
+                case 4:
+                    setColors4(COLORS.strtrue)
+                    break;
+            }
+            switch(tr) {
+                case 1:
+                    setColors11(COLORS.strtrue)
+                    break;
+                case 2:
+                    setColors12(COLORS.strtrue)
+                    break;
+                case 3:
+                    setColors13(COLORS.strtrue)
+                    break;
+                case 4:
+                    setColors14(COLORS.strtrue)
+                    break;
+            }
+            const result = await Proma();
+            setColors1(COLORS2.vid)
+            setColors2(COLORS2.strgrey)
+            setColors3(COLORS2.strgrey)
+            setColors4(COLORS2.strgrey)
+
+            setColors11(COLORS2.strgrey);
+            setColors12(COLORS2.strgrey);
+            setColors13(COLORS2.strgrey);
+            setColors14(COLORS2.strgrey);
+
+            setShowResultsQ(true);
             setShowResults(true);
             setShowResults2(true);
             setShowResults3(true);
             setShowResults4(true);
             setHelp(false);
-
+            setShowResults55(true);
             mass++
             setVal(mass)
             if(mass==9) {
-                router.push('/level');
+                router.push('/win');
+                globalThis.selectSq=-1;
             }
             else{
+                setShowResultsQ(false);
                 setShowResults(false);
                 setShowResults2(false);
                 setShowResults3(false);
@@ -255,17 +369,60 @@ export function Level() {
                 setShowResults13(true);
                 setShowResults15(false);
                 setBooks(ciri.books);
-                Start(setShowResults11,setShowResults12,setShowResults14,setShowResults,setShowResults2,setShowResults3,setShowResults4,setBooks,setShowResults10,setShowResults13,setShowResults15,mass,setValue,setVal,value);
+                Start();
             }
 
         }
         else {
+            switch(selectSq) {
+                case 1:
+                    setColors1(COLORS.strred)
+                    break;
+                case 2:
+                    setColors2(COLORS.strred)
+                    break;
+                case 3:
+                    setColors3(COLORS.strred)
+                    break;
+                case 4:
+                    setColors4(COLORS.strred)
+                    break;
+            }
+            switch(tr) {
+                case 1:
+                    setColors11(COLORS.strred)
+                    setColors12(COLORS2.strgrey)
+                    setColors13(COLORS2.strgrey)
+                    setColors14(COLORS2.strgrey)
+                    break;
+                case 2:
+                    setColors12(COLORS.strred)
+                    setColors11(COLORS2.strgrey)
+                    setColors13(COLORS2.strgrey)
+                    setColors14(COLORS2.strgrey)
+                    break;
+                case 3:
+                    setColors13(COLORS.strred)
+                    setColors11(COLORS2.strgrey)
+                    setColors14(COLORS2.strgrey)
+                    setColors12(COLORS2.strgrey)
+                    break;
+                case 4:
+                    setColors14(COLORS.strred)
+                    setColors11(COLORS2.strgrey)
+                    setColors12(COLORS2.strgrey)
+                    setColors13(COLORS2.strgrey)
+                    break;
+            }
             --value
-            score.hearts = value;
+            globalThis.hearts=value;
             setValue(value)
             if (value == 0) {
                 setHelp(false);
-
+                globalThis.hearts=5;
+                setValue(5);
+                globalThis.selectSq=-1;
+                setShowResults55(true);
                 router.push('/fail');
             }
         }
@@ -315,32 +472,44 @@ export function Level() {
         switch(rand1) {
             case 0:
                 setShowResults(true);
+                setColors1(COLORS2.vid);
+                globalThis.selectSq=1;
                 break;
             case 1:
                 setShowResults2(true);
+                setColors2(COLORS2.vid);
+                globalThis.selectSq=2;
                 break;
             case 2:
                 setShowResults3(true);
+                setColors3(COLORS2.vid);
+                globalThis.selectSq=3;
                 break;
             case 3:
                 setShowResults4(true);
+                setColors4(COLORS2.vid);
+                globalThis.selectSq=4;
                 break;
         }
+
+        setShowResults55(false);
+        setColors5(COLORS2.strgrey)
     }
 
     function handleEnter(){
+        console.log(selectSq)
         switch (selectSq) {
             case 1:
-                clickMe(event,answers[0].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,setShowResults11,setShowResults12,setShowResults14,setBooks,setShowResults10,setShowResults13,setShowResults15)
+                clickMe(event,answers[0].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,setShowResults11,setShowResults12,setShowResults14,setBooks,setShowResults10,setShowResults13,setShowResults15,0)
                 break;
             case 2:
-                clickMe(event,answers[1].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,setShowResults11,setShowResults12,setShowResults14,setBooks,setShowResults10,setShowResults13,setShowResults15)
+                clickMe(event,answers[1].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,setShowResults11,setShowResults12,setShowResults14,setBooks,setShowResults10,setShowResults13,setShowResults15,0)
                 break;
             case 3:
-                clickMe(event,answers[2].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,setShowResults11,setShowResults12,setShowResults14,setBooks,setShowResults10,setShowResults13,setShowResults15)
+                clickMe(event,answers[2].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,setShowResults11,setShowResults12,setShowResults14,setBooks,setShowResults10,setShowResults13,setShowResults15,0)
                 break;
             case 4:
-                clickMe(event,answers[3].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,setShowResults11,setShowResults12,setShowResults14,setBooks,setShowResults10,setShowResults13,setShowResults15)
+                clickMe(event,answers[3].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,setShowResults11,setShowResults12,setShowResults14,setBooks,setShowResults10,setShowResults13,setShowResults15,0)
                 break;
             case 5:
                 Fith(event,answers.mass, answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)
@@ -352,7 +521,7 @@ export function Level() {
                 Later(event,mass,setVal,setStar,star,setToast,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)
                 break;
             case -1:
-                Start(setShowResults11, setShowResults12, setShowResults14, setShowResults, setShowResults2, setShowResults3, setShowResults4, setBooks, setShowResults10, setShowResults13, setShowResults15, mass, setValue, setVal, value)
+                Start()
                 break;
             default:
                 console.log('Fara');
@@ -360,50 +529,55 @@ export function Level() {
         }
     }
     function handleBackspace(){
+        globalThis.selectSq=-1;
         router.push('/level');
     }
     function handleArrowUp(){
         switch (selectSq) {
             case 6:
-                selectSq=5;
-                setColors5(COLORS2.strred);
-                setColors6(COLORS2.strgrey);
+                if(showResults55==false){
+                }
+                else {
+                    globalThis.selectSq = 5;
+                    setColors5(COLORS2.vid);
+                    setColors6(COLORS2.strgrey);
+                }
                 break;
             case 7:
                 if(showResults4==false){
                     if(showResults3==false){
-                        selectSq=2;
-                        setColors2(COLORS2.strred);
+                        globalThis.selectSq=2;
+                        setColors2(COLORS2.vid);
                         setColors7(COLORS2.strgrey);
                     }
                     else{
-                        selectSq=3;
-                        setColors3(COLORS2.strred);
+                        globalThis.selectSq=3;
+                        setColors3(COLORS2.vid);
                         setColors7(COLORS2.strgrey);
                     }
                 }
                 else {
-                    selectSq = 4;
-                    setColors4(COLORS2.strred);
+                    globalThis.selectSq = 4;
+                    setColors4(COLORS2.vid);
                     setColors7(COLORS2.strgrey);
                 }
                 break;
             case 4:
                 if(showResults3==false){
                     if(showResults2==false){
-                        selectSq=1;
-                        setColors1(COLORS2.strred);
+                        globalThis.selectSq=1;
+                        setColors1(COLORS2.vid);
                         setColors4(COLORS2.strgrey);
                     }
                     else{
-                        selectSq=2;
-                        setColors2(COLORS2.strred);
+                        globalThis.selectSq=2;
+                        setColors2(COLORS2.vid);
                         setColors4(COLORS2.strgrey);
                     }
                 }
                 else {
-                    selectSq = 3;
-                    setColors3(COLORS2.strred);
+                    globalThis.selectSq = 3;
+                    setColors3(COLORS2.vid);
                     setColors4(COLORS2.strgrey);
                 }
                 break;
@@ -412,14 +586,14 @@ export function Level() {
                     if(showResults==false){
                     }
                     else{
-                        selectSq=1;
-                        setColors1(COLORS2.strred);
+                        globalThis.selectSq=1;
+                        setColors1(COLORS2.vid);
                         setColors3(COLORS2.strgrey);
                     }
                 }
                 else {
-                    selectSq = 2;
-                    setColors2(COLORS2.strred);
+                    globalThis.selectSq = 2;
+                    setColors2(COLORS2.vid);
                     setColors3(COLORS2.strgrey);
                 }
                 break;
@@ -427,8 +601,8 @@ export function Level() {
                 if(showResults==false){
                 }
                 else {
-                    selectSq = 1;
-                    setColors1(COLORS2.strred);
+                    globalThis.selectSq = 1;
+                    setColors1(COLORS2.vid);
                     setColors2(COLORS2.strgrey);
                 }
                 break;
@@ -442,61 +616,61 @@ export function Level() {
             case 1:
                 if(showResults2==false){
                     if(showResults3==false){
-                        selectSq=4;
-                        setColors4(COLORS2.strred);
+                        globalThis.selectSq=4;
+                        setColors4(COLORS2.vid);
                         setColors1(COLORS2.strgrey);
                     }
                     else{
-                        selectSq=3;
-                        setColors3(COLORS2.strred);
+                        globalThis.selectSq=3;
+                        setColors3(COLORS2.vid);
                         setColors1(COLORS2.strgrey);
                     }
                 }
                 else {
-                    selectSq = 2;
-                    setColors2(COLORS2.strred);
+                    globalThis.selectSq = 2;
+                    setColors2(COLORS2.vid);
                     setColors1(COLORS2.strgrey);
                 }
                 break;
             case 2:
                 if(showResults3==false){
                     if(showResults4==false){
-                        selectSq=1;
-                        setColors1(COLORS2.strred);
+                        globalThis.selectSq=1;
+                        setColors1(COLORS2.vid);
                         setColors2(COLORS2.strgrey);
                     }
                     else{
-                        selectSq=4;
-                        setColors4(COLORS2.strred);
+                        globalThis.selectSq=4;
+                        setColors4(COLORS2.vid);
                         setColors2(COLORS2.strgrey);
                     }
                 }
                 else {
-                    selectSq = 3;
-                    setColors3(COLORS2.strred);
+                    globalThis.selectSq = 3;
+                    setColors3(COLORS2.vid);
                     setColors2(COLORS2.strgrey);
                 }
                 break;
             case 3:
                 if(showResults4==false){
-                    selectSq = 7;
-                    setColors7(COLORS2.strred);
+                    globalThis.selectSq = 7;
+                    setColors7(COLORS2.vid);
                     setColors3(COLORS2.strgrey);
                 }
                 else {
-                    selectSq = 4;
-                    setColors4(COLORS2.strred);
+                    globalThis.selectSq = 4;
+                    setColors4(COLORS2.vid);
                     setColors3(COLORS2.strgrey);
                 }
                 break;
             case 4:
-                selectSq=7;
-                setColors7(COLORS2.strred);
+                globalThis.selectSq=7;
+                setColors7(COLORS2.vid);
                 setColors4(COLORS2.strgrey);
                 break;
             case 5:
-                selectSq=6;
-                setColors6(COLORS2.strred);
+                globalThis.selectSq=6;
+                setColors6(COLORS2.vid);
                 setColors5(COLORS2.strgrey);
                 break;
             default:
@@ -505,37 +679,50 @@ export function Level() {
         }
     }
     function handleArrowLeft(){
-        selectSq=5;
-        setColors1(COLORS2.strgrey);
-        setColors2(COLORS2.strgrey);
-        setColors3(COLORS2.strgrey);
-        setColors4(COLORS2.strgrey);
-        setColors7(COLORS2.strgrey);
-        setColors5(COLORS2.strred);
-    }
-    function handleArrowRight(){
-        if(showResults==false){
-            if(showResults2==false){
-                selectSq=3;
-                setColors5(COLORS2.strgrey);
-                setColors6(COLORS2.strgrey);
+        if(selectSq!=6) {
+            if(showResults55==false){
+                globalThis.selectSq = 6;
+                setColors1(COLORS2.strgrey);
+                setColors2(COLORS2.strgrey);
+                setColors3(COLORS2.strgrey);
+                setColors4(COLORS2.strgrey);
                 setColors7(COLORS2.strgrey);
-                setColors3(COLORS2.strred);
+                setColors6(COLORS2.vid);
             }
-            else{
-                selectSq=2;
-                setColors5(COLORS2.strgrey);
-                setColors6(COLORS2.strgrey);
+            else {
+                globalThis.selectSq = 5;
+                setColors1(COLORS2.strgrey);
+                setColors2(COLORS2.strgrey);
+                setColors3(COLORS2.strgrey);
+                setColors4(COLORS2.strgrey);
                 setColors7(COLORS2.strgrey);
-                setColors2(COLORS2.strred);
+                setColors5(COLORS2.vid);
             }
         }
-        else {
-            selectSq = 1;
-            setColors5(COLORS2.strgrey);
-            setColors6(COLORS2.strgrey);
-            setColors7(COLORS2.strgrey);
-            setColors1(COLORS2.strred);
+    }
+    function handleArrowRight(){
+        if(selectSq>4&&selectSq!=7) {
+            if (showResults == false) {
+                if (showResults2 == false) {
+                    globalThis.selectSq = 3;
+                    setColors5(COLORS2.strgrey);
+                    setColors6(COLORS2.strgrey);
+                    setColors7(COLORS2.strgrey);
+                    setColors3(COLORS2.vid);
+                } else {
+                    globalThis.selectSq = 2;
+                    setColors5(COLORS2.strgrey);
+                    setColors6(COLORS2.strgrey);
+                    setColors7(COLORS2.strgrey);
+                    setColors2(COLORS2.vid);
+                }
+            } else {
+                globalThis.selectSq = 1;
+                setColors5(COLORS2.strgrey);
+                setColors6(COLORS2.strgrey);
+                setColors7(COLORS2.strgrey);
+                setColors1(COLORS2.vid);
+            }
         }
     }
     useKey("Enter",handleEnter);
@@ -544,13 +731,13 @@ export function Level() {
     useKey("ArrowDown",handleArrowDown);
     useKey("ArrowRight",handleArrowRight);
     useKey("ArrowLeft", handleArrowLeft);
-    if(device.device=='mobile')
+    if(indexVar.device=='mobile')
     {
         return (
-            <div className={shani.bodyAnim}>
+            <Body className={shani.bodyAnim}>
                 {showToast ?
-                    <div className={imr.Toast}>
-                        <Toast text="У вас закончились звезды"/></div>
+                    <div className={shani.Toast}>
+                        <Toast style={{margin: 0}} text="У вас закончились звезды"/></div>
                     : null}
 
                 {showHelp ?
@@ -560,11 +747,11 @@ export function Level() {
 
                 <div className={lambert.fuck}>
                     <div className={lambert.texticon1}>
-                        {score.triangle}
+                        {triangle}
                     </div>
                     <img src="/rect.png" className={lambert.Firsticon}/>
                     <div className={lambert.texticon2}>
-                        {score.hearts}
+                        {hearts}
                     </div>
                     <img src="/heart.png" className={lambert.Secondicon}/>
                 </div>
@@ -574,47 +761,48 @@ export function Level() {
                     >
                     </Header>
                 <div className={ciri.TextBack}>Наука</div>
-                {showResults ?
+                {showResultsQ ?
                     <div className={lambert.textQue}>{way}</div>
                     : null}
                 {showResults ?
-                    <Answer1
-                        onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15)}
+                    <MobAn1
+                        onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15,1)}
                         className={shani.rel3}>
                         <Button id={[0].toString()} text={answers[0].answer} className={shani.fckdiv}></Button>
-                    </Answer1>
+                    </MobAn1>
                     : null}
 
                 {showResults2 ?
-                    <Answer2
-                        onClick={() => clickMe(event, answers[1].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15)}
+                    <MobAn2
+                        onClick={() => clickMe(event, answers[1].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15,2)}
                         className={shani.rel3}>
                         <Button id={[1].toString()} text={answers[1].answer} className={shani.fckdiv}></Button>
-                    </Answer2>
+                    </MobAn2>
                     : null}
 
                 {showResults3 ?
-                    <Answer3
-                        onClick={() => clickMe(event, answers[2].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15)}
+                    <MobAn3
+                        onClick={() => clickMe(event, answers[2].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15,3)}
                         className={shani.rel3}>
                         <Button id={[2].toString()} text={answers[2].answer} className={shani.fckdiv}></Button>
-                    </Answer3>
+                    </MobAn3>
                     : null}
 
                 {showResults4 ?
-                    <Answer4
-                        onClick={() => clickMe(event, answers[3].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15)}
+                    <MobAn4
+                        onClick={() => clickMe(event, answers[3].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15,4)}
                         className={shani.rel3}>
                         <Button id={[3].toString()} text={answers[3].answer} className={shani.fckdiv}></Button>
-                    </Answer4>
+                    </MobAn4>
                     : null}
                 {showResults10 ?
                     <div className={shani.threebutt}>
+                        {showResults55 ?
                         <FirstButt className={shani.butt1}
                                    onClick={() => Fith(event, answers.mass, answers, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp)}>
                             <Button text="50/50" className={shani.fifthonfifth}></Button>
                         </FirstButt>
-
+                            : null}
                         <SecondButt className={shani.butt2}>
                             <Button text="Помощь" className={shani.Help}
                                     onClick={() => Help(event, setHelp, answers.help)}></Button>
@@ -631,10 +819,10 @@ export function Level() {
                     </div>
                     : null}
                 {showResults13 ?
-                    <Image className={shani.boy} src={'giphy.gif'} height={200} width={200}/>
+                    <img className={shani.boy} src={'giphy.gif'} height={200} width={200}/>
                     : null}
                 {showResults11 ?
-                        <Image style={{marginTop: '105%'}} className={Books} src={'books.png'} height={100} width={100}/>
+                    <Image className={Books} src={'books.png'} style={{top: '80%'}} height={100} width={100}/>
                     : null}
                 {showResults12 ?
                     <div className={shani.Toast2}>
@@ -642,38 +830,18 @@ export function Level() {
                     : null}
                 {showResults14 ?
                     <div className={ciri.fckdivOk} style={{marginTop: 10}}
-                         onClick={() => Start(setShowResults11, setShowResults12, setShowResults14, setShowResults, setShowResults2, setShowResults3, setShowResults4, setBooks, setShowResults10, setShowResults13, setShowResults15, mass, setValue, setVal, value)}>
+                         onClick={() => Start()}>
                         <Button text={"Ok"} className={ciri.brOk}></Button>
                     </div>
                     : null}
-                {showResults15 ?
-                    <div className={ciri.basetimer}>
-                        <svg className={ciri.basetimersvg} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <g className={ciri.basetimercircle}>
-                                <circle className={ciri.basetimerpathelapsed} cx="50" cy="50" r="45"/>
-                                <path
-                                    id="base-timer-path-remaining"
-                                    strokeDasharray="283"
-                                    className={ciri.basetimerpathremaining.orange}
-                                    d="
-          M 50, 50
-          m -45, 0
-          a 45,45 0 1,0 90,0
-          a 45,45 0 1,0 -90,0
-        "
-                                />
-                            </g>
-                        </svg>
-                        <span id="base-timer-label" className={ciri.basetimerlabel}>{formatTime(
-                            timeLeft, mass, setValue, setVal, value
-                        )}</span>
-                    </div>
-                    : null}
-            </div>
+            </Body>
         );
     } else {
         return (
-            <div className={ciri.bodyAnim}>
+            <Body >
+                {showResults11 ?
+                        <img className={Books} src={'books.png'} height={100} width={100} />
+                    : null}
                 {showToast ?
                     <div className={imr.Toast}>
                         <Toast text="У вас закончились звезды"/></div>
@@ -686,11 +854,11 @@ export function Level() {
 
                 <div className={lambert.fuck}>
                     <div className={lambert.texticon1}>
-                        {score.triangle}
+                        {triangle}
                     </div>
                     <img src="/rect.png" className={lambert.Firsticon}/>
                     <div className={lambert.texticon2}>
-                        {score.hearts}
+                        {hearts}
                     </div>
                     <img src="/heart.png" className={lambert.Secondicon}/>
                 </div>
@@ -739,11 +907,12 @@ export function Level() {
                     : null}
                 {showResults10 ?
                     <div className={ciri.threebutt}>
+                        {showResults55 ?
                         <FirstButt className={imr.butt1}
                                    onClick={() => Fith(event, answers.mass, answers, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp)}>
                             <Button text="50/50" className={ciri.fifthonfifth}></Button>
                         </FirstButt>
-
+                        : null}
                         <SecondButt className={ciri.butt2}>
                             <Button text="Помощь" className={ciri.Help}
                                     onClick={() => Help(event, setHelp, answers.help)}></Button>
@@ -760,47 +929,20 @@ export function Level() {
                     </div>
                     : null}
                 {showResults13 ?
-                    <Image className={ciri.boy} src={'giphy.gif'} height={200} width={200}/>
+                    <img className={ciri.boy} src={'giphy.gif'} height={200} width={200}/>
                     : null}
-                {showResults11 ?
-                    <div>
-                        <Image className={Books} src={'books.png'} height={100} width={100}/>
-                    </div>
-                    : null}
+
                 {showResults12 ?
                     <div className={ciri.Toast2}>
                         <Toast text="Когда человек добежит до препятствия - появится вопрос. Готов(а)?"/></div>
                     : null}
                 {showResults14 ?
                     <div className={ciri.fckdivOk} style={{marginTop: 10}}
-                         onClick={() => Start(setShowResults11, setShowResults12, setShowResults14, setShowResults, setShowResults2, setShowResults3, setShowResults4, setBooks, setShowResults10, setShowResults13, setShowResults15, mass, setValue, setVal, value)}>
+                         onClick={() => Start()}>
                         <Button text={"Ok"} className={ciri.brOk}></Button>
                     </div>
                     : null}
-                {showResults15 ?
-                    <div className={ciri.basetimer}>
-                        <svg className={ciri.basetimersvg} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <g className={ciri.basetimercircle}>
-                                <circle className={ciri.basetimerpathelapsed} cx="50" cy="50" r="45"/>
-                                <path
-                                    id="base-timer-path-remaining"
-                                    strokeDasharray="283"
-                                    className={ciri.basetimerpathremaining.orange}
-                                    d="
-          M 50, 50
-          m -45, 0
-          a 45,45 0 1,0 90,0
-          a 45,45 0 1,0 -90,0
-        "
-                                />
-                            </g>
-                        </svg>
-                        <span id="base-timer-label" className={ciri.basetimerlabel}>{formatTime(
-                            timeLeft, mass, setValue, setVal, value
-                        )}</span>
-                    </div>
-                    : null}
-            </div>
+            </Body>
         );
     }
 }

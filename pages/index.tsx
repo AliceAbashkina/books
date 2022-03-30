@@ -1,56 +1,72 @@
 import lutik from '../styles/Home.module.css';
 import zoltan from '../styles/Home_NM.module.css';
-import Link from "next/link";
-import Image from "next/image";
 import {useRouter} from "next/router";
-import {func} from "prop-types";
-import {router} from "next/client";
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import {detectDevice} from "@sberdevices/plasma-ui";
+import {AssistantAppState, createAssistant} from "@sberdevices/assistant-client";
+import {COLORS} from "../public/colors";
 
-let srcH=1000;
-//let deviceKind=detectDevice();
-let deviceKind='sds';
+
+let deviceKind=detectDevice();
+//let deviceKind='sds';
 console.log(deviceKind)
 
-export function useKey(key,cb){
-    const callbackRef=useRef(cb);
-    useEffect(()=>{
-        callbackRef.current=cb;
-    });
-
-    useEffect(()=>{
-        function handle(event){
-            if(event.code===key){
-                callbackRef.current(event);
-            }
-        }
-        document.addEventListener("keydown",handle);
-        return ()=>document.removeEventListener("keydown",handle)
-    },[key]);
-}
+export var device= deviceKind;
+globalThis.str=0;
+globalThis.triangle=5;
+globalThis.hearts =5;
+globalThis.items= ["Животные", "Путешествия"];
+globalThis.glory= ["animals", "travel"];
+globalThis.text=["Как хорошо ты знаешь животных?", "Что ты знаешь о других странах?"];
+globalThis.index=0;
+globalThis.level=1;
+globalThis.selectSq=-1;
+globalThis.selectSq2=1;
 
 export default function Home(){
+    function useKey(key,cb){
+        const callbackRef=useRef(cb);
+        useEffect(()=>{
+            callbackRef.current=cb;
+        });
+
+        useEffect(()=>{
+            function handle(event){
+                if(event.code===key){
+                    callbackRef.current(event);
+                }
+            }
+            document.addEventListener("keydown",handle);
+            return ()=>document.removeEventListener("keydown",handle)
+        },[key]);
+    }
+    useKey("Enter",handleEnter);
+
+    function handleEnter(){
+        router.push('/cat');
+        console.log("s");
+    }
     const router = useRouter();
-    global.device = {
-        device: deviceKind,
-        str: 0
+
+
+    const initializeAssistant = (getState: any) => {
+        return createAssistant({ getState });
     };
 
-    global.score = {
-        triangle: 5,
-        hearts: 5
-    };
+    const assistantStateRef = useRef<AssistantAppState>();
+    const assistantRef = useRef<ReturnType<typeof createAssistant>>();
 
-    global.cat = {
-        items: ["Животные", "Путешествия"],
-        glory: ["animals", "travel"],
-        text: ["Как хорошо ты знаешь животных?", "Что ты знаешь о других странах?"],
-        index: 0
-    };
+    useEffect(() => {
+        assistantRef.current = initializeAssistant(() => assistantStateRef.current);
 
-    if (device.device === 'mobile') {
-        device.str=0;
+        assistantRef.current.on('data', ({ navigation, action }: any) => {
+            if (action) {
+
+            }
+        });
+    });
+    if (deviceKind === 'mobile') {
+        str=0;
         return (
             <div className={lutik.con}>
 
@@ -70,12 +86,12 @@ export default function Home(){
                     <div className={lutik.border2}/>
                     <div className={lutik.border3}/>
                     <div className={lutik.border4}/>
-                    <div className={lutik.rec1}>
-                        <Image src="/rect.png" width={20}
+                    <div className={zoltan.rec11}>
+                        <img src="/rect.png" width={20}
                                height={30}/>
                     </div>
-                    <div className={lutik.rec2}>
-                        <Image src="/rect.png" width={20}
+                    <div className={zoltan.rec21}>
+                        <img src="/rect.png" width={20}
                                height={30}/>
                     </div>
                 </div>
@@ -84,28 +100,20 @@ export default function Home(){
                         <img src="/chel.png" width={250}
                                height={300}/>
                     </div>
-                    <Link href="/cat">
-                        <div>
+                        <div onClick={() => router.push('/cat')}>
                             <button className={lutik.square}>
                                 <div className={lutik.play}>
-                                    <Image src="/play.png" width={85} height={102}/>
+                                    <img src="/play.png" width={85} height={102}/>
                                 </div>
                                 <div className={lutik.Go}>Начать</div>
                             </button>
                         </div>
-                    </Link>
                 </div>
-
             </div>
         );
     }
     else{
-        device.str=0;
-        function handleEnter(){
-            router.push('/cat');
-            console.log("s");
-        }
-        useKey("Enter",handleEnter);
+       str=0;
         return(
             <div className={zoltan.bodys}>
                 <div className={zoltan.three}>
@@ -117,42 +125,40 @@ export default function Home(){
                     </div>
                     <div className={zoltan.svet}>Ученье — свет, а неученье — тьма</div>
                 </div>
-                <Link href="/cat">
-                    <div>
+                    <div onClick={() => router.push('/cat')}>
                         <button className={zoltan.square}>
                             <div className={zoltan.play}>
-                                <Image src="/play.png" width={85} height={102}/>
+                                <img src="/play.png" width={85} height={102}/>
                             </div>
                             <div className={zoltan.Go}>Начать</div>
                         </button>
                     </div>
-                </Link>
                 <div className={zoltan.rec1}>
-                    <Image src="/rect.png" width={20}
+                    <img src="/rect.png" width={20}
                            height={30}/>
                 </div>
                 <div className={zoltan.rec2}>
-                    <Image src="/rect.png" width={20}
+                    <img src="/rect.png" width={20}
                            height={30}/>
                 </div>
                 <div className={zoltan.rec3}>
-                    <Image src="/rect.png" width={38}
+                    <img src="/rect.png" width={38}
                            height={57}/>
                 </div>
                 <div className={zoltan.circle_fon}>
-                    <Image src="/3cir.png" width={900}
+                    <img src="/3cir.png" width={900}
                            height={850}/>
                 </div>
                 <div className={zoltan.chel}>
-                    <Image src="/chel_pc.png" width={500}
+                    <img src="/chel_pc.png" width={500}
                            height={470}/>
                 </div>
                 <div className={zoltan.blur}>
-                    <Image src="/blur.png" width={2000}
+                    <img src="/blur.png" width={2000}
                            height={800}/>
                 </div>
                 <div className={zoltan.star}>
-                    <Image src="/star.png" width={300}
+                    <img src="/star.png" width={300}
                            height={298}/>
                 </div>
             </div>
@@ -160,4 +166,3 @@ export default function Home(){
         );
     }
 }
-

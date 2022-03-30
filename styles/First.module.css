@@ -51,7 +51,7 @@
 
 .boy {
     position: absolute;
-    top:70%;
+    bottom:40px;
     z-index: 2;
 }
 
@@ -61,35 +61,20 @@
 }
 .books {
     position: absolute;
-    -webkit-animation: 4s linear 0s infinite alternate move_eye;
+    -webkit-animation: 2s linear 0s infinite alternate move_eye;
     animation: 2s linear 0s infinite running move_eye;
-    margin-top: 33%;
+    bottom:60px;
     z-index: 0;
 }
 
 .booksPaused {
     position: absolute;
-    -webkit-animation: 4s linear 0s infinite alternate move_eye;
+    -webkit-animation: 2s linear 0s infinite alternate move_eye;
     animation: 2s linear 0s infinite paused move_eye;
-    margin-top: 33%;
+    bottom:60px;
     z-index: 0;
 }
 
-.books2 {
-    position: absolute;
-    -webkit-animation: 4s linear 0s infinite alternate move_eye;
-    animation: 8s linear 0s infinite running move_eye;
-    margin-top: 33%;
-    z-index: 0;
-}
-
-.booksPaused2 {
-    position: absolute;
-    -webkit-animation: 4s linear 0s infinite alternate move_eye;
-    animation: 8s linear 0s infinite paused move_eye;
-    margin-top: 33%;
-    z-index: 0;
-}
 
 .textQue{
     position: absolute;
@@ -111,7 +96,7 @@
 
     color: #ECF1FF;
 }
-@keyframes move_eye { from { margin-left: 100%; } to { margin-left: 0%; }  }
+@keyframes move_eye { from { margin-left: 100%; } to { margin-left: 0; }  }
 
 .c {
     position: absolute;
@@ -123,9 +108,12 @@
     position: absolute;
     top:40%;
     width: 60%;
-    height: 30%;
+    height: 20%;
     left:20%;
-    background: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffff40;
     border-radius: 54px;
 
     font-family: Inter;
@@ -137,7 +125,7 @@
     text-align: center;
     letter-spacing: -0.011em;
 
-    color: #23262F;
+    color: #000;
     z-index: 5;
 }
 

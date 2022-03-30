@@ -21,3 +21,19 @@
     background: rgba(255, 255, 255, 0.15);
     border-radius: 13px;
 }
+
+.bonusIcon {
+    position: absolute;
+    width: 16px;
+    height: 24px;
+    left: 78%;
+    top: 80%;
+}
+
+.bonusIcon2 {
+    position: absolute;
+    width: 25px;
+    height: 24px;
+    left: 82%;
+    top: 80%;
+}

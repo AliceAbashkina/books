@@ -283,7 +283,15 @@
     position: absolute;
     width: 16px;
     height: 24px;
-    left: 92%;
+    left: 83%;
+    top: 80%;
+}
+
+.bonusIcon2 {
+    position: absolute;
+    width: 25px;
+    height: 24px;
+    left: 89%;
     top: 80%;
 }
 

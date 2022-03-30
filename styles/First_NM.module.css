@@ -52,7 +52,7 @@
 
 .boy {
     position: absolute;
-    top:77%;
+    bottom:60px;
     z-index: 2;
 }
 
@@ -60,31 +60,15 @@
     position: absolute;
     -webkit-animation: 4s linear 0s infinite alternate move_eye;
     animation: 2s linear 0s infinite running move_eye;
-    margin-top: 33%;
     z-index: 0;
+    bottom:60px;
 }
 
 .booksPaused {
     position: absolute;
     -webkit-animation: 4s linear 0s infinite alternate move_eye;
     animation: 2s linear 0s infinite paused move_eye;
-    margin-top: 33%;
-    z-index: 0;
-}
-
-.books2 {
-    position: absolute;
-    -webkit-animation: 4s linear 0s infinite alternate move_eye;
-    animation: 8s linear 0s infinite running move_eye;
-    margin-top: 33%;
-    z-index: 0;
-}
-
-.booksPaused2 {
-    position: absolute;
-    -webkit-animation: 4s linear 0s infinite alternate move_eye;
-    animation: 8s linear 0s infinite paused move_eye;
-    margin-top: 33%;
+    bottom:auto;
     z-index: 0;
 }
 
@@ -142,7 +126,7 @@
     position: absolute;
     top:20%;
     width: 20%;
-    height: 10%;
+    height: 20%;
     left:40%;
     background: rgba(255, 255, 255, 1);
     border-radius: 54px;

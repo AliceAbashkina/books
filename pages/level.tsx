@@ -1,20 +1,47 @@
 import ien from "../styles/Level.module.css";
 import vesemir from "../styles/Level_NM.module.css";
 import imr from "../styles/Que_NM.module.css";
-import {COLORS} from "./colors";
+import {COLORS} from "../public/colors";
 
 import {
-    detectDevice,
     Header, Toast
 } from "@sberdevices/plasma-ui";
-import {router} from "next/client";
+import {useRouter} from "next/router";
 import {useEffect, useRef, useState} from "react";
-import styled, {createGlobalStyle} from "styled-components";
-import {useKey} from "./index";
+import styled from "styled-components";
+import * as indexVar from "./index";
 
-let selectQ=1;
+globalThis.selectQ=1;
+
 export function Level() {
-    device.str=2;
+    console.log(selectQ)
+    function squareQ1(){
+        router.push('/first')
+    }
+
+    function squareQ2 (){
+        router.push('/second')
+    }
+
+
+    const router = useRouter();
+    function useKey(key,cb){
+        const callbackRef=useRef(cb);
+        useEffect(()=>{
+            callbackRef.current=cb;
+        });
+
+        useEffect(()=>{
+            function handle(event){
+                if(event.code===key){
+                    callbackRef.current(event);
+                }
+            }
+            document.addEventListener("keydown",handle);
+            return ()=>document.removeEventListener("keydown",handle)
+        },[key]);
+    }
+    globalThis.str=2
 
     const [colors, setColors]= useState(COLORS.strred);
     const [colors2, setColors2]= useState(COLORS.strgrey);
@@ -43,9 +70,8 @@ export function Level() {
       color: white;
       }
       `;
-
-    if (device.device == "mobile") {
-    return(
+    if (indexVar.device == "mobile") {
+        return(
         <div className={ien.bqs}>
             <div className={ien.backtext}>
                 Тип забега
@@ -58,11 +84,13 @@ export function Level() {
             </Header>
             <div className={ien.fuck}>
                 <div className={ien.texticon1}>
-                    {score.triangle}
+                    {
+                        triangle}
                 </div>
                 <img src="/rect.png" className={ien.Firsticon}/>
                 <div className={ien.texticon2}>
-                    {score.hearts}
+                    {
+                        hearts}
                 </div>
                 <img src="/heart.png" className={ien.Secondicon}/>
             </div>
@@ -78,9 +106,10 @@ export function Level() {
                     На выживание
                 </div>
                 <div className={ien.bonus}>
-                    +10%
+                    +3
                 </div>
                 <img src="/rect.png" className={ien.bonusIcon}/>
+                <img src="/heart.png" className={ien.bonusIcon2}/>
             </div>
 
 
@@ -100,33 +129,41 @@ export function Level() {
         </div>
     );}
     else {
+        // @ts-ignore
         function handleEnter(){
             if(selectQ==1){
                 router.push('/first');
             }
             else if(selectQ==2){
+                selectSq2=1;
                 router.push('/second');
             }
         }
-
+        // @ts-ignore
         function handleBackspace(){
             router.push('/cat');
         }
+        // @ts-ignore
         function handleArrowUp(){
             console.log("s");
             setColors(COLORS.strred);
             setColors2(COLORS.strgrey);
             selectQ=1;
         }
+        // @ts-ignore
         function handleArrowDown(){
             console.log("s");
             setColors(COLORS.strgrey);
             setColors2(COLORS.strred);
             selectQ=2;
         }
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("Enter",handleEnter);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("Backspace",handleBackspace);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("ArrowUp",handleArrowUp);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("ArrowDown",handleArrowDown);
         return (<div className={ien.bqs} >
             <div className={ien.backtext}>
@@ -140,11 +177,13 @@ export function Level() {
             </Header>
             <div className={ien.fuck}>
                 <div className={ien.texticon1}>
-                    {score.triangle}
+                    {
+                        triangle}
                 </div>
                 <img src="/rect.png" className={ien.Firsticon}/>
                 <div className={ien.texticon2}>
-                    {score.hearts}
+                    {
+                        hearts}
                 </div>
                 <img src="/heart.png" className={ien.Secondicon}/>
             </div>
@@ -163,9 +202,10 @@ export function Level() {
                     На выживание
                 </div>
                 <div className={ien.bonus}>
-                    +10%
+                    +3
                 </div>
-                <img src="/rect.png" className={ien.bonusIcon}/>
+                <img src="/rect.png" className={vesemir.bonusIcon}/>
+                <img src="/heart.png" className={vesemir.bonusIcon2}/>
             </Container1>
 
             <Container2 className={vesemir.squareQ2}  onClick={() =>squareQ2()} >
@@ -182,14 +222,6 @@ export function Level() {
 
         </div>);
     }
-}
-
-function squareQ1(){
-    router.push('/first')
-}
-
-function squareQ2 (){
-        router.push('/second')
 }
 
 export default Level;

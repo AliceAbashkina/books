@@ -4,30 +4,48 @@ import {
 } from "@sberdevices/plasma-ui";
 import triss from "../styles/Second.module.css";
 import fri from "../styles/Second_NM.module.css";
-import {router} from "next/client";
-import Image from "next/image";
-import {COLORS} from "./colors";
-import {useState} from "react";
+import {COLORS} from "../public/colors";
+import {useEffect, useRef, useState} from "react";
 import styled from "styled-components";
 import imr from "../styles/Que_NM.module.css";
-import {useKey} from "./index";
-
-function Back(){
-    router.push('/level');
-}
-
-function Enter(){
-    router.push('/que');
-}
-
-function Fail(setHelp){
-    setHelp(true);
-    setTimeout(function (){setHelp(false)},2000);
-}
-let selectSq=1;
+import {useRouter} from "next/router";
+import * as indexVar from './index';
 
 export function Second(){
-    device.str=3;
+    console.log(selectSq2)
+    function Fail(setHelp){
+        setHelp(true);
+        setTimeout(function (){setHelp(false)},2000);
+    }
+    const router=useRouter();
+    function Back(){
+        router.push('/level');
+        globalThis.selectQ=1;
+    }
+
+    function Enter(levels){
+        globalThis.level=levels;
+        router.push('/que');
+    }
+    function useKey(key,cb){
+        const callbackRef=useRef(cb);
+        useEffect(()=>{
+            callbackRef.current=cb;
+        });
+
+        useEffect(()=>{
+            function handle(event){
+                if(event.code===key){
+                    callbackRef.current(event);
+                }
+            }
+            document.addEventListener("keydown",handle);
+            return ()=>document.removeEventListener("keydown",handle)
+        },[key]);
+    }
+
+    globalThis.str=3
+
     const [colors1, setColors1]= useState(COLORS.strred);
     const [colors2, setColors2]= useState(COLORS.strgrey);
     const [colors3, setColors3]= useState(COLORS.strgrey);
@@ -36,6 +54,7 @@ export function Second(){
     const [colors6, setColors6]= useState(COLORS.strgrey);
 
     const [showHelp, setHelp]=useState(false);
+
 
     const Square1 = styled.div`
       position: absolute;
@@ -91,10 +110,27 @@ export function Second(){
       background-color: ${ colors6 };
       backdrop-filter: blur(1px);
     `;
-    if (device.device == "mobile") {
+
+    function ClickMobile(levels) {
+        if(levels==-1){
+            setHelp(true);
+            setTimeout(function (){setHelp(false)},2000);
+        }
+        else {
+            globalThis.level = levels;
+            router.push('/que')
+        }
+    }
+
+    if (
+        indexVar.device == "mobile") {
         return (
             <div className={triss.body}>
-                <div className={triss.TextBack}>Сложность</div>
+                { showHelp?
+                    <div className={triss.Toast}>
+                        <Toast text={"В следующей версии"} /> </div>
+                    :null}
+                <div className={triss.TextBack}>Уровень</div>
                 <div className={triss.BackHead}>
                     <Header
                         back={true}
@@ -104,37 +140,37 @@ export function Second(){
                 </div>
                 <div className={triss.fuck}>
                     <div className={triss.texticon1}>
-                        {score.triangle}
+                        {triangle}
                     </div>
                     <img src="/rect.png" className={triss.Firsticon}/>
                     <div className={triss.texticon2}>
-                        {score.hearts}
+                        {hearts}
                     </div>
                     <img src="/heart.png" className={triss.Secondicon}/>
                 </div>
                 <div className={triss.rel}>
-                    <div className={triss.square1} onClick={() => router.push('/que')}>
-                        <Image src="/fsquare.png" width={118} height={118}/>
+                    <div className={triss.square1} onClick={()=>ClickMobile(1)}>
+                        <img src="/fsquare.png" width={118} height={118}/>
                         <div className={triss.text1}>1</div>
                     </div>
-                    <div className={triss.square2}>
-                        <Image src="/fsquare.png" width={118} height={118}/>
+                    <div className={triss.square2} onClick={()=>ClickMobile(2)}>
+                        <img src="/fsquare.png" width={118} height={118}/>
                         <div className={triss.text2}>2</div>
                     </div>
-                    <div className={triss.square3}>
-                        <Image src="/fsquare.png" width={118} height={118}/>
+                    <div className={triss.square3} onClick={()=>ClickMobile(-1)}>
+                        <img src="/fsquare.png" width={118} height={118}/>
                         <div className={triss.text3}>3</div>
                     </div>
-                    <div className={triss.square4}>
-                        <Image src="/fsquare.png" width={118} height={118}/>
+                    <div className={triss.square4} onClick={()=>ClickMobile(-1)}>
+                        <img src="/fsquare.png" width={118} height={118}/>
                         <div className={triss.text4}>4</div>
                     </div>
-                    <div className={triss.square5}>
-                        <Image src="/fsquare.png" width={118} height={118}/>
+                    <div className={triss.square5} onClick={()=>ClickMobile(-1)}>
+                        <img src="/fsquare.png" width={118} height={118}/>
                         <div className={triss.text5}>5</div>
                     </div>
-                    <div className={triss.square6}>
-                        <Image src="/fsquare.png" width={118} height={118}/>
+                    <div className={triss.square6} onClick={()=>ClickMobile(-1)}>
+                        <img src="/fsquare.png" width={118} height={118}/>
                         <div className={triss.text6}>6</div>
                     </div>
                 </div>
@@ -142,37 +178,40 @@ export function Second(){
         );
     }
     else{
+        // @ts-ignore
         function handleEnter(){
-            if(selectSq===1){
-                Enter();
+            if(selectSq2<3){
+                Enter(selectSq2);
             }
             else {
                 setHelp(true);
                 setTimeout(function (){setHelp(false)},2000);
             }
         }
+        // @ts-ignore
         function handleBackspace(){
             Back();
         }
+        // @ts-ignore
         function handleArrowUp(){
-            switch (selectSq) {
+            switch (selectSq2) {
                 case 3:
-                    selectSq=1;
+                    globalThis.selectSq2=1;
                     setColors1(COLORS.strred);
                     setColors3(COLORS.strgrey);
                     break;
                 case 4:
-                    selectSq=2;
+                    globalThis.selectSq2=2;
                     setColors2(COLORS.strred);
                     setColors4(COLORS.strgrey);
                     break;
                 case 5:
-                    selectSq=3;
+                    globalThis.selectSq2=3;
                     setColors3(COLORS.strred);
                     setColors5(COLORS.strgrey);
                     break;
                 case 6:
-                    selectSq=4;
+                    globalThis.selectSq2=4;
                     setColors4(COLORS.strred);
                     setColors6(COLORS.strgrey);
                     break;
@@ -181,25 +220,26 @@ export function Second(){
                     break;
             }
         }
+        // @ts-ignore
         function handleArrowDown(){
-            switch (selectSq) {
+            switch (selectSq2) {
                 case 1:
-                    selectSq=3;
+                    globalThis.selectSq2=3;
                     setColors3(COLORS.strred);
                     setColors1(COLORS.strgrey);
                     break;
                 case 2:
-                    selectSq=4;
+                    globalThis.selectSq2=4;
                     setColors4(COLORS.strred);
                     setColors2(COLORS.strgrey);
                     break;
                 case 3:
-                    selectSq=5;
+                    globalThis.selectSq2=5;
                     setColors5(COLORS.strred);
                     setColors3(COLORS.strgrey);
                     break;
                 case 4:
-                    selectSq=6;
+                    globalThis.selectSq2=6;
                     setColors6(COLORS.strred);
                     setColors4(COLORS.strgrey);
                     break;
@@ -208,20 +248,22 @@ export function Second(){
                     break;
             }
         }
+        // @ts-ignore
         function handleArrowRight(){
-            switch (selectSq) {
+
+            switch (selectSq2) {
                 case 1:
-                    selectSq=2;
+                    globalThis.selectSq2=2;
                     setColors2(COLORS.strred);
                     setColors1(COLORS.strgrey);
                     break;
                 case 3:
-                    selectSq=4;
+                    globalThis.selectSq2=4;
                     setColors4(COLORS.strred);
                     setColors3(COLORS.strgrey);
                     break;
                 case 5:
-                    selectSq=6;
+                    globalThis.selectSq2=6;
                     setColors6(COLORS.strred);
                     setColors5(COLORS.strgrey);
                     break;
@@ -230,20 +272,21 @@ export function Second(){
                     break;
             }
         }
+        // @ts-ignore
         function handleArrowLeft(){
-            switch (selectSq) {
+            switch (selectSq2) {
                 case 2:
-                    selectSq=1;
+                    globalThis.selectSq2=1;
                     setColors1(COLORS.strred);
                     setColors2(COLORS.strgrey);
                     break;
                 case 4:
-                    selectSq=3;
+                    globalThis.selectSq2=3;
                     setColors3(COLORS.strred);
                     setColors4(COLORS.strgrey);
                     break;
                 case 6:
-                    selectSq=5;
+                    globalThis.selectSq2=5;
                     setColors5(COLORS.strred);
                     setColors6(COLORS.strgrey);
                     break;
@@ -252,17 +295,23 @@ export function Second(){
                     break;
             }
         }
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("Enter",handleEnter);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("Backspace",handleBackspace);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("ArrowUp",handleArrowUp);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("ArrowDown",handleArrowDown);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("ArrowRight",handleArrowRight);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("ArrowLeft", handleArrowLeft);
         return(
             <div className={triss.body}>
                 { showHelp?
                     <div className={imr.Toast}>
-                        <Toast text={"Будет в следующей версии"} /> </div>
+                        <Toast text={"В следующей версии"} /> </div>
                     :null}
                 <div className={fri.TextBack}>Уровень</div>
                 <div className={triss.BackHead}>
@@ -274,21 +323,21 @@ export function Second(){
                 </div>
                 <div className={triss.fuck}>
                     <div className={triss.texticon1}>
-                        {score.triangle}
+                        {triangle}
                     </div>
                     <img src="/rect.png" className={triss.Firsticon}/>
                     <div className={triss.texticon2}>
-                        {score.hearts}
+                        {hearts}
                     </div>
                     <img src="/heart.png" className={triss.Secondicon}/>
                 </div>
                 <div className={fri.rel}>
                     <Square1 className={fri.square1}>
-                    <div onClick={Enter}>
+                    <div onClick={()=>Enter(1)}>
                         <div className={fri.text1}>1</div>
                     </div>
                     </Square1>
-                    <Square2 className={fri.square2}  onClick={()=>Fail(setHelp)}>
+                    <Square2 className={fri.square2}  onClick={()=>Enter(2)}>
                         <div className={fri.text2}>2</div>
                     </Square2>
                     <Square3 className={fri.square3}  onClick={()=>Fail(setHelp)}>
@@ -305,11 +354,11 @@ export function Second(){
                     </Square6>
 
                     <div className={fri.c}>
-                        <Image src="/2c.png" width={1400} height={1200}/>
+                        <img src="/2c.png" width={1400} height={1200}/>
                     </div>
                 </div>
                 <div className={fri.chel}>
-                    <Image src="/chel_second.png" width={400} height={600}/>
+                    <img src="/chel_second.png" width={400} height={600}/>
                 </div>
             </div>
         );

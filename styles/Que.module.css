@@ -94,11 +94,12 @@
 
 .textQue{
     position: absolute;
-    width: 325px;
-    height: 128px;
-    left: 28px;
-    top: 7%;
+    width: 100%;
 
+    margin-right: auto;
+    margin-left: auto;
+    top: 7%;
+    height: 128px;
     font-family: Inter;
     font-style: normal;
     font-weight: bold;
