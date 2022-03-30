@@ -35,6 +35,7 @@ export function Que(){
 
     async function clickMe(event, isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq,itr){
         if (isCorrect == true) {
+            // @ts-ignore
             switch(selectSq1) {
                 case 1:
                     setColors1(COLORS.strtrue)
@@ -91,6 +92,7 @@ export function Que(){
             setVal(mass)
         }
         else {
+            // @ts-ignore
             switch(selectSq1) {
                 case 1:
                     setColors1(COLORS.strred)
@@ -133,10 +135,12 @@ export function Que(){
                     break;
             }
             --value
+            // @ts-ignore
             globalThis.hearts=value;
             setValue(value)
             if (value == 0) {
                 setHelp(false);
+                // @ts-ignore
                 globalThis.hearts=5;
                 setShowResults55(true);
                 router.push('/fail');
@@ -187,21 +191,25 @@ export function Que(){
         switch(rand1) {
             case 0:
                 setShowResults(true);
+                // @ts-ignore
                 globalThis.selectSq1=1;
                 setColors1(COLORS.secgrey);
                 break;
             case 1:
                 setShowResults2(true);
+                // @ts-ignore
                 globalThis.selectSq1=2;
                 setColors2(COLORS.secgrey);
                 break;
             case 2:
                 setShowResults3(true);
+                // @ts-ignore
                 globalThis.selectSq1=3;
                 setColors3(COLORS.secgrey);
                 break;
             case 3:
                 setShowResults4(true);
+                // @ts-ignore
                 globalThis.selectSq1=4;
                 setColors4(COLORS.secgrey);
                 break;
@@ -260,8 +268,10 @@ export function Que(){
 
 
     const [value, setValue] = useState(
+        // @ts-ignore
         hearts);
     const [star,setStar]=useState(
+        // @ts-ignore
         triangle);
     const [mass=0, setVal] = useState(0);
     const [answer, setAnswer]=useState("");
@@ -363,6 +373,7 @@ export function Que(){
                 break;
         }
     }
+    // @ts-ignore
     if (indexVar.device == "mobile") {
     return (
         <div className={lambert.body}>
@@ -388,11 +399,14 @@ export function Que(){
 
             <div className={lambert.fuck}>
                 <div className={lambert.texticon1}>
-                    { triangle}
+
+                    { // @ts-ignore
+                        triangle}
                 </div>
                 <img src="/rect.png" className={lambert.Firsticon}/>
                 <div className={lambert.texticon2}>
-                    { hearts}
+                    {// @ts-ignore
+                        hearts}
                 </div>
                 <img src="/heart.png" className={lambert.Secondicon}/>
             </div>
@@ -446,6 +460,7 @@ export function Que(){
     else{
         // @ts-ignore
         function handleEnter(){
+            // @ts-ignore
             switch (selectSq1) {
                 case 1:
                     clickMe(event,answers[0].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,0)
@@ -475,16 +490,20 @@ export function Que(){
         }
         // @ts-ignore
         function handleBackspace(){
+            // @ts-ignore
             globalThis.selectSq1=1;
+            // @ts-ignore
             globalThis.selectSq2=1;
             router.push('/second');
         }
         // @ts-ignore
         function handleArrowUp(){
+            // @ts-ignore
             switch (selectSq1) {
                 case 6:
                     if(showResults55==false){}
                     else {
+                        // @ts-ignore
                         globalThis.selectSq1 = 5;
                         setColors5(COLORS.secgrey);
                         setColors6(COLORS.strgrey);
@@ -493,17 +512,20 @@ export function Que(){
                 case 7:
                     if(showResults4==false){
                         if(showResults3==false){
+                            // @ts-ignore
                             globalThis.selectSq1=2;
                             setColors2(COLORS.secgrey);
                             setColors7(COLORS.strgrey);
                         }
                         else{
+                            // @ts-ignore
                             globalThis.selectSq1=3;
                             setColors3(COLORS.secgrey);
                             setColors7(COLORS.strgrey);
                         }
                     }
                     else {
+                        // @ts-ignore
                         globalThis.selectSq1 = 4;
                         setColors4(COLORS.secgrey);
                         setColors7(COLORS.strgrey);
@@ -512,17 +534,20 @@ export function Que(){
                 case 4:
                     if(showResults3==false){
                         if(showResults2==false){
+                            // @ts-ignore
                             globalThis.selectSq1=1;
                             setColors1(COLORS.secgrey);
                             setColors4(COLORS.strgrey);
                         }
                         else{
+                            // @ts-ignore
                             globalThis.selectSq1=2;
                             setColors2(COLORS.secgrey);
                             setColors4(COLORS.strgrey);
                         }
                     }
                     else {
+                        // @ts-ignore
                         globalThis.selectSq1 = 3;
                         setColors3(COLORS.secgrey);
                         setColors4(COLORS.strgrey);
@@ -533,12 +558,14 @@ export function Que(){
                         if(showResults==false){
                         }
                         else{
+                            // @ts-ignore
                             globalThis.selectSq1=1;
                             setColors1(COLORS.secgrey);
                             setColors3(COLORS.strgrey);
                         }
                     }
                     else {
+                        // @ts-ignore
                         globalThis.selectSq1 = 2;
                         setColors2(COLORS.secgrey);
                         setColors3(COLORS.strgrey);
@@ -548,6 +575,7 @@ export function Que(){
                     if(showResults==false){
                     }
                     else {
+                        // @ts-ignore
                         globalThis.selectSq1 = 1;
                         setColors1(COLORS.secgrey);
                         setColors2(COLORS.strgrey);
@@ -560,22 +588,27 @@ export function Que(){
         }
         // @ts-ignore
         function handleArrowDown(){
+            // @ts-ignore
             console.log(selectSq1);
+            // @ts-ignore
             switch (selectSq1) {
                 case 1:
                     if(showResults2==false){
                         if(showResults3==false){
+                            // @ts-ignore
                             globalThis.selectSq1=4;
                             setColors4(COLORS.secgrey);
                             setColors1(COLORS.strgrey);
                         }
                         else{
+                            // @ts-ignore
                             globalThis.selectSq1=3;
                             setColors3(COLORS.secgrey);
                             setColors1(COLORS.strgrey);
                         }
                     }
                     else {
+                        // @ts-ignore
                         globalThis.selectSq1 = 2;
                         setColors2(COLORS.secgrey);
                         setColors1(COLORS.strgrey);
@@ -584,17 +617,20 @@ export function Que(){
                 case 2:
                     if(showResults3==false){
                         if(showResults4==false){
+                            // @ts-ignore
                             globalThis.selectSq1=1;
                             setColors1(COLORS.secgrey);
                             setColors2(COLORS.strgrey);
                         }
                         else{
+                            // @ts-ignore
                             globalThis.selectSq1=4;
                             setColors4(COLORS.secgrey);
                             setColors2(COLORS.strgrey);
                         }
                     }
                     else {
+                        // @ts-ignore
                         globalThis.selectSq1 = 3;
                         setColors3(COLORS.secgrey);
                         setColors2(COLORS.strgrey);
@@ -602,22 +638,26 @@ export function Que(){
                     break;
                 case 3:
                     if(showResults4==false){
+                        // @ts-ignore
                         globalThis.selectSq1 = 7;
                         setColors7(COLORS.secgrey);
                         setColors3(COLORS.strgrey);
                     }
                     else {
+                        // @ts-ignore
                         globalThis.selectSq1 = 4;
                         setColors4(COLORS.secgrey);
                         setColors3(COLORS.strgrey);
                     }
                     break;
                 case 4:
+                    // @ts-ignore
                     globalThis.selectSq1=7;
                     setColors7(COLORS.secgrey);
                     setColors4(COLORS.strgrey);
                     break;
                 case 5:
+                    // @ts-ignore
                     globalThis.selectSq1=6;
                     setColors6(COLORS.secgrey);
                     setColors5(COLORS.strgrey);
@@ -629,6 +669,7 @@ export function Que(){
         }
         // @ts-ignore
         function handleArrowLeft(){
+            // @ts-ignore
             if(selectSq1!=6) {
                 if(showResults55==false){
                     globalThis.selectSq1 = 6;
@@ -652,9 +693,11 @@ export function Que(){
         }
         // @ts-ignore
         function handleArrowRight(){
+            // @ts-ignore
             if(selectSq1>4&&selectSq1!=7) {
                 if (showResults == false) {
                     if (showResults2 == false) {
+                        // @ts-ignore
                         globalThis.selectSq1 = 3;
                         setColors5(COLORS.strgrey);
                         setColors6(COLORS.strgrey);
@@ -715,12 +758,12 @@ export function Que(){
 
                 <div className={lambert.fuck}>
                     <div className={lambert.texticon1}>
-                        {
+                        {// @ts-ignore
                             triangle}
                     </div>
                     <img src="/rect.png" className={lambert.Firsticon}/>
                     <div className={lambert.texticon2}>
-                        {
+                        {// @ts-ignore
                             hearts}
                     </div>
                     <img src="/heart.png" className={lambert.Secondicon}/>

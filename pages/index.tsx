@@ -7,8 +7,8 @@ import {AssistantAppState, createAssistant} from "@sberdevices/assistant-client"
 import {COLORS} from "../public/colors";
 
 
-let deviceKind=detectDevice();
-//let deviceKind='sds';
+//let deviceKind=detectDevice();
+let deviceKind='sds';
 console.log(deviceKind)
 
 export var device= deviceKind;
