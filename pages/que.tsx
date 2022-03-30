@@ -17,7 +17,6 @@ import * as indexVar from './index';
 const initialize  = (getState:any) => {
     return createAssistant({ getState });
 };
- globalThis.selectSq1=1;
 
 
 export function Que(){
@@ -287,7 +286,7 @@ export function Que(){
     const [showToast,setToast]=useState(false);
     const [showHelp, setHelp]=useState(false);
 
-    const [colors1, setColors1]= useState(COLORS.secgrey); //no-mob-ans
+    const [colors1, setColors1]= useState(COLORS.strgrey); //no-mob-ans
     const [colors2, setColors2]= useState(COLORS.strgrey);
     const [colors3, setColors3]= useState(COLORS.strgrey);
     const [colors4, setColors4]= useState(COLORS.strgrey);
