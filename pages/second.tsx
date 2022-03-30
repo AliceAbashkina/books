@@ -139,11 +139,15 @@ export function Second(){
                 </div>
                 <div className={triss.fuck}>
                     <div className={triss.texticon1}>
-                        {triangle}
+                        {
+                            // @ts-ignore
+                            triangle}
                     </div>
                     <img src="/rect.png" className={triss.Firsticon}/>
                     <div className={triss.texticon2}>
-                        {hearts}
+                        {
+                            // @ts-ignore
+                            hearts}
                     </div>
                     <img src="/heart.png" className={triss.Secondicon}/>
                 </div>
