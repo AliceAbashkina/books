@@ -84,7 +84,7 @@ export function Level() {
             <div className={ien.fuck}>
                 <div className={ien.texticon1}>
                     {
-                        triangle}
+                        global.triangle}
                 </div>
                 <img src="/rect.png" className={ien.Firsticon}/>
                 <div className={ien.texticon2}>
