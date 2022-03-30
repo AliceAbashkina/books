@@ -12,6 +12,149 @@ import {useRouter} from "next/router";
 import * as indexVar from './index';
 
 export function Second(){
+    function handleEnter(){
+        if( // @ts-ignore
+            selectSq2<3){
+            Enter( // @ts-ignore
+                selectSq2);
+        }
+        else {
+            setHelp(true);
+            setTimeout(function (){setHelp(false)},2000);
+        }
+    }
+    function handleBackspace(){
+        Back();
+    }
+    function handleArrowUp(){
+        switch (
+            // @ts-ignore
+            selectSq2) {
+            case 3:
+                // @ts-ignore
+                globalThis.selectSq2=1;
+                setColors1(COLORS.strred);
+                setColors3(COLORS.strgrey);
+                break;
+            case 4:
+                // @ts-ignore
+                globalThis.selectSq2=2;
+                setColors2(COLORS.strred);
+                setColors4(COLORS.strgrey);
+                break;
+            case 5:
+                // @ts-ignore
+                globalThis.selectSq2=3;
+                setColors3(COLORS.strred);
+                setColors5(COLORS.strgrey);
+                break;
+            case 6:
+                // @ts-ignore
+                globalThis.selectSq2=4;
+                setColors4(COLORS.strred);
+                setColors6(COLORS.strgrey);
+                break;
+            default:
+                console.log('Genga');
+                break;
+        }
+    }
+    function handleArrowDown(){
+        switch (
+            // @ts-ignore
+            selectSq2) {
+            case 1:
+                // @ts-ignore
+                globalThis.selectSq2=3;
+                setColors3(COLORS.strred);
+                setColors1(COLORS.strgrey);
+                break;
+            case 2:
+                // @ts-ignore
+                globalThis.selectSq2=4;
+                setColors4(COLORS.strred);
+                setColors2(COLORS.strgrey);
+                break;
+            case 3:
+                // @ts-ignore
+                globalThis.selectSq2=5;
+                setColors5(COLORS.strred);
+                setColors3(COLORS.strgrey);
+                break;
+            case 4:
+                // @ts-ignore
+                globalThis.selectSq2=6;
+                setColors6(COLORS.strred);
+                setColors4(COLORS.strgrey);
+                break;
+            default:
+                console.log('Hanzo');
+                break;
+        }
+    }
+    function handleArrowRight(){
+
+        switch (
+            // @ts-ignore
+            selectSq2) {
+            case 1:
+                // @ts-ignore
+                globalThis.selectSq2=2;
+                setColors2(COLORS.strred);
+                setColors1(COLORS.strgrey);
+                break;
+            case 3:
+                // @ts-ignore
+                globalThis.selectSq2=4;
+                setColors4(COLORS.strred);
+                setColors3(COLORS.strgrey);
+                break;
+            case 5:
+                // @ts-ignore
+                globalThis.selectSq2=6;
+                setColors6(COLORS.strred);
+                setColors5(COLORS.strgrey);
+                break;
+            default:
+                console.log('Hanzo');
+                break;
+        }
+    }
+    function handleArrowLeft(){
+        switch (
+            // @ts-ignore
+            selectSq2) {
+            case 2:
+                // @ts-ignore
+                globalThis.selectSq2=1;
+                setColors1(COLORS.strred);
+                setColors2(COLORS.strgrey);
+                break;
+            case 4:
+                // @ts-ignore
+                globalThis.selectSq2=3;
+                setColors3(COLORS.strred);
+                setColors4(COLORS.strgrey);
+                break;
+            case 6:
+                // @ts-ignore
+                globalThis.selectSq2=5;
+                setColors5(COLORS.strred);
+                setColors6(COLORS.strgrey);
+                break;
+            default:
+                console.log('Hanzo');
+                break;
+        }
+    }
+    useKey("Enter",handleEnter);
+    useKey("Backspace",handleBackspace);
+    useKey("ArrowUp",handleArrowUp);
+    useKey("ArrowDown",handleArrowDown);
+    useKey("ArrowRight",handleArrowRight);
+    useKey("ArrowLeft", handleArrowLeft);
+
+
     function Fail(setHelp){
         setHelp(true);
         setTimeout(function (){setHelp(false)},2000);
@@ -181,159 +324,6 @@ export function Second(){
         );
     }
     else{
-        // @ts-ignore
-        function handleEnter(){
-            if( // @ts-ignore
-                selectSq2<3){
-                Enter( // @ts-ignore
-                    selectSq2);
-            }
-            else {
-                setHelp(true);
-                setTimeout(function (){setHelp(false)},2000);
-            }
-        }
-        // @ts-ignore
-        function handleBackspace(){
-            Back();
-        }
-        // @ts-ignore
-        function handleArrowUp(){
-            switch (
-                // @ts-ignore
-                selectSq2) {
-                case 3:
-                    // @ts-ignore
-                    globalThis.selectSq2=1;
-                    setColors1(COLORS.strred);
-                    setColors3(COLORS.strgrey);
-                    break;
-                case 4:
-                    // @ts-ignore
-                    globalThis.selectSq2=2;
-                    setColors2(COLORS.strred);
-                    setColors4(COLORS.strgrey);
-                    break;
-                case 5:
-                    // @ts-ignore
-                    globalThis.selectSq2=3;
-                    setColors3(COLORS.strred);
-                    setColors5(COLORS.strgrey);
-                    break;
-                case 6:
-                    // @ts-ignore
-                    globalThis.selectSq2=4;
-                    setColors4(COLORS.strred);
-                    setColors6(COLORS.strgrey);
-                    break;
-                default:
-                    console.log('Genga');
-                    break;
-            }
-        }
-        // @ts-ignore
-        function handleArrowDown(){
-            switch (
-                // @ts-ignore
-                selectSq2) {
-                case 1:
-                    // @ts-ignore
-                    globalThis.selectSq2=3;
-                    setColors3(COLORS.strred);
-                    setColors1(COLORS.strgrey);
-                    break;
-                case 2:
-                    // @ts-ignore
-                    globalThis.selectSq2=4;
-                    setColors4(COLORS.strred);
-                    setColors2(COLORS.strgrey);
-                    break;
-                case 3:
-                    // @ts-ignore
-                    globalThis.selectSq2=5;
-                    setColors5(COLORS.strred);
-                    setColors3(COLORS.strgrey);
-                    break;
-                case 4:
-                    // @ts-ignore
-                    globalThis.selectSq2=6;
-                    setColors6(COLORS.strred);
-                    setColors4(COLORS.strgrey);
-                    break;
-                default:
-                    console.log('Hanzo');
-                    break;
-            }
-        }
-        // @ts-ignore
-        function handleArrowRight(){
-
-            switch (
-                // @ts-ignore
-                selectSq2) {
-                case 1:
-                    // @ts-ignore
-                    globalThis.selectSq2=2;
-                    setColors2(COLORS.strred);
-                    setColors1(COLORS.strgrey);
-                    break;
-                case 3:
-                    // @ts-ignore
-                    globalThis.selectSq2=4;
-                    setColors4(COLORS.strred);
-                    setColors3(COLORS.strgrey);
-                    break;
-                case 5:
-                    // @ts-ignore
-                    globalThis.selectSq2=6;
-                    setColors6(COLORS.strred);
-                    setColors5(COLORS.strgrey);
-                    break;
-                default:
-                    console.log('Hanzo');
-                    break;
-            }
-        }
-        // @ts-ignore
-        function handleArrowLeft(){
-            switch (
-                // @ts-ignore
-                selectSq2) {
-                case 2:
-                    // @ts-ignore
-                    globalThis.selectSq2=1;
-                    setColors1(COLORS.strred);
-                    setColors2(COLORS.strgrey);
-                    break;
-                case 4:
-                    // @ts-ignore
-                    globalThis.selectSq2=3;
-                    setColors3(COLORS.strred);
-                    setColors4(COLORS.strgrey);
-                    break;
-                case 6:
-                    // @ts-ignore
-                    globalThis.selectSq2=5;
-                    setColors5(COLORS.strred);
-                    setColors6(COLORS.strgrey);
-                    break;
-                default:
-                    console.log('Hanzo');
-                    break;
-            }
-        }
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useKey("Enter",handleEnter);
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useKey("Backspace",handleBackspace);
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useKey("ArrowUp",handleArrowUp);
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useKey("ArrowDown",handleArrowDown);
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useKey("ArrowRight",handleArrowRight);
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useKey("ArrowLeft", handleArrowLeft);
         return(
             <div className={triss.body}>
                 { showHelp?
