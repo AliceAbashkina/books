@@ -417,26 +417,34 @@ export function Que(){
             <div className={lambert.textQue}>{way}</div>
 
             {showResults ?
-                <MobAn1 onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,1)}
+                <MobAn1 onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                    // @ts-ignore
+                    selectSq1,1)}
                      className={lambert.rel3}>
                     <Button id={[0].toString()} text={answers[0].answer} className={lambert.fckdiv}></Button>
                 </MobAn1>
                 : null}
 
             {showResults2 ?
-                <MobAn2 onClick={() => clickMe(event,answers[1].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,2)} className={lambert.rel3}>
+                <MobAn2 onClick={() => clickMe(event,answers[1].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                    // @ts-ignore
+                    selectSq1,2)} className={lambert.rel3}>
                     <Button id={[1].toString()} text={answers[1].answer} className={lambert.fckdiv} ></Button>
                 </MobAn2>
                 : null}
 
             {showResults3 ?
-                <MobAn3 onClick={() => clickMe(event,answers[2].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,3)} className={lambert.rel3}>
+                <MobAn3 onClick={() => clickMe(event,answers[2].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                    // @ts-ignore
+                    selectSq1,3)} className={lambert.rel3}>
                     <Button id={[2].toString()}  text={answers[2].answer} className={lambert.fckdiv} ></Button>
                 </MobAn3>
                 : null}
 
             {showResults4 ?
-                <MobAn4 onClick={() => clickMe(event,answers[3].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,selectSq1,4)} className={lambert.rel3}>
+                <MobAn4 onClick={() => clickMe(event,answers[3].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                    // @ts-ignore
+                    selectSq1,4)} className={lambert.rel3}>
                     <Button id={[3].toString()}  text={answers[3].answer} className={lambert.fckdiv} ></Button>
                 </MobAn4>
                 : null}
