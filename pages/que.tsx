@@ -346,7 +346,9 @@ export function Que(){
     const ThirdButt = styled.div`
       background-color: ${ colors7 };
     `;
+    // @ts-ignore
     if(level==1){
+        // @ts-ignore
     switch (items[index]){
         case "Путешествия":
             way=tupik[0].travel[mass].question;
