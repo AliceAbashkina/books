@@ -114,6 +114,7 @@ export default function Home(){
         );
     }
     else{
+        // @ts-ignore
        str=0;
         return(
             <div className={zoltan.bodys}>
