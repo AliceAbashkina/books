@@ -14,7 +14,6 @@ import * as indexVar from "./index";
 globalThis.selectQ=1;
 
 export function Level() {
-    console.log(selectQ)
     function squareQ1(){
         router.push('/first')
     }
@@ -131,7 +130,7 @@ export function Level() {
     else {
         // @ts-ignore
         function handleEnter(){
-            if(selectQ==1){
+            if(global.selectQ==1){
                 router.push('/first');
             }
             else if(selectQ==2){
