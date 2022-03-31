@@ -9,8 +9,8 @@ import {COLORS} from "../public/colors";
 import styled from "styled-components";
 
 
-//let deviceKind=detectDevice();
-let deviceKind='sds';
+let deviceKind=detectDevice();
+//let deviceKind='sds';
 console.log(deviceKind)
 
 export var device= deviceKind;
@@ -23,6 +23,7 @@ globalThis.text=["Как хорошо ты знаешь животных?", "Ч�
 globalThis.index=0;
 globalThis.level=1;
 globalThis.selectSq=-1;
+globalThis.selectSq1=1;
 globalThis.selectSq2=1;
 
 

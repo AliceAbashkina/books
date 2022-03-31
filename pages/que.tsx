@@ -17,9 +17,7 @@ import * as indexVar from './index';
 const initialize  = (getState:any) => {
     return createAssistant({ getState });
 };
- globalThis.selectSq1=1;
-
-
+selectSq1=1;
 export function Que(){
     function Prom(){
         return new Promise(resolve => {
@@ -287,7 +285,7 @@ export function Que(){
     const [showToast,setToast]=useState(false);
     const [showHelp, setHelp]=useState(false);
 
-    const [colors1, setColors1]= useState(COLORS.secgrey); //no-mob-ans
+    const [colors1, setColors1]= useState(COLORS.strgrey); //no-mob-ans
     const [colors2, setColors2]= useState(COLORS.strgrey);
     const [colors3, setColors3]= useState(COLORS.strgrey);
     const [colors4, setColors4]= useState(COLORS.strgrey);
@@ -306,28 +304,28 @@ export function Que(){
     const Answer1 = styled.div`
       background-color: ${ colors1 };
       &:focus {
-        background-color: rgba(255, 108, 64, 0.45);
+        background-color: ${COLORS.secgrey};
       }
     `;
 
     const Answer2 = styled.div`
       background-color: ${ colors2 };
       &:focus {
-        background-color: rgba(255, 108, 64, 0.45);
+        background-color: ${COLORS.secgrey};
       }
     `;
 
     const Answer3 = styled.div`
       background-color: ${ colors3 };
       &:focus {
-        background-color: rgba(255, 108, 64, 0.45);
+        background-color: ${COLORS.secgrey};
       }
     `;
 
     const Answer4 = styled.div`
       background-color: ${ colors4 };
       &:focus {
-        background-color: rgba(255, 108, 64, 0.45);
+        background-color: ${COLORS.secgrey};
       }
     `;
 
@@ -350,21 +348,21 @@ export function Que(){
     const FirstButt = styled.div`
       background-color: ${ colors5 };
       &:focus {
-        background-color: rgba(255, 108, 64, 0.45);
+        background-color: ${COLORS.secgrey};
       }
     `;
 
     const SecondButt = styled.div`
       background-color: ${ colors6 };
       &:focus {
-        background-color: rgba(255, 108, 64, 0.45);
+        background-color: ${COLORS.secgrey};
       }
     `;
 
     const ThirdButt = styled.div`
       background-color: ${ colors7 };
       &:focus {
-        background-color: rgba(255, 108, 64, 0.45);
+        background-color: ${COLORS.secgrey};
       }
     `;
     // @ts-ignore
@@ -542,7 +540,9 @@ export function Que(){
             // @ts-ignore
             switch (selectSq1) {
                 case 6:
-                    if(showResults55==false){}
+                    if(showResults55==false){
+                        document.getElementById("help").focus();
+                    }
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 5;
@@ -562,7 +562,8 @@ export function Que(){
                             // @ts-ignore
                             globalThis.selectSq1=3;
                             document.getElementById("third").focus();
-                            document.getElementById("later").blur();                        }
+                            document.getElementById("later").blur();
+                        }
                     }
                     else {
                         // @ts-ignore
@@ -628,8 +629,6 @@ export function Que(){
         }
         // @ts-ignore
         function handleArrowDown(){
-            // @ts-ignore
-            console.log(selectSq1);
             // @ts-ignore
             switch (selectSq1) {
                 case 1:
@@ -706,30 +705,47 @@ export function Que(){
                     console.log('Diva');
                     break;
             }
+            // @ts-ignore
+            console.log(selectSq1);
         }
         // @ts-ignore
         function handleArrowLeft(){
             // @ts-ignore
-            if(selectSq1!=6) {
+            if(selectSq1!=6&&selectSq1!=5) {
                 if(showResults55==false){
                     globalThis.selectSq1 = 6;
+                    if(showResults!=false){
+                        document.getElementById("first").blur();
+                    }
+                    if(showResults2!=false){
+                        document.getElementById("second").blur();
+                    }
+                    if(showResults3!=false){
+                        document.getElementById("third").blur();
+                    }
+                    if(showResults4!=false){
+                        document.getElementById("fourth").blur();
+                    }
                     document.getElementById("help").focus();
                     document.getElementById("later").blur();
-                    document.getElementById("50").blur();
-                    document.getElementById("first").blur();
-                    document.getElementById("second").blur();
-                    document.getElementById("third").blur();
-                    document.getElementById("fourth").blur();
                 }
                 else {
                     globalThis.selectSq1 = 5;
-                    document.getElementById("later").focus();
+                    document.getElementById("50").focus();
                     document.getElementById("help").blur();
-                    document.getElementById("50").blur();
-                    document.getElementById("first").blur();
-                    document.getElementById("second").blur();
-                    document.getElementById("third").blur();
-                    document.getElementById("fourth").blur();
+                    document.getElementById("later").blur();
+                    if(showResults!=false){
+                        document.getElementById("first").blur();
+                    }
+                    if(showResults2!=false){
+                        document.getElementById("second").blur();
+                    }
+                    if(showResults3!=false){
+                        document.getElementById("third").blur();
+                    }
+                    if(showResults4!=false){
+                        document.getElementById("fourth").blur();
+                    }
                 }
             }
         }
@@ -743,9 +759,7 @@ export function Que(){
                         globalThis.selectSq1 = 3;
                         document.getElementById("help").blur();
                         document.getElementById("later").blur();
-                        document.getElementById("50").blur();
                         document.getElementById("first").blur();
-                        document.getElementById("second").blur();
                         document.getElementById("third").focus();
                         document.getElementById("fourth").blur();
                     } else {
@@ -753,7 +767,6 @@ export function Que(){
                         document.getElementById("help").blur();
                         document.getElementById("later").blur();
                         document.getElementById("50").blur();
-                        document.getElementById("first").blur();
                         document.getElementById("second").focus();
                         document.getElementById("third").blur();
                         document.getElementById("fourth").blur();
@@ -823,7 +836,7 @@ export function Que(){
                 <div  tabIndex={-1} className={imr.textQue}>{way}</div>
 
                 {showResults ?
-                    <Answer1 id="first"  tabIndex={-1} onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                    <Answer1 id="first" tabIndex={-1} onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
                         // @ts-ignore
                         selectSq1,0)}
                          className={imr.rel3}>
