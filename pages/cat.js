@@ -12,6 +12,20 @@ import * as indexVar from './index';
 
 export function Cat() {
 const router = useRouter();
+    function handleEnter(){
+        router.push('/level');
+        console.log("bruh");
+    }
+    function handleArrowLeft(){
+        ClickLeft(event, index, setValue)
+    }
+    function handleArrowRight(){
+        ClickRight(event, index, setValue)
+    }
+    useKey("Enter",handleEnter);
+    useKey("ArrowLeft",handleArrowLeft);
+    useKey("ArrowRight",handleArrowRight);
+
     function useKey(key,cb){
         const callbackRef=useRef(cb);
         useEffect(()=>{
@@ -69,22 +83,6 @@ const router = useRouter();
         );
     }
     else {
-        function handleEnter(){
-            router.push('/level');
-            console.log("bruh");
-        }
-        function handleArrowLeft(){
-            ClickLeft(event, index, setValue)
-        }
-        function handleArrowRight(){
-            ClickRight(event, index, setValue)
-        }
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useKey("Enter",handleEnter);
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useKey("ArrowLeft",handleArrowLeft);
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useKey("ArrowRight",handleArrowRight);
         return(
             <div  tabIndex={-1} className={geralt.body} >
                 <Header
