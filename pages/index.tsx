@@ -3,17 +3,17 @@ import zoltan from '../styles/Home_NM.module.css';
 import {useRouter} from "next/router";
 import {useEffect, useRef, useState} from "react";
 import {FocusProps, OutlinedProps, addFocus, detectDevice} from '@sberdevices/plasma-ui';
-import * as indexVar from './index';
+
 import {AssistantAppState, createAssistant} from "@sberdevices/assistant-client";
 import {COLORS} from "../public/colors";
 import styled from "styled-components";
 
-//export var deviceKind='sds';
-export var device=indexVar.device;
-let deviceKind=device;
-console.log(deviceKind)
 
 
+//let deviceKind='sds';
+
+let deviceKind=detectDevice();
+export var device= deviceKind;
 globalThis.str=0;
 globalThis.triangle=5;
 globalThis.hearts =5;
