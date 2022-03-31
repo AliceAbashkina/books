@@ -109,7 +109,7 @@ export function Que(){
             }
             switch(itr) {
                 case 1:
-                    setColors11(COLORS.strred)
+                    setColors11(COLORS.strgrey)
                     setColors12(COLORS.strgrey)
                     setColors13(COLORS.strgrey)
                     setColors14(COLORS.strgrey)
@@ -305,18 +305,30 @@ export function Que(){
 
     const Answer1 = styled.div`
       background-color: ${ colors1 };
+      &:focus {
+        background-color: rgba(255, 108, 64, 0.45);
+      }
     `;
 
     const Answer2 = styled.div`
       background-color: ${ colors2 };
+      &:focus {
+        background-color: rgba(255, 108, 64, 0.45);
+      }
     `;
 
     const Answer3 = styled.div`
       background-color: ${ colors3 };
+      &:focus {
+        background-color: rgba(255, 108, 64, 0.45);
+      }
     `;
 
     const Answer4 = styled.div`
       background-color: ${ colors4 };
+      &:focus {
+        background-color: rgba(255, 108, 64, 0.45);
+      }
     `;
 
     const MobAn1 = styled.div`
@@ -337,14 +349,23 @@ export function Que(){
 
     const FirstButt = styled.div`
       background-color: ${ colors5 };
+      &:focus {
+        background-color: rgba(255, 108, 64, 0.45);
+      }
     `;
 
     const SecondButt = styled.div`
       background-color: ${ colors6 };
+      &:focus {
+        background-color: rgba(255, 108, 64, 0.45);
+      }
     `;
 
     const ThirdButt = styled.div`
       background-color: ${ colors7 };
+      &:focus {
+        background-color: rgba(255, 108, 64, 0.45);
+      }
     `;
     // @ts-ignore
     if(level==1){
@@ -525,8 +546,8 @@ export function Que(){
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 5;
-                        setColors5(COLORS.secgrey);
-                        setColors6(COLORS.strgrey);
+                        document.getElementById("50").focus();
+                        document.getElementById("help").blur();
                     }
                     break;
                 case 7:
@@ -534,21 +555,20 @@ export function Que(){
                         if(showResults3==false){
                             // @ts-ignore
                             globalThis.selectSq1=2;
-                            setColors2(COLORS.secgrey);
-                            setColors7(COLORS.strgrey);
+                            document.getElementById("second").focus();
+                            document.getElementById("later").blur();
                         }
                         else{
                             // @ts-ignore
                             globalThis.selectSq1=3;
-                            setColors3(COLORS.secgrey);
-                            setColors7(COLORS.strgrey);
-                        }
+                            document.getElementById("third").focus();
+                            document.getElementById("later").blur();                        }
                     }
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 4;
-                        setColors4(COLORS.secgrey);
-                        setColors7(COLORS.strgrey);
+                        document.getElementById("fourth").focus();
+                        document.getElementById("later").blur();
                     }
                     break;
                 case 4:
@@ -556,21 +576,21 @@ export function Que(){
                         if(showResults2==false){
                             // @ts-ignore
                             globalThis.selectSq1=1;
-                            setColors1(COLORS.secgrey);
-                            setColors4(COLORS.strgrey);
+                            document.getElementById("first").focus();
+                            document.getElementById("fourth").blur();
                         }
                         else{
                             // @ts-ignore
                             globalThis.selectSq1=2;
-                            setColors2(COLORS.secgrey);
-                            setColors4(COLORS.strgrey);
+                            document.getElementById("second").focus();
+                            document.getElementById("fourth").blur();
                         }
                     }
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 3;
-                        setColors3(COLORS.secgrey);
-                        setColors4(COLORS.strgrey);
+                        document.getElementById("third").focus();
+                        document.getElementById("fourth").blur();
                     }
                     break;
                 case 3:
@@ -580,15 +600,15 @@ export function Que(){
                         else{
                             // @ts-ignore
                             globalThis.selectSq1=1;
-                            setColors1(COLORS.secgrey);
-                            setColors3(COLORS.strgrey);
+                            document.getElementById("first").focus();
+                            document.getElementById("third").blur();
                         }
                     }
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 2;
-                        setColors2(COLORS.secgrey);
-                        setColors3(COLORS.strgrey);
+                        document.getElementById("second").focus();
+                        document.getElementById("third").blur();
                     }
                     break;
                 case 2:
@@ -597,8 +617,8 @@ export function Que(){
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 1;
-                        setColors1(COLORS.secgrey);
-                        setColors2(COLORS.strgrey);
+                        document.getElementById("first").focus();
+                        document.getElementById("second").blur();
                     }
                     break;
                 default:
@@ -617,21 +637,21 @@ export function Que(){
                         if(showResults3==false){
                             // @ts-ignore
                             globalThis.selectSq1=4;
-                            setColors4(COLORS.secgrey);
-                            setColors1(COLORS.strgrey);
+                            document.getElementById("fourth").focus();
+                            document.getElementById("first").blur();
                         }
                         else{
                             // @ts-ignore
                             globalThis.selectSq1=3;
-                            setColors3(COLORS.secgrey);
-                            setColors1(COLORS.strgrey);
+                            document.getElementById("fourth").focus();
+                            document.getElementById("first").blur();
                         }
                     }
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 2;
-                        setColors2(COLORS.secgrey);
-                        setColors1(COLORS.strgrey);
+                        document.getElementById("second").focus();
+                        document.getElementById("first").blur();
                     }
                     break;
                 case 2:
@@ -639,48 +659,48 @@ export function Que(){
                         if(showResults4==false){
                             // @ts-ignore
                             globalThis.selectSq1=1;
-                            setColors1(COLORS.secgrey);
-                            setColors2(COLORS.strgrey);
+                            document.getElementById("first").focus();
+                            document.getElementById("second").blur();
                         }
                         else{
                             // @ts-ignore
                             globalThis.selectSq1=4;
-                            setColors4(COLORS.secgrey);
-                            setColors2(COLORS.strgrey);
+                            document.getElementById("fourth").focus();
+                            document.getElementById("second").blur();
                         }
                     }
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 3;
-                        setColors3(COLORS.secgrey);
-                        setColors2(COLORS.strgrey);
+                        document.getElementById("third").focus();
+                        document.getElementById("second").blur();
                     }
                     break;
                 case 3:
                     if(showResults4==false){
                         // @ts-ignore
                         globalThis.selectSq1 = 7;
-                        setColors7(COLORS.secgrey);
-                        setColors3(COLORS.strgrey);
+                        document.getElementById("later").focus();
+                        document.getElementById("third").blur();
                     }
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 4;
-                        setColors4(COLORS.secgrey);
-                        setColors3(COLORS.strgrey);
+                        document.getElementById("fourth").focus();
+                        document.getElementById("third").blur();
                     }
                     break;
                 case 4:
                     // @ts-ignore
                     globalThis.selectSq1=7;
-                    setColors7(COLORS.secgrey);
-                    setColors4(COLORS.strgrey);
+                    document.getElementById("later").focus();
+                    document.getElementById("fourth").blur();
                     break;
                 case 5:
                     // @ts-ignore
                     globalThis.selectSq1=6;
-                    setColors6(COLORS.secgrey);
-                    setColors5(COLORS.strgrey);
+                    document.getElementById("help").focus();
+                    document.getElementById("50").blur();
                     break;
                 default:
                     console.log('Diva');
@@ -693,21 +713,23 @@ export function Que(){
             if(selectSq1!=6) {
                 if(showResults55==false){
                     globalThis.selectSq1 = 6;
-                    setColors1(COLORS.strgrey);
-                    setColors2(COLORS.strgrey);
-                    setColors3(COLORS.strgrey);
-                    setColors4(COLORS.strgrey);
-                    setColors7(COLORS.strgrey);
-                    setColors6(COLORS.secgrey);
+                    document.getElementById("help").focus();
+                    document.getElementById("later").blur();
+                    document.getElementById("50").blur();
+                    document.getElementById("first").blur();
+                    document.getElementById("second").blur();
+                    document.getElementById("third").blur();
+                    document.getElementById("fourth").blur();
                 }
                 else {
                     globalThis.selectSq1 = 5;
-                    setColors1(COLORS.strgrey);
-                    setColors2(COLORS.strgrey);
-                    setColors3(COLORS.strgrey);
-                    setColors4(COLORS.strgrey);
-                    setColors7(COLORS.strgrey);
-                    setColors5(COLORS.secgrey);
+                    document.getElementById("later").focus();
+                    document.getElementById("help").blur();
+                    document.getElementById("50").blur();
+                    document.getElementById("first").blur();
+                    document.getElementById("second").blur();
+                    document.getElementById("third").blur();
+                    document.getElementById("fourth").blur();
                 }
             }
         }
@@ -719,23 +741,32 @@ export function Que(){
                     if (showResults2 == false) {
                         // @ts-ignore
                         globalThis.selectSq1 = 3;
-                        setColors5(COLORS.strgrey);
-                        setColors6(COLORS.strgrey);
-                        setColors7(COLORS.strgrey);
-                        setColors3(COLORS.secgrey);
+                        document.getElementById("help").blur();
+                        document.getElementById("later").blur();
+                        document.getElementById("50").blur();
+                        document.getElementById("first").blur();
+                        document.getElementById("second").blur();
+                        document.getElementById("third").focus();
+                        document.getElementById("fourth").blur();
                     } else {
                         globalThis.selectSq1 = 2;
-                        setColors5(COLORS.strgrey);
-                        setColors6(COLORS.strgrey);
-                        setColors7(COLORS.strgrey);
-                        setColors2(COLORS.secgrey);
+                        document.getElementById("help").blur();
+                        document.getElementById("later").blur();
+                        document.getElementById("50").blur();
+                        document.getElementById("first").blur();
+                        document.getElementById("second").focus();
+                        document.getElementById("third").blur();
+                        document.getElementById("fourth").blur();
                     }
                 } else {
                     globalThis.selectSq1 = 1;
-                    setColors5(COLORS.strgrey);
-                    setColors6(COLORS.strgrey);
-                    setColors7(COLORS.strgrey);
-                    setColors1(COLORS.secgrey);
+                    document.getElementById("help").blur();
+                    document.getElementById("later").blur();
+                    document.getElementById("50").blur();
+                    document.getElementById("first").focus();
+                    document.getElementById("second").blur();
+                    document.getElementById("third").blur();
+                    document.getElementById("fourth").blur();
                 }
             }
         }
@@ -752,92 +783,92 @@ export function Que(){
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("ArrowLeft", handleArrowLeft);
         return(
-            <div className={lambert.body}>
-                <div className={imr.c}>
-                    <img src="/2c.png" width={1400} height={1200}/>
+            <div  tabIndex={-1} className={lambert.body}>
+                <div  tabIndex={-1} className={imr.c}>
+                    <img  tabIndex={-1} src="/2c.png" width={1400} height={1200}/>
                 </div>
                 { showToast?
-                    <div className={imr.Toast}>
+                    <div  tabIndex={-1} className={imr.Toast}>
                         <Toast text="У вас закончились звезды" /> </div>
                     :null}
 
                 { showHelp?
-                    <div className={imr.Toast}>
+                    <div  tabIndex={-1} className={imr.Toast}>
                         <Toast text={help} /> </div>
                     :null}
 
-                <div className={imr.TextBackQue}>Вопрос</div>
+                <div  tabIndex={-1} className={imr.TextBackQue}>Вопрос</div>
 
-                <div className={lambert.headers}>
-                    <Header
+                <div  tabIndex={-1} className={lambert.headers}>
+                    <Header  tabIndex={-1}
                         back={true}
                         onBackClick={() => router.push('/second')}
                     >
                     </Header>
                 </div>
 
-                <div className={lambert.fuck}>
-                    <div className={lambert.texticon1}>
+                <div tabIndex={-1} className={lambert.fuck}>
+                    <div tabIndex={-1} className={lambert.texticon1}>
                         {// @ts-ignore
                             triangle}
                     </div>
-                    <img src="/rect.png" className={lambert.Firsticon}/>
-                    <div className={lambert.texticon2}>
+                    <img  tabIndex={-1} src="/rect.png" className={lambert.Firsticon}/>
+                    <div tabIndex={-1} className={lambert.texticon2}>
                         {// @ts-ignore
                             hearts}
                     </div>
-                    <img src="/heart.png" className={lambert.Secondicon}/>
+                    <img  tabIndex={-1} src="/heart.png" className={lambert.Secondicon}/>
                 </div>
 
-                <div className={imr.textQue}>{way}</div>
+                <div  tabIndex={-1} className={imr.textQue}>{way}</div>
 
                 {showResults ?
-                    <Answer1 onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                    <Answer1 id="first"  tabIndex={-1} onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
                         // @ts-ignore
                         selectSq1,0)}
                          className={imr.rel3}>
-                        <Button id={[0].toString()} text={answers[0].answer} className={imr.fckdiv}></Button>
+                        <Button  tabIndex={-1} id={[0].toString()} text={answers[0].answer} className={imr.fckdiv}></Button>
                     </Answer1>
                     : null}
 
                 {showResults2 ?
-                    <Answer2 onClick={() => clickMe(event,answers[1].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                    <Answer2 id="second" tabIndex={-1} onClick={() => clickMe(event,answers[1].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
                         // @ts-ignore
                         selectSq1,0)} className={imr.rel3}>
-                        <Button id={[1].toString()} text={answers[1].answer} className={imr.fckdiv} ></Button>
+                        <Button  tabIndex={-1} id={[1].toString()} text={answers[1].answer} className={imr.fckdiv} ></Button>
                     </Answer2>
                     : null}
 
                 {showResults3 ?
-                    <Answer3 onClick={() => clickMe(event,answers[2].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                    <Answer3 id="third" tabIndex={-1} onClick={() => clickMe(event,answers[2].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
                         // @ts-ignore
                         selectSq1,0)} className={imr.rel3}>
-                        <Button id={[2].toString()}  text={answers[2].answer} className={imr.fckdiv} ></Button>
+                        <Button  tabIndex={-1} id={[2].toString()}  text={answers[2].answer} className={imr.fckdiv} ></Button>
                     </Answer3>
                     : null}
 
                 {showResults4 ?
-                    <Answer4 onClick={() => clickMe(event,answers[3].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
+                    <Answer4 id="fourth" tabIndex={-1} onClick={() => clickMe(event,answers[3].isCorrect,value,setValue,setVal,mass,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp,
                         // @ts-ignore
                         selectSq1,0)} className={imr.rel3}>
-                        <Button id={[3].toString()}  text={answers[3].answer} className={imr.fckdiv} ></Button>
+                        <Button  tabIndex={-1} id={[3].toString()}  text={answers[3].answer} className={imr.fckdiv} ></Button>
                     </Answer4>
                     : null}
 
-                <div className={imr.threebutt}>
+                <div className={imr.threebutt}  tabIndex={-1}>
                     {showResults55 ?
-                    <FirstButt className={imr.butt1} onClick={() => Fith(event,answers.mass, answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)}>
-                        <Button text="50/50" className={imr.fifthonfifth} ></Button>
+                    <FirstButt id="50"  tabIndex={-1} className={imr.butt1} onClick={() => Fith(event,answers.mass, answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)}>
+                        <Button  tabIndex={-1} text="50/50" className={imr.fifthonfifth} ></Button>
                     </FirstButt>
                     : null}
-                    <SecondButt className={imr.butt2}>
-                        <Button text="Помощь" className={imr.Help} onClick={() => Help(event,setHelp,answers.help)}></Button>
+                    <SecondButt id="help"  tabIndex={-1} className={imr.butt2}>
+                        <Button  tabIndex={-1} text="Помощь" className={imr.Help} onClick={() => Help(event,setHelp,answers.help)}></Button>
                     </SecondButt>
 
-                    <ThirdButt className={imr.butt3} onClick={() => Later(event,mass,setVal,setStar,star,setToast,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)}>
-                        <div className={imr.Later}>
-                            <Button text="Пропустить за 1" className={imr.LaterButt}></Button>
-                            <img src="/rect.png" className={imr.romb}/>
+                    <ThirdButt id="later"  tabIndex={-1} className={imr.butt3} onClick={() => Later(event,mass,setVal,setStar,star,setToast,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)}>
+                        <div  tabIndex={-1} className={imr.Later}>
+                            <Button  tabIndex={-1} text="Пропустить за 1" className={imr.LaterButt}></Button>
+                            <img  tabIndex={-1} src="/rect.png" className={imr.romb}/>
                         </div>
                     </ThirdButt>
 
