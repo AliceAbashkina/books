@@ -130,7 +130,7 @@ export default function Home(){
                     </div>
                     <div className={zoltan.svet} tabIndex={-1}>Ученье — свет, а неученье — тьма</div>
                 </div>
-                    <Buttons tabIndex={-1} onClick={() => router.push('/cat')}>
+                    <Buttons autoFocus tabIndex={-1} onClick={() => router.push('/cat')}>
                         <button className={zoltan.square} tabIndex={-1}>
                             <div className={zoltan.play} tabIndex={-1}>
                                 <img src="/play.png" width={85} height={102} tabIndex={-1}/>
