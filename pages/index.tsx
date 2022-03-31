@@ -31,11 +31,12 @@ globalThis.selectSq2=1;
 export default function Home(){
     const Buttons = styled.button<FocusProps>`
       font-family: Inter,serif;
+      background-color: gold;
     ${addFocus}
 `;
 
     const MyImage = styled.div`
-      background-color: gold; ;
+      background-color: gold;
 `;
 
     const Go = styled.div`
