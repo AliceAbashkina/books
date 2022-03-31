@@ -91,7 +91,6 @@ export default function Home(){
         if (isMobile) {
             return(
             <div className={lutik.con}>
-
                 <div className={lutik.purple}></div>
                 <div className={lutik.rel2}>
                     <div className={lutik.smart}>
