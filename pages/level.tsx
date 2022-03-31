@@ -45,7 +45,7 @@ export function Level() {
     }
     globalThis.str=2
 
-    const [colors, setColors]= useState(COLORS.strred);
+    const [colors, setColors]= useState(COLORS.strgrey);
     const [colors2, setColors2]= useState(COLORS.strgrey);
     const [showHelp, setHelp]=useState(false);
 
