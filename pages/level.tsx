@@ -100,11 +100,13 @@ export function Level() {
         // @ts-ignore
         globalThis.selectQ=1;
         document.getElementById("Mycon1").focus();
+        document.getElementById("Mycon2").blur();
     }
     function handleArrowDown(){
         // @ts-ignore
         globalThis.selectQ=2;
-        document.getElementById("Mycon2").focus()
+        document.getElementById("Mycon1").blur()
+        document.getElementById("Mycon2").focus();
     }
 
     if (indexVar.device == "mobile") {
@@ -212,7 +214,7 @@ export function Level() {
                 <img tabIndex={-1} src="/heart.png" className={vesemir.bonusIcon2}/>
             </Container1>
 
-            <Container2 id="Mycon2" className={vesemir.squareQ2} onClick={() =>squareQ2()} tabIndex={2}>
+            <Container2 id="Mycon2" className={vesemir.squareQ2} onClick={() =>squareQ2()} tabIndex={-1}>
                 <div tabIndex={-1}className={ien.text21}>
                     Сложность по уровням
                 </div>
