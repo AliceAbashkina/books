@@ -64,7 +64,6 @@ export function Level() {
         
         background-color: rgba(255, 108, 64, 0.45);
         color: white;
-        ${addFocus}
       }
       `;
 
@@ -73,7 +72,6 @@ export function Level() {
       &:focus {
       background-color: rgba(255, 108, 64, 0.45);
       color: white;
-        ${addFocus}
       }
       `;
 
@@ -174,57 +172,57 @@ export function Level() {
     else {
         return (
 
-            <div className={ien.bqs} >
-            <div className={ien.backtext}>
+            <div tabIndex={-1} className={ien.bqs} >
+            <div tabIndex={-1} className={ien.backtext}>
                 Тип забега
             </div>
-            <Header
+            <Header tabIndex={-1}
                 back={true}
                 className={ien.headers}
                 onBackClick={() => router.push('/cat')}
             >
             </Header>
-            <div className={ien.fuck}>
-                <div className={ien.texticon1}>
+            <div tabIndex={-1} className={ien.fuck}>
+                <div tabIndex={-1} className={ien.texticon1}>
                     { // @ts-ignore
                         triangle}
                 </div>
-                <img src="/rect.png" className={ien.Firsticon}/>
-                <div className={ien.texticon2}>
+                <img tabIndex={-1} src="/rect.png" className={ien.Firsticon}/>
+                <div tabIndex={-1} className={ien.texticon2}>
                     {   // @ts-ignore
                         hearts}
                 </div>
-                <img src="/heart.png" className={ien.Secondicon}/>
+                <img tabIndex={-1} src="/heart.png" className={ien.Secondicon}/>
             </div>
             { showHelp?
-                <div className={imr.Toast}>
-                    <Toast text={"В следующей версии("} /> </div>
+                <div tabIndex={-1} className={imr.Toast}>
+                    <Toast  text={"В следующей версии("} /> </div>
                 :null}
-            <Container1 focused={focusState1} onClick={() =>squareQ1()} tabIndex={1}>
-                <div className={ien.text1}>
+            <Container1 focused={focusState1} onClick={() =>squareQ1()} tabIndex={-1}>
+                <div tabIndex={-1} className={ien.text1}>
                     Чем дальше бежишь, тем сложнее вопросы
                 </div>
-                <div className={ien.text2}>
+                <div tabIndex={-1} className={ien.text2}>
                     Беги, пока можешь
                 </div>
-                <div className={ien.text3}>
+                <div tabIndex={-1} className={ien.text3}>
                     На выживание
                 </div>
-                <div className={ien.bonus}>
+                <div tabIndex={-1} className={ien.bonus}>
                     +3
                 </div>
-                <img src="/rect.png" className={vesemir.bonusIcon}/>
-                <img src="/heart.png" className={vesemir.bonusIcon2}/>
+                <img tabIndex={-1} src="/rect.png" className={vesemir.bonusIcon}/>
+                <img tabIndex={-1} src="/heart.png" className={vesemir.bonusIcon2}/>
             </Container1>
 
             <Container2 focused={focusState2} className={vesemir.squareQ2} onClick={() =>squareQ2()} tabIndex={2}>
-                <div className={ien.text21}>
+                <div tabIndex={-1}className={ien.text21}>
                     Сложность по уровням
                 </div>
-                <div className={ien.text22}>
+                <div tabIndex={-1} className={ien.text22}>
                     Чем дальше, тем сложнее
                 </div>
-                <div className={ien.text23}>
+                <div  tabIndex={-1} className={ien.text23}>
                     По уровням
                 </div>
             </Container2>

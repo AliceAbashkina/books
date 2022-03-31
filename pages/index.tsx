@@ -9,8 +9,8 @@ import {COLORS} from "../public/colors";
 import styled from "styled-components";
 
 
-let deviceKind=detectDevice();
-//let deviceKind='sds';
+//let deviceKind=detectDevice();
+let deviceKind='sds';
 console.log(deviceKind)
 
 export var device= deviceKind;
