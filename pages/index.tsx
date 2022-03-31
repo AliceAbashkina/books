@@ -35,7 +35,12 @@ export default function Home(){
 `;
 
     const MyImage = styled.div`
-      background: url(/square.png) ;
+      background-color: gold; ;
+`;
+
+    const Go = styled.div`
+      color: #000000;
+      font-family: Rubik,serif;
 `;
     function useKey(key,cb){
         const callbackRef=useRef(cb);
@@ -141,7 +146,7 @@ export default function Home(){
                             <div className={zoltan.play} tabIndex={-1}>
                                 <img width={85} height={102} tabIndex={-1}/>
                             </div>
-                            <div className={zoltan.Go} tabIndex={-1}>Начать</div>
+                            <Go className={zoltan.Go} tabIndex={-1}>Начать</Go>
                         </MyImage>
                     </Buttons>
                 <div className={zoltan.rec1} tabIndex={-1}>
