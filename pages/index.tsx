@@ -3,17 +3,16 @@ import zoltan from '../styles/Home_NM.module.css';
 import {useRouter} from "next/router";
 import {useEffect, useRef, useState} from "react";
 import {FocusProps, OutlinedProps, addFocus, detectDevice} from '@sberdevices/plasma-ui';
-
+import * as indexVar from './index';
 import {AssistantAppState, createAssistant} from "@sberdevices/assistant-client";
 import {COLORS} from "../public/colors";
 import styled from "styled-components";
 
-
-let deviceKind=detectDevice();
-//let deviceKind='sds';
+//export var deviceKind='sds';
+export var deviceKind=indexVar.deviceKind;
 console.log(deviceKind)
 
-export var device= deviceKind;
+
 globalThis.str=0;
 globalThis.triangle=5;
 globalThis.hearts =5;
@@ -121,13 +120,11 @@ export default function Home(){
                         <img src="/chel.png" width={250}
                                height={300}/>
                     </div>
-                        <div onClick={() => router.push('/cat')}>
-                            <button className={lutik.square}>
+                        <div className={lutik.square} onClick={() => router.push('/cat')}>
                                 <div className={lutik.play}>
                                     <img src="/play.png" width={85} height={102}/>
                                 </div>
                                 <div className={lutik.Go}>Начать</div>
-                            </button>
                         </div>
                 </div>
             </div>

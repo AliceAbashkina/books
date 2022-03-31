@@ -6,8 +6,6 @@
   height: 100%;
   width: 100%;
   position: relative;
-  top:0%;
-  left:0px;
   background: linear-gradient(336.9deg, #143787 0%, rgba(8, 8, 8, 0) 64.95%), radial-gradient(66.53% 100% at 73.33% 100%, rgba(110, 5, 193, 0.44) 0%, rgba(53, 19, 149, 0.1) 99.69%), linear-gradient(180.03deg, rgba(8, 8, 8, 0) 50%, rgba(25, 63, 152, 0.41) 99.97%), linear-gradient(270deg, rgba(39, 15, 107, 0.3) 0%, rgba(8, 8, 8, 0) 100%);
   background-color: #23262F;
 }
@@ -107,8 +105,9 @@
 
 .chel {
   position: absolute;
-  left: -230px;
-
+  height: 200%;
+  left: -300px;
+  bottom: 10%;
   z-index: 3;
 }
 
@@ -127,10 +126,10 @@
 }
 
 .square{
-  position: absolute;
+  position: relative;
   width: 280px;
   height: 280px;
-  margin-left:41%;
+  margin-right:auto;
   background-color: #FFFF00;
   z-index: 5;
 }
@@ -143,7 +142,6 @@
 
 .border0 {
   position: absolute;
-  top: 200px;
   height: 0px;
   width: 815px;
   left: -500px;
@@ -155,7 +153,6 @@
 
 .border1 {
   position: absolute;
-  top: 200px;
   height: 0px;
   width: 815px;
   left: -420px;
@@ -167,7 +164,6 @@
 
 .border2 {
   position: absolute;
-  top: 200px;
   height: 0px;
   width: 815px;
   left: -340px;
@@ -179,7 +175,6 @@
 
 .border3 {
   position: absolute;
-  top: 200px;
   height: 0px;
   width: 815px;
   left: -260px;
@@ -191,7 +186,6 @@
 
 .border4 {
   position: absolute;
-  top:0;
   height: 0px;
   width: 815px;
   left: -98px;
