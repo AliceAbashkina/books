@@ -10,7 +10,7 @@ import styled from "styled-components";
 import imr from "../styles/Que_NM.module.css";
 import {useRouter} from "next/router";
 import * as indexVar from './index';
-
+// @ts-ignore
 selectSq2=1;
 export function Second(){
     function handleEnter(){
