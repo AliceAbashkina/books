@@ -120,49 +120,49 @@ export default function Home(){
     }
     else{
         return(
-            <div className={zoltan.bodys}>
-                <div className={zoltan.three}>
-                    <div className={zoltan.smarts}>
+            <div className={zoltan.bodys} tabIndex={-1}>
+                <div className={zoltan.three } tabIndex={-1}>
+                    <div className={zoltan.smarts} tabIndex={-1}>
                         Smart
                     </div>
-                    <div className={zoltan.runner}>
+                    <div className={zoltan.runner} tabIndex={-1}>
                         Runner
                     </div>
-                    <div className={zoltan.svet}>Ученье — свет, а неученье — тьма</div>
+                    <div className={zoltan.svet} tabIndex={-1}>Ученье — свет, а неученье — тьма</div>
                 </div>
                     <Buttons tabIndex={1} onClick={() => router.push('/cat')}>
-                        <button className={zoltan.square}>
-                            <div className={zoltan.play}>
-                                <img src="/play.png" width={85} height={102}/>
+                        <button className={zoltan.square} tabIndex={-1}>
+                            <div className={zoltan.play} tabIndex={-1}>
+                                <img src="/play.png" width={85} height={102} tabIndex={-1}/>
                             </div>
-                            <div className={zoltan.Go}>Начать</div>
+                            <div className={zoltan.Go} tabIndex={-1}>Начать</div>
                         </button>
                     </Buttons>
-                <div className={zoltan.rec1}>
+                <div className={zoltan.rec1} tabIndex={-1}>
                     <img src="/rect.png" width={20}
                            height={30}/>
                 </div>
-                <div className={zoltan.rec2}>
+                <div className={zoltan.rec2} tabIndex={-1}>
                     <img src="/rect.png" width={20}
                            height={30}/>
                 </div>
-                <div className={zoltan.rec3}>
+                <div className={zoltan.rec3} tabIndex={-1}>
                     <img src="/rect.png" width={38}
                            height={57}/>
                 </div>
-                <div className={zoltan.circle_fon}>
+                <div className={zoltan.circle_fon} tabIndex={-1}>
                     <img src="/3cir.png" width={900}
                            height={850}/>
                 </div>
-                <div className={zoltan.chel}>
+                <div className={zoltan.chel} tabIndex={-1}>
                     <img src="/chel_pc.png" width={500}
                            height={470}/>
                 </div>
-                <div className={zoltan.blur}>
+                <div className={zoltan.blur} tabIndex={-1}>
                     <img src="/blur.png" width={2000}
                            height={800}/>
                 </div>
-                <div className={zoltan.star}>
+                <div className={zoltan.star} tabIndex={-1}>
                     <img src="/star.png" width={300}
                            height={298}/>
                 </div>
