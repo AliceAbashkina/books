@@ -2,13 +2,15 @@ import lutik from '../styles/Home.module.css';
 import zoltan from '../styles/Home_NM.module.css';
 import {useRouter} from "next/router";
 import {useEffect, useRef, useState} from "react";
-import {Button, ButtonProps, detectDevice, withAutoFocus} from "@sberdevices/plasma-ui";
+import { FocusProps, OutlinedProps, addFocus } from '@sberdevices/plasma-ui';
+
 import {AssistantAppState, createAssistant} from "@sberdevices/assistant-client";
 import {COLORS} from "../public/colors";
+import styled from "styled-components";
 
 
-//let deviceKind=detectDevice();
-let deviceKind='sds';
+let deviceKind=detectDevice();
+//let deviceKind='sds';
 console.log(deviceKind)
 
 export var device= deviceKind;
@@ -26,8 +28,9 @@ globalThis.selectSq2=1;
 
 
 export default function Home(){
-    // @ts-ignore
-    const AutoFocusButton = withAutoFocus<ButtonProps>(Button);
+    const Buttons = styled.button<FocusProps>`
+    ${addFocus}
+`;
     function useKey(key,cb){
         const callbackRef=useRef(cb);
         useEffect(()=>{
@@ -127,14 +130,14 @@ export default function Home(){
                     </div>
                     <div className={zoltan.svet}>Ученье — свет, а неученье — тьма</div>
                 </div>
-                    <AutoFocusButton tabIndex={1} onClick={() => router.push('/cat')}>
+                    <Buttons tabIndex={1} onClick={() => router.push('/cat')}>
                         <button className={zoltan.square}>
                             <div className={zoltan.play}>
                                 <img src="/play.png" width={85} height={102}/>
                             </div>
                             <div className={zoltan.Go}>Начать</div>
                         </button>
-                    </AutoFocusButton>
+                    </Buttons>
                 <div className={zoltan.rec1}>
                     <img src="/rect.png" width={20}
                            height={30}/>
