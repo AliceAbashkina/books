@@ -123,7 +123,7 @@ export default function Home(){
                     </div>
                     <div className={zoltan.svet}>Ученье — свет, а неученье — тьма</div>
                 </div>
-                    <div onClick={() => router.push('/cat')}>
+                    <div tabIndex={1} onClick={() => router.push('/cat')}>
                         <button className={zoltan.square}>
                             <div className={zoltan.play}>
                                 <img src="/play.png" width={85} height={102}/>
