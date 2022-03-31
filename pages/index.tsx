@@ -32,8 +32,8 @@ export default function Home(){
     ${addFocus}
 `;
 
-    const MyImage = styled.image`
-      background: url(/play.png) ;
+    const MyImage = styled.div`
+      background: url(/square.png) ;
 `;
     function useKey(key,cb){
         const callbackRef=useRef(cb);
