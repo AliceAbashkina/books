@@ -2,15 +2,23 @@ import geralt from '../styles/Cat.module.css';
 import eskel from '../styles/Cat_NM.module.css'
 import {
     Header,
-    Button
+    Button, FocusProps, addFocus
 } from "@sberdevices/plasma-ui";
 import {IconArrowLeft, IconArrowRight} from "@sberdevices/plasma-icons";
 import {white} from "@sberdevices/plasma-tokens/colors/values";
 import {useEffect, useRef, useState} from "react";
 import {useRouter} from "next/router";
 import * as indexVar from './index';
+import styled from "styled-components";
 
 export function Cat() {
+    const Buttons = styled.button<FocusProps>`
+      &:focus {
+        outline: none;
+        box-shadow: 0px 0px 2px red;
+      }
+`;
+
 const router = useRouter();
     function handleEnter(){
         router.push('/level');
@@ -111,9 +119,9 @@ const router = useRouter();
                         <Button tabIndex={-1}><IconArrowRight color={white}/></Button>
                     </div>
                 </div>
-                <div className={eskel.okButtonDes} autoFocus tabIndex={-1} onClick={() => router.push('/level')}>
+                <Buttons className={eskel.okButtonDes} autoFocus tabIndex={-1} onClick={() => router.push('/level')}>
                     <div tabIndex={-1}><Button tabIndex={-1} className={eskel.buttonW} text="ВЫБРАТЬ"/></div>
-                </div>
+                </Buttons>
             </div>
         );
     }
