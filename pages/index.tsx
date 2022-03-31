@@ -135,12 +135,12 @@ export default function Home(){
                     <div className={zoltan.svet} tabIndex={-1}>Ученье — свет, а неученье — тьма</div>
                 </div>
                     <Buttons autoFocus tabIndex={-1} onClick={() => router.push('/cat')}>
-                        <button className={zoltan.square} tabIndex={-1}>
+                        <MyImage className={zoltan.square} tabIndex={-1}>
                             <div className={zoltan.play} tabIndex={-1}>
-                                <MyImage width={85} height={102} tabIndex={-1}/>
+                                <img width={85} height={102} tabIndex={-1}/>
                             </div>
                             <div className={zoltan.Go} tabIndex={-1}>Начать</div>
-                        </button>
+                        </MyImage>
                     </Buttons>
                 <div className={zoltan.rec1} tabIndex={-1}>
                     <img src="/rect.png" width={20}
