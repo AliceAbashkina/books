@@ -131,7 +131,7 @@
   width: 280px;
   height: 280px;
   margin-left:41%;
-  background-image: url("./png/square.png");
+  background-color: #FFFF00;
   z-index: 5;
 }
 
@@ -218,7 +218,7 @@
 
   font-family: Rubik;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   line-height: 130%;
   /* or 23px */

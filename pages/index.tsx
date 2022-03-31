@@ -40,6 +40,11 @@ export default function Home(){
 
     const Go = styled.div`
       color: #000000;
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 130%;
 `;
     function useKey(key,cb){
         const callbackRef=useRef(cb);
