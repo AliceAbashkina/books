@@ -99,7 +99,7 @@ const router = useRouter();
                     {items[index]}
                 </div>
                 <div tabIndex={-1} className={eskel.square}>
-                    <div className={eskel.textCat}>
+                    <div tabIndex={-1} className={eskel.textCat}>
                         {text[index]}
                     </div>
                 </div>
