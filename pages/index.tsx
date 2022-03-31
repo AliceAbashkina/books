@@ -41,7 +41,6 @@ export default function Home(){
 
     const Go = styled.div`
       color: #000000;
-      font-family: Rubik,serif;
 `;
     function useKey(key,cb){
         const callbackRef=useRef(cb);
