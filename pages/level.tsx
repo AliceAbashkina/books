@@ -4,7 +4,7 @@ import imr from "../styles/Que_NM.module.css";
 import {COLORS} from "../public/colors";
 
 import {
-    addFocus,
+    addFocus, FocusProps,
     Header, Toast, withAutoFocus
 } from "@sberdevices/plasma-ui";
 import {useRouter} from "next/router";
@@ -49,7 +49,7 @@ export function Level() {
     const [colors2, setColors2]= useState(COLORS.strgrey);
     const [showHelp, setHelp]=useState(false);
 
-    const Container1 = styled.div`
+    const Container1 = styled.div<FocusProps>`
     position: relative;
     width: 600px;
     height: 300px;
@@ -68,7 +68,7 @@ export function Level() {
       }
       `;
 
-    const Container2 = styled.div`
+    const Container2 = styled.div<FocusProps>`
       background-color: ${ colors2 };
       &:active {
       background-color: rgba(255, 108, 64, 0.45);
