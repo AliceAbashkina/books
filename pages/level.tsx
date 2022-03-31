@@ -49,25 +49,24 @@ export function Level() {
     const [colors2, setColors2]= useState(COLORS.strgrey);
     const [showHelp, setHelp]=useState(false);
 
-    const Container1 = styled.div<FocusProps>`
+    const Container1 = styled.div`
     position: relative;
     width: 600px;
     height: 300px;
     margin-left: auto;
     margin-right: auto;
     top: 112px;
-      
+    
     backdrop-filter: blur(126.885px);
       border-radius: 13px;
       background-color: ${ colors };
       &:focus {
-        
         background-color: rgba(255, 108, 64, 0.45);
         color: white;
       }
       `;
 
-    const Container2 = styled.div<FocusProps>`
+    const Container2 = styled.div`
       background-color: ${ colors2 };
       &:focus {
       background-color: rgba(255, 108, 64, 0.45);
