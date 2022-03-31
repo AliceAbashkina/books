@@ -117,40 +117,40 @@
 
     left:38%;
     top:60%;
- }
+}
 
- .rec3{
-     position: absolute;
-     z-index: 2;
+.rec3{
+    position: absolute;
+    z-index: 2;
 
     left:63%;
-     top:25%;
- }
+    top:25%;
+}
 
- .circle_fon{
-     position: absolute;
-     z-index: 0;
-     left:25%;
- }
+.circle_fon{
+    position: absolute;
+    z-index: 0;
+    left:25%;
+}
 
- .chel{
-position: absolute;
-     left:10%;
+.chel{
+    position: absolute;
+    left:10%;
     top:30%;
-     z-index: 1;
- }
-
- .blur{
-     position: absolute;
-     z-index: 1;
- }
-
- .star{
-     position: absolute;
     z-index: 1;
-     left: 50%;
-     top: 136px;
- }
+}
+
+.blur{
+    position: absolute;
+    z-index: 1;
+}
+
+.star{
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 136px;
+}
 
 .rec11{
     position: absolute;
