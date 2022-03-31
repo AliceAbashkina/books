@@ -60,7 +60,7 @@ export function Level() {
     backdrop-filter: blur(126.885px);
       border-radius: 13px;
       background-color: ${ colors };
-      &:active {
+      &:focus {
         
         background-color: rgba(255, 108, 64, 0.45);
         color: white;
@@ -70,7 +70,7 @@ export function Level() {
 
     const Container2 = styled.div<FocusProps>`
       background-color: ${ colors2 };
-      &:active {
+      &:focus {
       background-color: rgba(255, 108, 64, 0.45);
       color: white;
         ${addFocus}
