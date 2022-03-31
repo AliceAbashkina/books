@@ -7,7 +7,7 @@ import {FocusProps, OutlinedProps, addFocus, detectDevice} from '@sberdevices/pl
 import {AssistantAppState, createAssistant} from "@sberdevices/assistant-client";
 import {COLORS} from "../public/colors";
 import styled from "styled-components";
-
+import {isMobile} from 'react-device-detect';
 
 
 //let deviceKind='sds';
@@ -87,8 +87,9 @@ export default function Home(){
             }
         });
     });
-    if (deviceKind === 'mobile') {
-        return (
+
+        if (isMobile) {
+            return(
             <div className={lutik.con}>
 
                 <div className={lutik.purple}></div>
