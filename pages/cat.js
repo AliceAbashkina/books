@@ -112,7 +112,7 @@ const router = useRouter();
                         <Button><IconArrowRight color={white}/></Button>
                     </div>
                 </div>
-                <div className={eskel.okButtonDes} onClick={() => router.push('/level')}>
+                <div className={eskel.okButtonDes} autoFocus onClick={() => router.push('/level')}>
                     <div><Button className={eskel.buttonW} text="ВЫБРАТЬ"/></div>
                 </div>
             </div>
