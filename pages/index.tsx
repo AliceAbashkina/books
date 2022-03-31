@@ -30,7 +30,6 @@ globalThis.selectSq2=1;
 
 export default function Home(){
     const Buttons = styled.button<FocusProps>`
-      font-family: Inter,serif;
       background-color: gold;
     ${addFocus}
 `;
