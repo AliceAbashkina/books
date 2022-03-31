@@ -374,8 +374,8 @@ export function Second(){
                     <img  tabIndex={-1} src="/heart.png" className={triss.Secondicon}/>
                 </div>
                 <div  tabIndex={-1} className={fri.rel}>
-                    <Square1  tabIndex={-1} className={fri.square1} id="first">
-                    <div  tabIndex={-1} onClick={()=>Enter(1)}>
+                    <Square1  tabIndex={-1} className={fri.square1} id="first" onClick={()=>Enter(1)}>
+                    <div  tabIndex={-1}>
                         <div  tabIndex={-1} className={fri.text1}>1</div>
                     </div>
                     </Square1 >
