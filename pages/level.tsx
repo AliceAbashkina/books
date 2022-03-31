@@ -85,14 +85,14 @@ export function Level() {
     function handleEnter(){
         if(
             // @ts-ignore
-            selectQ==1){
+            globalThis.selectQ==1){
             router.push('/first');
         }
         else if(
             // @ts-ignore
-            selectQ==2){
+            globalThis.selectQ==2){
             // @ts-ignore
-            selectSq2=1;
+            globalThis.selectSq2=1;
             router.push('/second');
         }
     }
@@ -104,7 +104,7 @@ export function Level() {
         setColors(COLORS.strred);
         setColors2(COLORS.strgrey);
         // @ts-ignore
-        selectQ=1;
+        globalThis.selectQ=1;
         setFocus1(true);
         setFocus2(false);
     }
@@ -113,7 +113,7 @@ export function Level() {
         setColors(COLORS.strgrey);
         setColors2(COLORS.strred);
         // @ts-ignore
-        selectQ=2;
+        globalThis.selectQ=2;
         setFocus1(false);
         setFocus2(true);
     }
@@ -223,7 +223,7 @@ export function Level() {
                 <img src="/heart.png" className={vesemir.bonusIcon2}/>
             </Container1>
 
-            <Container2 focused={focusState2} className={vesemir.squareQ2} onClick={() =>squareQ2()} tabIndex={-1}>
+            <Container2 focused={focusState2} className={vesemir.squareQ2} onClick={() =>squareQ2()} tabIndex={2}>
                 <div className={ien.text21}>
                     Сложность по уровням
                 </div>
