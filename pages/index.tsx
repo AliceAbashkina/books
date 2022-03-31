@@ -31,6 +31,10 @@ export default function Home(){
     const Buttons = styled.button<FocusProps>`
     ${addFocus}
 `;
+
+    const MyImage = styled.image`
+      background: url(/play.png) ;
+`;
     function useKey(key,cb){
         const callbackRef=useRef(cb);
         useEffect(()=>{
@@ -133,7 +137,7 @@ export default function Home(){
                     <Buttons autoFocus tabIndex={-1} onClick={() => router.push('/cat')}>
                         <button className={zoltan.square} tabIndex={-1}>
                             <div className={zoltan.play} tabIndex={-1}>
-                                <img src="/play.png" width={85} height={102} tabIndex={-1}/>
+                                <MyImage width={85} height={102} tabIndex={-1}/>
                             </div>
                             <div className={zoltan.Go} tabIndex={-1}>Начать</div>
                         </button>
