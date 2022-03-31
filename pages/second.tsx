@@ -11,6 +11,7 @@ import imr from "../styles/Que_NM.module.css";
 import {useRouter} from "next/router";
 import * as indexVar from './index';
 
+selectSq2=1;
 export function Second(){
     function handleEnter(){
         if( // @ts-ignore
@@ -345,61 +346,61 @@ export function Second(){
     }
     else{
         return(
-            <div className={triss.body}>
+            <div  tabIndex={-1} className={triss.body}>
                 { showHelp?
-                    <div className={imr.Toast}>
+                    <div tabIndex={-1} className={imr.Toast}>
                         <Toast text={"В следующей версии"} /> </div>
                     :null}
-                <div className={fri.TextBack}>Уровень</div>
-                <div className={triss.BackHead}>
-                    <Header
+                <div  tabIndex={-1} className={fri.TextBack}>Уровень</div>
+                <div  tabIndex={-1} className={triss.BackHead}>
+                    <Header  tabIndex={-1}
                         back={true}
                         onBackClick={() => router.push('/level')}
                     >
                     </Header>
                 </div>
-                <div className={triss.fuck}>
-                    <div className={triss.texticon1}>
+                <div  tabIndex={-1} className={triss.fuck}>
+                    <div  tabIndex={-1} className={triss.texticon1}>
                         {
                             // @ts-ignore
                             triangle}
                     </div>
-                    <img src="/rect.png" className={triss.Firsticon}/>
-                    <div className={triss.texticon2}>
+                    <img   tabIndex={-1} src="/rect.png" className={triss.Firsticon}/>
+                    <div  tabIndex={-1} className={triss.texticon2}>
                         {
                             // @ts-ignore
                             hearts}
                     </div>
-                    <img src="/heart.png" className={triss.Secondicon}/>
+                    <img  tabIndex={-1} src="/heart.png" className={triss.Secondicon}/>
                 </div>
-                <div className={fri.rel}>
-                    <Square1 className={fri.square1} id="first">
-                    <div onClick={()=>Enter(1)}>
-                        <div className={fri.text1}>1</div>
+                <div  tabIndex={-1} className={fri.rel}>
+                    <Square1  tabIndex={-1} className={fri.square1} id="first">
+                    <div  tabIndex={-1} onClick={()=>Enter(1)}>
+                        <div  tabIndex={-1} className={fri.text1}>1</div>
                     </div>
-                    </Square1>
-                    <Square2 className={fri.square2} id="second" onClick={()=>Enter(2)}>
-                        <div className={fri.text2}>2</div>
+                    </Square1 >
+                    <Square2  tabIndex={-1} className={fri.square2} id="second" onClick={()=>Enter(2)}>
+                        <div  tabIndex={-1} className={fri.text2}>2</div>
                     </Square2>
-                    <Square3 className={fri.square3} id="third" onClick={()=>Fail(setHelp)}>
-                        <div className={fri.text3}>3</div>
+                    <Square3  tabIndex={-1} className={fri.square3} id="third" onClick={()=>Fail(setHelp)}>
+                        <div  tabIndex={-1} className={fri.text3}>3</div>
                     </Square3>
-                    <Square4 className={fri.square4} id="fourth" onClick={()=>Fail(setHelp)}>
-                        <div className={fri.text4}>4</div>
+                    <Square4  tabIndex={-1} className={fri.square4} id="fourth" onClick={()=>Fail(setHelp)}>
+                        <div  tabIndex={-1} className={fri.text4}>4</div>
                     </Square4>
-                    <Square5 className={fri.square5} id="fifth" onClick={()=>Fail(setHelp)}>
-                        <div className={fri.text5}>5</div>
+                    <Square5  tabIndex={-1} className={fri.square5} id="fifth" onClick={()=>Fail(setHelp)}>
+                        <div  tabIndex={-1} className={fri.text5}>5</div>
                     </Square5>
-                    <Square6 className={fri.square6} id="six" onClick={()=>Fail(setHelp)}>
-                        <div className={fri.text6}>6</div>
+                    <Square6  tabIndex={-1} className={fri.square6} id="six" onClick={()=>Fail(setHelp)}>
+                        <div  tabIndex={-1} className={fri.text6}>6</div>
                     </Square6>
 
-                    <div className={fri.c}>
-                        <img src="/2c.png" width={1400} height={1200}/>
+                    <div  tabIndex={-1} className={fri.c}>
+                        <img   tabIndex={-1} src="/2c.png" width={1400} height={1200}/>
                     </div>
                 </div>
-                <div className={fri.chel}>
-                    <img src="/chel_second.png" width={400} height={600}/>
+                <div  tabIndex={-1}  className={fri.chel}>
+                    <img  tabIndex={-1} src="/chel_second.png" width={400} height={600}/>
                 </div>
             </div>
         );
