@@ -4,7 +4,8 @@ import imr from "../styles/Que_NM.module.css";
 import {COLORS} from "../public/colors";
 
 import {
-    Header, Toast
+    addFocus,
+    Header, Toast, withAutoFocus
 } from "@sberdevices/plasma-ui";
 import {useRouter} from "next/router";
 import {useEffect, useRef, useState} from "react";
@@ -14,6 +15,8 @@ import * as indexVar from "./index";
 globalThis.selectQ=1;
 
 export function Level() {
+    const [focusState1, setFocus1]= useState(true);
+    const [focusState2, setFocus2]= useState(false);
     function squareQ1(){
         router.push('/first')
     }
@@ -53,12 +56,15 @@ export function Level() {
     margin-left: auto;
     margin-right: auto;
     top: 112px;
+      
     backdrop-filter: blur(126.885px);
       border-radius: 13px;
       background-color: ${ colors };
       &:active {
+        
         background-color: rgba(255, 108, 64, 0.45);
         color: white;
+        ${addFocus}
       }
       `;
 
@@ -67,6 +73,7 @@ export function Level() {
       &:active {
       background-color: rgba(255, 108, 64, 0.45);
       color: white;
+        ${addFocus}
       }
       `;
 
@@ -98,6 +105,8 @@ export function Level() {
         setColors2(COLORS.strgrey);
         // @ts-ignore
         selectQ=1;
+        setFocus1(true);
+        setFocus2(false);
     }
     function handleArrowDown(){
         console.log("s");
@@ -105,6 +114,8 @@ export function Level() {
         setColors2(COLORS.strred);
         // @ts-ignore
         selectQ=2;
+        setFocus1(false);
+        setFocus2(true);
     }
 
     if (indexVar.device == "mobile") {
@@ -195,7 +206,7 @@ export function Level() {
                 <div className={imr.Toast}>
                     <Toast text={"В следующей версии("} /> </div>
                 :null}
-            <Container1 onClick={() =>squareQ1()} tabIndex={1}>
+            <Container1 focused={focusState1} onClick={() =>squareQ1()} tabIndex={1}>
                 <div className={ien.text1}>
                     Чем дальше бежишь, тем сложнее вопросы
                 </div>
@@ -212,7 +223,7 @@ export function Level() {
                 <img src="/heart.png" className={vesemir.bonusIcon2}/>
             </Container1>
 
-            <Container2 className={vesemir.squareQ2}  onClick={() =>squareQ2()} tabIndex={2}>
+            <Container2 focused={focusState2} className={vesemir.squareQ2} onClick={() =>squareQ2()} tabIndex={2}>
                 <div className={ien.text21}>
                     Сложность по уровням
                 </div>
