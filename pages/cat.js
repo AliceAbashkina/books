@@ -86,34 +86,35 @@ const router = useRouter();
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("ArrowRight",handleArrowRight);
         return(
-            <div className={geralt.body} >
+            <div  tabIndex={-1} className={geralt.body} >
                 <Header
                     className={geralt.headers}
                     back={false}
+                    tabIndex={-1}
                 >
-                    <div className={geralt.backtext}>Выбери категорию</div>
+                    <div tabIndex={-1} className={geralt.backtext}>Выбери категорию</div>
                 </Header>
-                <div className={eskel.ImageCat}>
-                    <img src={massIm[index]} width={600} height={600}></img>
+                <div tabIndex={-1} className={eskel.ImageCat}>
+                    <img tabIndex={-1} src={massIm[index]} width={600} height={600}></img>
                 </div>
-                <div className={eskel.nameCat}>
+                <div tabIndex={-1} className={eskel.nameCat}>
                     {items[index]}
                 </div>
-                <div className={eskel.square}>
+                <div tabIndex={-1} className={eskel.square}>
                     <div className={eskel.textCat}>
                         {text[index]}
                     </div>
                 </div>
-                <div className={eskel.Group}>
-                    <div onClick={() => ClickLeft(event, index, setValue)} className={eskel.buttonArrow}>
-                        <Button><IconArrowLeft color={white}/></Button>
+                <div  tabIndex={-1} className={eskel.Group}>
+                    <div tabIndex={-1} onClick={() => ClickLeft(event, index, setValue)} className={eskel.buttonArrow}>
+                        <Button tabIndex={-1}><IconArrowLeft color={white}/></Button>
                     </div>
-                    <div onClick={() => ClickRight(event, index, setValue)} className={eskel.buttonArrow}>
-                        <Button><IconArrowRight color={white}/></Button>
+                    <div tabIndex={-1} onClick={() => ClickRight(event, index, setValue)} className={eskel.buttonArrow}>
+                        <Button tabIndex={-1}><IconArrowRight color={white}/></Button>
                     </div>
                 </div>
-                <div className={eskel.okButtonDes} autoFocus onClick={() => router.push('/level')}>
-                    <div><Button className={eskel.buttonW} text="ВЫБРАТЬ"/></div>
+                <div className={eskel.okButtonDes} autoFocus tabIndex={-1} onClick={() => router.push('/level')}>
+                    <div tabIndex={-1}><Button tabIndex={-1} className={eskel.buttonW} text="ВЫБРАТЬ"/></div>
                 </div>
             </div>
         );
