@@ -2,7 +2,7 @@ import lutik from '../styles/Home.module.css';
 import zoltan from '../styles/Home_NM.module.css';
 import {useRouter} from "next/router";
 import {useEffect, useRef, useState} from "react";
-import { FocusProps, OutlinedProps, addFocus } from '@sberdevices/plasma-ui';
+import {FocusProps, OutlinedProps, addFocus, detectDevice} from '@sberdevices/plasma-ui';
 
 import {AssistantAppState, createAssistant} from "@sberdevices/assistant-client";
 import {COLORS} from "../public/colors";
