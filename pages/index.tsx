@@ -100,7 +100,7 @@ export default function Home(){
                     <div className={lutik.runner}>
                         Runner
                     </div>
-                    <div className={lutik.svet}>Ученье — свет, а неученье — тьма</div>
+                    <div className={lutik.svet}>Пукенье — свет, а неученье — тьма</div>
                 </div>
                 <div className={lutik.rel3}>
                     <div className={lutik.border0}/>
