@@ -43,8 +43,8 @@ export default function Home(){
                     callbackRef.current(event);
                 }
             }
-            window.addEventListener("keydown",handle);
-            return ()=>window.removeEventListener("keydown",handle)
+            window.addEventListener("keyup",handle);
+            return ()=>window.removeEventListener("keyup",handle)
         },[key]);
     }
     useKey("Enter",handleEnter);
@@ -130,7 +130,7 @@ export default function Home(){
                     </div>
                     <div className={zoltan.svet} tabIndex={-1}>Ученье — свет, а неученье — тьма</div>
                 </div>
-                    <Buttons tabIndex={1} onClick={() => router.push('/cat')}>
+                    <Buttons tabIndex={-1} onClick={() => router.push('/cat')}>
                         <button className={zoltan.square} tabIndex={-1}>
                             <div className={zoltan.play} tabIndex={-1}>
                                 <img src="/play.png" width={85} height={102} tabIndex={-1}/>
