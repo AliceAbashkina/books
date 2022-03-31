@@ -33,26 +33,27 @@ export function Second(){
             case 3:
                 // @ts-ignore
                 globalThis.selectSq2=1;
-                setColors1(COLORS.strred);
-                setColors3(COLORS.strgrey);
+                document.getElementById("first").focus();
+                document.getElementById("third").blur();
+
                 break;
             case 4:
                 // @ts-ignore
                 globalThis.selectSq2=2;
-                setColors2(COLORS.strred);
-                setColors4(COLORS.strgrey);
+                document.getElementById("second").focus();
+                document.getElementById("fourth").blur();
                 break;
             case 5:
                 // @ts-ignore
                 globalThis.selectSq2=3;
-                setColors3(COLORS.strred);
-                setColors5(COLORS.strgrey);
+                document.getElementById("third").focus();
+                document.getElementById("fifth").blur();
                 break;
             case 6:
                 // @ts-ignore
                 globalThis.selectSq2=4;
-                setColors4(COLORS.strred);
-                setColors6(COLORS.strgrey);
+                document.getElementById("fourth").focus();
+                document.getElementById("six").blur();
                 break;
             default:
                 console.log('Genga');
@@ -66,26 +67,26 @@ export function Second(){
             case 1:
                 // @ts-ignore
                 globalThis.selectSq2=3;
-                setColors3(COLORS.strred);
-                setColors1(COLORS.strgrey);
+                document.getElementById("third").focus();
+                document.getElementById("first").blur();
                 break;
             case 2:
                 // @ts-ignore
                 globalThis.selectSq2=4;
-                setColors4(COLORS.strred);
-                setColors2(COLORS.strgrey);
+                document.getElementById("fourth").focus();
+                document.getElementById("second").blur();
                 break;
             case 3:
                 // @ts-ignore
                 globalThis.selectSq2=5;
-                setColors5(COLORS.strred);
-                setColors3(COLORS.strgrey);
+                document.getElementById("fifth").focus();
+                document.getElementById("third").blur();
                 break;
             case 4:
                 // @ts-ignore
                 globalThis.selectSq2=6;
-                setColors6(COLORS.strred);
-                setColors4(COLORS.strgrey);
+                document.getElementById("six").focus();
+                document.getElementById("fourth").blur();
                 break;
             default:
                 console.log('Hanzo');
@@ -100,20 +101,20 @@ export function Second(){
             case 1:
                 // @ts-ignore
                 globalThis.selectSq2=2;
-                setColors2(COLORS.strred);
-                setColors1(COLORS.strgrey);
+                document.getElementById("second").focus();
+                document.getElementById("first").blur();
                 break;
             case 3:
                 // @ts-ignore
                 globalThis.selectSq2=4;
-                setColors4(COLORS.strred);
-                setColors3(COLORS.strgrey);
+                document.getElementById("fourth").focus();
+                document.getElementById("third").blur();
                 break;
             case 5:
                 // @ts-ignore
                 globalThis.selectSq2=6;
-                setColors6(COLORS.strred);
-                setColors5(COLORS.strgrey);
+                document.getElementById("six").focus();
+                document.getElementById("fifth").blur();
                 break;
             default:
                 console.log('Hanzo');
@@ -127,20 +128,20 @@ export function Second(){
             case 2:
                 // @ts-ignore
                 globalThis.selectSq2=1;
-                setColors1(COLORS.strred);
-                setColors2(COLORS.strgrey);
+                document.getElementById("first").focus();
+                document.getElementById("second").blur();
                 break;
             case 4:
                 // @ts-ignore
                 globalThis.selectSq2=3;
-                setColors3(COLORS.strred);
-                setColors4(COLORS.strgrey);
+                document.getElementById("third").focus();
+                document.getElementById("fourth").blur();
                 break;
             case 6:
                 // @ts-ignore
                 globalThis.selectSq2=5;
-                setColors5(COLORS.strred);
-                setColors6(COLORS.strgrey);
+                document.getElementById("fifth").focus();
+                document.getElementById("six").blur();
                 break;
             default:
                 console.log('Hanzo');
@@ -189,7 +190,7 @@ export function Second(){
 
     globalThis.str=3
 
-    const [colors1, setColors1]= useState(COLORS.strred);
+    const [colors1, setColors1]= useState(COLORS.strgrey);
     const [colors2, setColors2]= useState(COLORS.strgrey);
     const [colors3, setColors3]= useState(COLORS.strgrey);
     const [colors4, setColors4]= useState(COLORS.strgrey);
@@ -207,6 +208,9 @@ export function Second(){
       border-radius: 13px;
       background-color: ${ colors1 };
       backdrop-filter: blur(1px);
+      &:focus {
+        background-color: rgba(255, 108, 64, 0.45);
+      }
     `;
     const Square2 = styled.div`
       position: absolute;
@@ -216,6 +220,9 @@ export function Second(){
       border-radius: 13px;
       background-color: ${ colors2 };
       backdrop-filter: blur(1px);
+      &:focus {
+        background-color: rgba(255, 108, 64, 0.45);
+      }
     `;
     const Square3 = styled.div`
       position: absolute;
@@ -225,6 +232,9 @@ export function Second(){
       border-radius: 13px;
       background-color: ${ colors3 };
       backdrop-filter: blur(1px);
+      &:focus {
+        background-color: rgba(255, 108, 64, 0.45);
+      }
     `;
     const Square4 = styled.div`
       position: absolute;
@@ -234,6 +244,9 @@ export function Second(){
       border-radius: 13px;
       background-color: ${ colors4 };
       backdrop-filter: blur(1px);
+      &:focus {
+        background-color: rgba(255, 108, 64, 0.45);
+      }
     `;
     const Square5 = styled.div`
       position: absolute;
@@ -243,6 +256,9 @@ export function Second(){
       border-radius: 13px;
       background-color: ${ colors5 };
       backdrop-filter: blur(1px);
+      &:focus {
+        background-color: rgba(255, 108, 64, 0.45);
+      }
     `;
     const Square6 = styled.div`
       position: absolute;
@@ -252,6 +268,9 @@ export function Second(){
       border-radius: 13px;
       background-color: ${ colors6 };
       backdrop-filter: blur(1px);
+      &:focus {
+        background-color: rgba(255, 108, 64, 0.45);
+      }
     `;
 
     function ClickMobile(levels) {
@@ -354,24 +373,24 @@ export function Second(){
                     <img src="/heart.png" className={triss.Secondicon}/>
                 </div>
                 <div className={fri.rel}>
-                    <Square1 className={fri.square1}>
+                    <Square1 className={fri.square1} id="first">
                     <div onClick={()=>Enter(1)}>
                         <div className={fri.text1}>1</div>
                     </div>
                     </Square1>
-                    <Square2 className={fri.square2}  onClick={()=>Enter(2)}>
+                    <Square2 className={fri.square2} id="second" onClick={()=>Enter(2)}>
                         <div className={fri.text2}>2</div>
                     </Square2>
-                    <Square3 className={fri.square3}  onClick={()=>Fail(setHelp)}>
+                    <Square3 className={fri.square3} id="third" onClick={()=>Fail(setHelp)}>
                         <div className={fri.text3}>3</div>
                     </Square3>
-                    <Square4 className={fri.square4}  onClick={()=>Fail(setHelp)}>
+                    <Square4 className={fri.square4} id="fourth" onClick={()=>Fail(setHelp)}>
                         <div className={fri.text4}>4</div>
                     </Square4>
-                    <Square5 className={fri.square5} onClick={()=>Fail(setHelp)}>
+                    <Square5 className={fri.square5} id="fifth" onClick={()=>Fail(setHelp)}>
                         <div className={fri.text5}>5</div>
                     </Square5>
-                    <Square6 className={fri.square6}  onClick={()=>Fail(setHelp)}>
+                    <Square6 className={fri.square6} id="six" onClick={()=>Fail(setHelp)}>
                         <div className={fri.text6}>6</div>
                     </Square6>
 
