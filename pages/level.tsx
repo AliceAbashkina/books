@@ -100,18 +100,12 @@ export function Level() {
         router.push('/cat');
     }
     function handleArrowUp(){
-        console.log("s");
-        setColors(COLORS.strred);
-        setColors2(COLORS.strgrey);
         // @ts-ignore
         globalThis.selectQ=1;
         setFocus1(true);
         setFocus2(false);
     }
     function handleArrowDown(){
-        console.log("s");
-        setColors(COLORS.strgrey);
-        setColors2(COLORS.strred);
         // @ts-ignore
         globalThis.selectQ=2;
         setFocus1(false);
