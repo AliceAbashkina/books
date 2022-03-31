@@ -17,6 +17,7 @@ import * as indexVar from './index';
 const initialize  = (getState:any) => {
     return createAssistant({ getState });
 };
+// @ts-ignore
 selectSq1=1;
 export function Que(){
     function Prom(){
