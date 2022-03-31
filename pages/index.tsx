@@ -88,25 +88,25 @@ export default function Home(){
         });
     });
 
-        if (isMobile) {
+        if (deviceKind=='mobile') {
             return(
             <div className={lutik.con}>
                 <div className={lutik.purple}></div>
                 <div className={lutik.rel2}>
-                    <div className={lutik.smart}>
+                    <div className={lutik.smart} style={{zIndex:1}}>
                         Smart
                     </div>
-                    <div className={lutik.runner}>
+                    <div className={lutik.runner} style={{zIndex:1}}>
                         Runner
                     </div>
-                    <div className={lutik.svet}>Пукенье — свет, а неученье — тьма</div>
+                    <div className={lutik.svet}>Ученье — свет, а неученье — тьма</div>
                 </div>
                 <div className={lutik.rel3}>
-                    <div className={lutik.border0}/>
-                    <div className={lutik.border1}/>
-                    <div className={lutik.border2}/>
-                    <div className={lutik.border3}/>
-                    <div className={lutik.border4}/>
+                    <div className={lutik.border0} style={{zIndex:5}}/>
+                    <div className={lutik.border1} style={{zIndex:5}}/>
+                    <div className={lutik.border2} style={{zIndex:5}}/>
+                    <div className={lutik.border3} style={{zIndex:55}}/>
+                    <div className={lutik.border4} style={{zIndex:5}}/>
                     <div className={zoltan.rec11}>
                         <img src="/rect.png" width={20}
                                height={30}/>
