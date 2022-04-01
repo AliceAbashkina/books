@@ -15,10 +15,6 @@ function Prom(){
     });
 }
 
-async function A() {
-    const result = await Prom();
-    console.log('fuuu')
-}
 let deviceKind=detectDevice();
 //let deviceKind='sds';
 console.log(deviceKind)
@@ -84,7 +80,6 @@ export default function Home(){
     if (deviceKind === 'mobile') {
         return (
             <div className={lutik.con}>
-
                 <div className={lutik.purple}></div>
                 <div className={lutik.rel2}>
                     <div className={lutik.smart}>

@@ -10,6 +10,14 @@
   background-color: #23262F;
 }
 
+@font-face {
+  font-family: Syo;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/agencyfb_bold.ttf') format('truetype')
+}
+
+
 .purple{
   position: absolute;
   width: 268px;
@@ -31,7 +39,7 @@
   left: 6px;
   top: 187px;
 
-  font-family: Agency FB;
+  font-family: Syo;
   font-style: normal;
   font-weight: bold;
   font-size: 96px;
@@ -45,7 +53,7 @@
   left: 6px;
   top: 273px;
 
-  font-family: Agency FB, r;
+  font-family: Syo;
   font-style: normal;
   font-weight: bold;
   font-size: 100px;
