@@ -10,7 +10,7 @@
 }
 
 .BackHead {
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 26px;
@@ -25,7 +25,7 @@
 
 .TextBack {
     position: absolute;
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -46,7 +46,7 @@
     height: 100%;
     width: 100%;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
@@ -164,7 +164,7 @@
     left: 119px;
     top: 63%;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 28px;
@@ -201,7 +201,7 @@
     width: 15px;
     height: 31px;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -220,7 +220,7 @@
     width: 15px;
     height: 31px;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -248,7 +248,7 @@
     background: rgba(255, 255, 255, 1);
     border-radius: 54px;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;

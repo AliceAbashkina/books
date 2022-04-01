@@ -34,7 +34,7 @@
 
 .TextBack {
     position: absolute;
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -80,7 +80,7 @@
     margin-right: auto;
     top: 20%;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -109,7 +109,7 @@
     background: rgba(255, 255, 255, 1);
     border-radius: 54px;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -131,7 +131,7 @@
     background: rgba(255, 255, 255, 1);
     border-radius: 54px;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -145,7 +145,7 @@
 }
 .TextBackQue{
     position: absolute;
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -169,7 +169,7 @@
     margin-right: auto;
     top: 20%;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -191,7 +191,7 @@
     margin-right: auto;
     margin-left: auto;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -219,7 +219,7 @@
     top: 45%;
     background: rgba(255, 255, 255);
     border-radius: 74px;
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -281,7 +281,7 @@
 
 .threebutt{
     width: 100%;
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
 
@@ -376,7 +376,7 @@
     justify-content: center;
     font-size: 48px;
     color: #ECF1FF;
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 50px;

@@ -13,7 +13,7 @@
 
 .three{
     position: absolute;
-    font-family: Agency FB;
+    font-family: Syo;
     font-style: normal;
     top:20%;
     width: 100%;
@@ -25,6 +25,7 @@
     z-index: 3;
 }
 .smarts{
+    font-family: Syo;
     font-weight: bold;
     font-size: 144px;
     color: #ECF1FF;
@@ -35,6 +36,7 @@
 }
 
 .runner{
+    font-family: Syo;
     font-weight: bold;
     font-size: 144px;
     /* identical to box height, or 53% */
@@ -48,6 +50,7 @@
 }
 
 .svet{
+    font-family: MyInter;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -87,7 +90,7 @@
     left: 12%;
     top: 40%;
 
-    font-family: Rubik;
+    font-family: MyRubik;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;

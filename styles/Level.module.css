@@ -28,7 +28,7 @@
 
 .backtext{
     position: absolute;
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -88,7 +88,7 @@
     left: 23px;
     top:13px;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
@@ -108,7 +108,7 @@
     left: 23px;
     top: 60%;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
@@ -128,7 +128,7 @@
     left: 23px;
     top: 70%;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -148,7 +148,7 @@
     left: 23px;
     top: 14px;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
@@ -169,7 +169,7 @@
     left: 23px;
     top: 60%;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
@@ -189,9 +189,9 @@
     left: 23px;
     top: 70%;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 24px;
     line-height: 36px;
 
@@ -224,7 +224,7 @@
     width: 15px;
     height: 31px;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -243,7 +243,7 @@
     width: 15px;
     height: 31px;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -264,7 +264,7 @@
     left: 70%;
     top: 80%;
 
-    font-family: Inter;
+    font-family: MyInter;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
