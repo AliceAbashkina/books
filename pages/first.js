@@ -71,7 +71,7 @@ export function Level() {
     const [showHelp, setHelp]=useState(false);
 
     const [Books, setBooks]=useState(ciri.books); //active or paused books
-    const [colors1, setColors1]= useState(COLORS2.vid); //no-mob
+    const [colors1, setColors1]= useState(COLORS2.strgrey); //no-mob
     const [colors2, setColors2]= useState(COLORS2.strgrey);
     const [colors3, setColors3]= useState(COLORS2.strgrey);
     const [colors4, setColors4]= useState(COLORS2.strgrey);
@@ -89,30 +89,51 @@ export function Level() {
 
     const Answer1 = styled.div`
       background-color: ${ colors1 };
+      &:focus {
+        background-color: ${COLORS2.vid};
+      }
     `;
 
     const Answer2 = styled.div`
       background-color: ${ colors2 };
+      &:focus {
+        background-color: ${COLORS2.vid};
+      }
     `;
 
     const Answer3 = styled.div`
       background-color: ${ colors3 };
+      &:focus {
+        background-color: ${COLORS2.vid};
+      }
     `;
 
     const Answer4 = styled.div`
       background-color: ${ colors4 };
+      &:focus {
+        background-color: ${COLORS2.vid};
+      }
     `;
 
     const FirstButt = styled.div`
       background-color: ${ colors5 };
+      &:focus {
+        background-color: ${COLORS2.vid};
+      }
     `;
 
     const SecondButt = styled.div`
       background-color: ${ colors6 };
+      &:focus {
+        background-color: ${COLORS2.vid};
+      }
     `;
 
     const ThirdButt = styled.div`
       background-color: ${ colors7 };
+      &:focus {
+        background-color: ${COLORS2.vid};
+      }
     `;
 
     const MobAn1 = styled.div`
@@ -170,8 +191,6 @@ export function Level() {
     let timeLeft = timer.timer;
     let timerInterval = null;
     let remainingPathColor = COLOR_CODES.info.color;
-
-
 
     function onTimesUp() {
         clearInterval(timerInterval);
@@ -258,30 +277,33 @@ export function Level() {
 
     function Later(event,mass,setVal,setStar,star,setToast,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp){
         if(star>0){
-            setColors11(COLORS2.strgrey)
-            setColors12(COLORS2.strgrey)
-            setColors13(COLORS2.strgrey)
-            setColors14(COLORS2.strgrey)
             setShowResultsQ(true);
             setShowResults(true);
             setShowResults2(true);
             setShowResults3(true);
             setShowResults4(true);
             setHelp(false)
-            star--;
-            globalThis.triangle=star;
-            setStar(star);
             mass++
             if(mass==9){
                 router.push('/win');
                 setStar(5);
             }
             else{
-                setVal(mass);
-                setColors7(COLORS2.strgrey)
-                setColors1(COLORS2.vid)
-                selectSq=1;
+                star--;
+                globalThis.triangle=star;
+                setStar(star);
                 setShowResults55(true)
+                setVal(mass);
+                setColors1(COLORS2.strgrey);
+                setColors7(COLORS2.strgrey);
+                setColors2(COLORS2.strgrey);
+                setColors3(COLORS2.strgrey);
+
+                setColors11(COLORS2.strgrey);
+                setColors12(COLORS2.strgrey);
+                setColors13(COLORS2.strgrey);
+                setColors14(COLORS2.strgrey);
+                globalThis.selectSq=1;
             }
         }
         else{
@@ -336,7 +358,7 @@ export function Level() {
                     break;
             }
             const result = await Proma();
-            setColors1(COLORS2.vid)
+            setColors1(COLORS2.strgrey);
             setColors2(COLORS2.strgrey)
             setColors3(COLORS2.strgrey)
             setColors4(COLORS2.strgrey)
@@ -440,7 +462,7 @@ export function Level() {
         setShowResults4(false);
         setHelp(false);
 
-        for(let i=0;i<3;i++){
+        for(let i=0;i<4;i++){
             if(answers[i].isCorrect==true){
                 switch(i) {
                     case 0:
@@ -472,28 +494,96 @@ export function Level() {
         switch(rand1) {
             case 0:
                 setShowResults(true);
-                setColors1(COLORS2.vid);
+                // @ts-ignore
+                globalThis.selectSq=1;
+                document.getElementById("first").focus()
+                break;
+            case 1:
+                setShowResults2(true);
+                // @ts-ignore
+                globalThis.selectSq=2;
+                document.getElementById("second").focus()
+                break;
+            case 2:
+                setShowResults3(true);
+                // @ts-ignore
+                globalThis.selectSq=3;
+                document.getElementById("third").focus()
+                break;
+            case 3:
+                setShowResults4(true);
+                // @ts-ignore
+                globalThis.selectSq=4;
+                document.getElementById("fourth").focus()
+                break;
+        }
+        document.getElementById("50").blur();
+
+        setShowResults55(false);
+        setColors5(COLORS2.strgrey);
+    }
+
+    function MobFith(event,mass,answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp) {
+        let rand1,isCorr;
+        setShowResults(false);
+        setShowResults2(false);
+        setShowResults3(false);
+        setShowResults4(false);
+        setHelp(false);
+
+        for(let i=0;i<4;i++){
+            if(answers[i].isCorrect==true){
+                switch(i) {
+                    case 0:
+                        setShowResults(true);
+                        isCorr=i;
+                        break;
+                    case 1:
+                        setShowResults2(true);
+                        isCorr=i;
+                        break;
+                    case 2:
+                        setShowResults3(true);
+                        isCorr=i;
+                        break;
+                    case 3:
+                        setShowResults4(true);
+                        isCorr=i;
+                        break;
+                }
+            }
+        }
+        console.log(isCorr);
+        rand1=getRandomInt(3);
+
+        while(rand1==isCorr)
+        {
+            rand1=getRandomInt(3);
+        }
+        switch(rand1) {
+            case 0:
+                setShowResults(true);
+                // @ts-ignore
                 globalThis.selectSq=1;
                 break;
             case 1:
                 setShowResults2(true);
-                setColors2(COLORS2.vid);
+                // @ts-ignore
                 globalThis.selectSq=2;
                 break;
             case 2:
                 setShowResults3(true);
-                setColors3(COLORS2.vid);
+                // @ts-ignore
                 globalThis.selectSq=3;
                 break;
             case 3:
                 setShowResults4(true);
-                setColors4(COLORS2.vid);
+                // @ts-ignore
                 globalThis.selectSq=4;
                 break;
         }
-
         setShowResults55(false);
-        setColors5(COLORS2.strgrey)
+        setColors5(COLORS2.strgrey);
     }
 
     function handleEnter(){
@@ -536,49 +626,50 @@ export function Level() {
         switch (selectSq) {
             case 6:
                 if(showResults55==false){
+                    document.getElementById("help").focus();
                 }
                 else {
                     globalThis.selectSq = 5;
-                    setColors5(COLORS2.vid);
-                    setColors6(COLORS2.strgrey);
+                    document.getElementById("50").focus();
+                    document.getElementById("help").blur();
                 }
                 break;
             case 7:
                 if(showResults4==false){
                     if(showResults3==false){
                         globalThis.selectSq=2;
-                        setColors2(COLORS2.vid);
-                        setColors7(COLORS2.strgrey);
+                        document.getElementById("second").focus();
+                        document.getElementById("later").blur();
                     }
                     else{
                         globalThis.selectSq=3;
-                        setColors3(COLORS2.vid);
-                        setColors7(COLORS2.strgrey);
+                        document.getElementById("third").focus();
+                        document.getElementById("later").blur();
                     }
                 }
                 else {
                     globalThis.selectSq = 4;
-                    setColors4(COLORS2.vid);
-                    setColors7(COLORS2.strgrey);
+                    document.getElementById("fourth").focus();
+                    document.getElementById("later").blur();
                 }
                 break;
             case 4:
                 if(showResults3==false){
                     if(showResults2==false){
                         globalThis.selectSq=1;
-                        setColors1(COLORS2.vid);
-                        setColors4(COLORS2.strgrey);
+                        document.getElementById("first").focus();
+                        document.getElementById("fourth").blur();
                     }
                     else{
                         globalThis.selectSq=2;
-                        setColors2(COLORS2.vid);
-                        setColors4(COLORS2.strgrey);
+                        document.getElementById("second").focus();
+                        document.getElementById("fourth").blur();
                     }
                 }
                 else {
                     globalThis.selectSq = 3;
-                    setColors3(COLORS2.vid);
-                    setColors4(COLORS2.strgrey);
+                    document.getElementById("third").focus();
+                    document.getElementById("fourth").blur();
                 }
                 break;
             case 3:
@@ -587,14 +678,14 @@ export function Level() {
                     }
                     else{
                         globalThis.selectSq=1;
-                        setColors1(COLORS2.vid);
-                        setColors3(COLORS2.strgrey);
+                        document.getElementById("first").focus();
+                        document.getElementById("third").blur();
                     }
                 }
                 else {
                     globalThis.selectSq = 2;
-                    setColors2(COLORS2.vid);
-                    setColors3(COLORS2.strgrey);
+                    document.getElementById("second").focus();
+                    document.getElementById("third").blur();
                 }
                 break;
             case 2:
@@ -602,8 +693,8 @@ export function Level() {
                 }
                 else {
                     globalThis.selectSq = 1;
-                    setColors1(COLORS2.vid);
-                    setColors2(COLORS2.strgrey);
+                    document.getElementById("first").focus();
+                    document.getElementById("second").blur();
                 }
                 break;
             default:
@@ -617,61 +708,61 @@ export function Level() {
                 if(showResults2==false){
                     if(showResults3==false){
                         globalThis.selectSq=4;
-                        setColors4(COLORS2.vid);
-                        setColors1(COLORS2.strgrey);
+                        document.getElementById("fourth").focus();
+                        document.getElementById("first").blur();
                     }
                     else{
                         globalThis.selectSq=3;
-                        setColors3(COLORS2.vid);
-                        setColors1(COLORS2.strgrey);
+                        document.getElementById("third").focus();
+                        document.getElementById("first").blur();
                     }
                 }
                 else {
                     globalThis.selectSq = 2;
-                    setColors2(COLORS2.vid);
-                    setColors1(COLORS2.strgrey);
+                    document.getElementById("second").focus();
+                    document.getElementById("first").blur();
                 }
                 break;
             case 2:
                 if(showResults3==false){
                     if(showResults4==false){
                         globalThis.selectSq=1;
-                        setColors1(COLORS2.vid);
-                        setColors2(COLORS2.strgrey);
+                        document.getElementById("first").focus();
+                        document.getElementById("second").blur();
                     }
                     else{
                         globalThis.selectSq=4;
-                        setColors4(COLORS2.vid);
-                        setColors2(COLORS2.strgrey);
+                        document.getElementById("fourth").focus();
+                        document.getElementById("second").blur();
                     }
                 }
                 else {
                     globalThis.selectSq = 3;
-                    setColors3(COLORS2.vid);
-                    setColors2(COLORS2.strgrey);
+                    document.getElementById("third").focus();
+                    document.getElementById("second").blur();
                 }
                 break;
             case 3:
                 if(showResults4==false){
                     globalThis.selectSq = 7;
-                    setColors7(COLORS2.vid);
-                    setColors3(COLORS2.strgrey);
+                    document.getElementById("later").focus();
+                    document.getElementById("third").blur();
                 }
                 else {
                     globalThis.selectSq = 4;
-                    setColors4(COLORS2.vid);
-                    setColors3(COLORS2.strgrey);
+                    document.getElementById("fourth").focus();
+                    document.getElementById("third").blur();
                 }
                 break;
             case 4:
                 globalThis.selectSq=7;
-                setColors7(COLORS2.vid);
-                setColors4(COLORS2.strgrey);
+                document.getElementById("later").focus();
+                document.getElementById("fourth").blur();
                 break;
             case 5:
                 globalThis.selectSq=6;
-                setColors6(COLORS2.vid);
-                setColors5(COLORS2.strgrey);
+                document.getElementById("help").focus();
+                document.getElementById("50").blur();
                 break;
             default:
                 console.log('Diva');
@@ -679,49 +770,66 @@ export function Level() {
         }
     }
     function handleArrowLeft(){
-        if(selectSq!=6) {
+        if(selectSq!=6&&selectSq!=5) {
             if(showResults55==false){
-                globalThis.selectSq = 6;
-                setColors1(COLORS2.strgrey);
-                setColors2(COLORS2.strgrey);
-                setColors3(COLORS2.strgrey);
-                setColors4(COLORS2.strgrey);
-                setColors7(COLORS2.strgrey);
-                setColors6(COLORS2.vid);
+                globalThis.selectSq= 6;
+                if(showResults!=false){
+                    document.getElementById("first").blur();
+                }
+                if(showResults2!=false){
+                    document.getElementById("second").blur();
+                }
+                if(showResults3!=false){
+                    document.getElementById("third").blur();
+                }
+                if(showResults4!=false){
+                    document.getElementById("fourth").blur();
+                }
+                document.getElementById("help").focus();
+                document.getElementById("later").blur();
             }
             else {
                 globalThis.selectSq = 5;
-                setColors1(COLORS2.strgrey);
-                setColors2(COLORS2.strgrey);
-                setColors3(COLORS2.strgrey);
-                setColors4(COLORS2.strgrey);
-                setColors7(COLORS2.strgrey);
-                setColors5(COLORS2.vid);
+                document.getElementById("50").focus();
+                document.getElementById("help").blur();
+                document.getElementById("later").blur();
+                if(showResults!=false){
+                    document.getElementById("first").blur();
+                }
+                if(showResults2!=false){
+                    document.getElementById("second").blur();
+                }
+                if(showResults3!=false){
+                    document.getElementById("third").blur();
+                }
+                if(showResults4!=false){
+                    document.getElementById("fourth").blur();
+                }
             }
         }
     }
     function handleArrowRight(){
+        // @ts-ignore
         if(selectSq>4&&selectSq!=7) {
             if (showResults == false) {
                 if (showResults2 == false) {
+                    // @ts-ignore
                     globalThis.selectSq = 3;
-                    setColors5(COLORS2.strgrey);
-                    setColors6(COLORS2.strgrey);
-                    setColors7(COLORS2.strgrey);
-                    setColors3(COLORS2.vid);
-                } else {
+                    document.getElementById("help").blur();
+                    document.getElementById("later").blur();
+                    document.getElementById("third").focus();
+                }
+                else {
                     globalThis.selectSq = 2;
-                    setColors5(COLORS2.strgrey);
-                    setColors6(COLORS2.strgrey);
-                    setColors7(COLORS2.strgrey);
-                    setColors2(COLORS2.vid);
+                    document.getElementById("help").blur();
+                    document.getElementById("later").blur();
+                    document.getElementById("second").focus();
                 }
             } else {
                 globalThis.selectSq = 1;
-                setColors5(COLORS2.strgrey);
-                setColors6(COLORS2.strgrey);
-                setColors7(COLORS2.strgrey);
-                setColors1(COLORS2.vid);
+                document.getElementById("help").blur();
+                document.getElementById("later").blur();
+                document.getElementById("first").focus();
             }
         }
     }
@@ -799,7 +907,7 @@ export function Level() {
                     <div className={shani.threebutt}>
                         {showResults55 ?
                         <FirstButt className={shani.butt1}
-                                   onClick={() => Fith(event, answers.mass, answers, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp)}>
+                                   onClick={() => MobFith(event, answers.mass, answers, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp)}>
                             <Button text="50/50" className={shani.fifthonfifth}></Button>
                         </FirstButt>
                             : null}
@@ -875,7 +983,7 @@ export function Level() {
                     <div className={imr.textQue}>{way}</div>
                     : null}
                 {showResults ?
-                    <Answer1
+                    <Answer1 id="first" tabIndex={-1}
                         onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15)}
                         className={ciri.rel3}>
                         <Button id={[0].toString()} text={answers[0].answer} className={ciri.fckdiv}></Button>
@@ -883,7 +991,7 @@ export function Level() {
                     : null}
 
                 {showResults2 ?
-                    <Answer2
+                    <Answer2 id="second" tabIndex={-1}
                         onClick={() => clickMe(event, answers[1].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15)}
                         className={ciri.rel3}>
                         <Button id={[1].toString()} text={answers[1].answer} className={ciri.fckdiv}></Button>
@@ -891,7 +999,7 @@ export function Level() {
                     : null}
 
                 {showResults3 ?
-                    <Answer3
+                    <Answer3 id="third" tabIndex={-1}
                         onClick={() => clickMe(event, answers[2].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15)}
                         className={ciri.rel3}>
                         <Button id={[2].toString()} text={answers[2].answer} className={ciri.fckdiv}></Button>
@@ -899,7 +1007,7 @@ export function Level() {
                     : null}
 
                 {showResults4 ?
-                    <Answer4
+                    <Answer4 id="fourth" tabIndex={-1}
                         onClick={() => clickMe(event, answers[3].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15)}
                         className={ciri.rel3}>
                         <Button id={[3].toString()} text={answers[3].answer} className={ciri.fckdiv}></Button>
@@ -908,17 +1016,17 @@ export function Level() {
                 {showResults10 ?
                     <div className={ciri.threebutt}>
                         {showResults55 ?
-                        <FirstButt className={imr.butt1}
+                        <FirstButt id="50" tabIndex={-1} className={imr.butt1}
                                    onClick={() => Fith(event, answers.mass, answers, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp)}>
                             <Button text="50/50" className={ciri.fifthonfifth}></Button>
                         </FirstButt>
                         : null}
-                        <SecondButt className={ciri.butt2}>
+                        <SecondButt id="help" tabIndex={-1} className={ciri.butt2}>
                             <Button text="Помощь" className={ciri.Help}
                                     onClick={() => Help(event, setHelp, answers.help)}></Button>
                         </SecondButt>
 
-                        <ThirdButt className={ciri.butt3}
+                        <ThirdButt id="later"  tabIndex={-1} className={ciri.butt3}
                                    onClick={() => Later(event, mass, setVal, setStar, star, setToast, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp)}>
                             <div className={ciri.Later}>
                                 <Button text="Пропустить за 1" className={ciri.LaterButt}></Button>

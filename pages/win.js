@@ -11,9 +11,7 @@ import ien from "../styles/Level.module.css";
 
 export function Win(){
     const router = useRouter();
-    useEffect(() => {
-        document.getElementById("StartQ").focus();
-    }, []);
+
     function useKey(key,cb){
         const callbackRef=useRef(cb);
         useEffect(()=>{
@@ -73,6 +71,10 @@ export function Win(){
     }
 
     else{
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useEffect(() => {
+            document.getElementById("StartQ").focus();
+        }, []);
         function handleEnter(){
             globalThis.triangle += 3;
             globalThis.hearts += 3;

@@ -105,7 +105,7 @@ export function Que(){
             }
             switch(itr) {
                 case 1:
-                    setColors11(COLORS.strgrey)
+                    setColors11(COLORS.strred)
                     setColors12(COLORS.strgrey)
                     setColors13(COLORS.strgrey)
                     setColors14(COLORS.strgrey)
@@ -146,6 +146,69 @@ export function Que(){
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
+    }
+
+    function MobFith(event,mass,answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp) {
+        let rand1,isCorr;
+        setShowResults(false);
+        setShowResults2(false);
+        setShowResults3(false);
+        setShowResults4(false);
+        setHelp(false);
+
+        for(let i=0;i<4;i++){
+            if(answers[i].isCorrect==true){
+                switch(i) {
+                    case 0:
+                        setShowResults(true);
+                        isCorr=i;
+                        break;
+                    case 1:
+                        setShowResults2(true);
+                        isCorr=i;
+                        break;
+                    case 2:
+                        setShowResults3(true);
+                        isCorr=i;
+                        break;
+                    case 3:
+                        setShowResults4(true);
+                        isCorr=i;
+                        break;
+                }
+            }
+        }
+        console.log(isCorr);
+        rand1=getRandomInt(3);
+
+        while(rand1==isCorr)
+        {
+            rand1=getRandomInt(3);
+        }
+        switch(rand1) {
+            case 0:
+                setShowResults(true);
+                // @ts-ignore
+                globalThis.selectSq=1;
+                break;
+            case 1:
+                setShowResults2(true);
+                // @ts-ignore
+                globalThis.selectSq=2;
+                break;
+            case 2:
+                setShowResults3(true);
+                // @ts-ignore
+                globalThis.selectSq=3;
+                break;
+            case 3:
+                setShowResults4(true);
+                // @ts-ignore
+                globalThis.selectSq=4;
+                break;
+        }
+        setShowResults55(false);
+        setColors5(COLORS2.strgrey);
     }
 
     function Fith(event,mass,answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp) {
@@ -229,17 +292,23 @@ export function Que(){
             setShowResults4(true);
             setHelp(false)
             mass++
-            setVal(mass);
-            star--;
-            globalThis.triangle=star;
-            setStar(star);
-            setShowResults55(true)
-            globalThis.selectSq1=1;
-            setColors1(COLORS.strgrey);
-            setColors7(COLORS.strgrey);
-            setColors2(COLORS.strgrey);
-            setColors3(COLORS.strgrey);
-            setColors4(COLORS.strgrey);
+            if(mass==9){
+                router.push('/win');
+                setStar(5);
+            }
+            else {
+                setVal(mass);
+                star--;
+                globalThis.triangle = star;
+                setStar(star);
+                setShowResults55(true)
+                globalThis.selectSq1 = 1;
+                setColors1(COLORS.strgrey);
+                setColors7(COLORS.strgrey);
+                setColors2(COLORS.strgrey);
+                setColors3(COLORS.strgrey);
+                setColors4(COLORS.strgrey);
+            }
         }
         else{
             setToast(true);
@@ -478,7 +547,7 @@ export function Que(){
 
             <div className={lambert.threebutt}>
                 {showResults55 ?
-                <div className={lambert.butt1} onClick={() => Fith(event,answers.mass, answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)}>
+                <div className={lambert.butt1} onClick={() => MobFith(event,answers.mass, answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)}>
                     <Button text="50/50" className={lambert.fifthonfifth} ></Button>
                 </div> :null}
 

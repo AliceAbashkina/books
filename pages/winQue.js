@@ -10,9 +10,7 @@ import * as indexVar from './index';
 import ien from "../styles/Level.module.css";
 
 export function Win(){
-    useEffect(() => {
-        document.getElementById("StartQ").focus();
-    }, []);
+
     const router = useRouter();
     function useKey(key,cb){
         const callbackRef=useRef(cb);
@@ -67,7 +65,10 @@ export function Win(){
     }
 
     else{
-
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useEffect(() => {
+            document.getElementById("StartQ").focus();
+        }, []);
         function handleEnter(){
             globalThis.index=0;
             router.push('/level')

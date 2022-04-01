@@ -7,9 +7,20 @@ import {AssistantAppState, createAssistant} from "@sberdevices/assistant-client"
 import {COLORS} from "../public/colors";
 import styled from "styled-components";
 
+function Prom(){
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('resolved');
+        }, 100);
+    });
+}
 
-//let deviceKind=detectDevice();
-let deviceKind='sds';
+async function A() {
+    const result = await Prom();
+    console.log('fuuu')
+}
+let deviceKind=detectDevice();
+//let deviceKind='sds';
 console.log(deviceKind)
 
 export var device= deviceKind;
@@ -25,8 +36,6 @@ globalThis.selectSq=-1;
 globalThis.selectSq2=1;
 
 export default function Home(){
-
-
     function useKey(key,cb){
         const callbackRef=useRef(cb);
         useEffect(()=>{
@@ -71,6 +80,7 @@ export default function Home(){
             }
         });
     });
+
     if (deviceKind === 'mobile') {
         return (
             <div className={lutik.con}>
