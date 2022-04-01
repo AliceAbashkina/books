@@ -73,7 +73,7 @@
     height: 117px;
     left: 43%;
     bottom: 10%;
-    background-image: url("./png/square.png");
+    background-color: #FFFF00;
     z-index: 3;
 }
 
