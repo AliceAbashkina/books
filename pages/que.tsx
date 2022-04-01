@@ -293,7 +293,7 @@ export function Que(){
             setHelp(false)
             mass++
             if(mass==9){
-                router.push('/win');
+                router.push('/winQue');
                 setStar(5);
             }
             else {
@@ -491,7 +491,7 @@ export function Que(){
             <div className={lambert.headers}>
                 <Header
                     back={true}
-                    onBackClick={Back}
+                    onBackClick={()=>router.push('/second')}
                 >
                 </Header>
             </div>
