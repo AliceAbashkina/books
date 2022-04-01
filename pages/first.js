@@ -28,6 +28,7 @@ const Body = styled.div `
       animation-fill-mode: forwards;
     `;
 
+
 export function Level() {
     const router = useRouter();
     function useKey(key,cb){
@@ -948,7 +949,7 @@ export function Level() {
         return (
             <Body >
                 {showResults11 ?
-                        <img className={Books} src={'books.png'} height={100} width={100} />
+                        <Image className={Books} src={'books.png'} height={100} width={100} />
                     : null}
                 {showToast ?
                     <div className={imr.Toast}>
