@@ -107,7 +107,7 @@
               {
                 "question": "Какой континент самый маленький в мире?",
                 "answerOptions": [
-                  { "answer": "Австралия" },
+                  { "answer": "Африка" },
                   { "answer": "Азия" },
                   { "answer": "Австралия", "isCorrect": true },
                   { "answer": "Антарктида" }
