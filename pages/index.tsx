@@ -19,8 +19,8 @@ async function A() {
     const result = await Prom();
     console.log('fuuu')
 }
-//let deviceKind=detectDevice();
-let deviceKind='sds';
+let deviceKind=detectDevice();
+//let deviceKind='sds';
 console.log(deviceKind)
 
 export var device= deviceKind;
