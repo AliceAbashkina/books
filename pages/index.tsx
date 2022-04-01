@@ -76,7 +76,6 @@ export default function Home(){
             }
         });
     });
-
     if (deviceKind === 'mobile') {
         return (
             <div className={lutik.con}>
@@ -110,7 +109,7 @@ export default function Home(){
                         <img src="/chel.png" width={250}
                              height={300}/>
                     </div>
-                    <div onClick={() => router.push('/cat')}>
+                    <div onClick={() => router.push('/cat')} className={lutik.Div2}>
                         <button className={lutik.square}>
                             <div className={lutik.play}>
                                 <img src="/play.png" width={85} height={102}/>

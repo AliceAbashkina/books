@@ -48,7 +48,7 @@
   width: 205px;
   height: 74px;
   left: 6px;
-  top: 187px;
+  top: 25%;
 
   font-family: Syo;
   font-style: normal;
@@ -62,7 +62,7 @@
 .runner {
   position: absolute;
   left: 6px;
-  top: 273px;
+  top: 38%;
 
   font-family: Syo;
   font-style: normal;
@@ -94,7 +94,7 @@
   width: 308px;
   height: 17px;
   left: 8px;
-  top: 371px;
+  top: 53%;
 
   font-family: MyInter;
   font-style: normal;
@@ -144,10 +144,15 @@
   margin-top: 0px;
 }
 
+.Div2{
+  position: absolute;
+  height: 100%;
+}
+
 .square{
   position: relative;
   width: 280px;
-  height: 280px;
+  height: 300px;
   margin-right:auto;
   background-color: #FFFF00;
   z-index: 5;
@@ -227,7 +232,7 @@
   width: 77px;
   height: 23px;
   left: 32%;
-  top: 70%;
+  top: 60%;
 
   font-family: MyRubik;
   font-style: normal;
