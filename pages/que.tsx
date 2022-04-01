@@ -189,7 +189,6 @@ export function Que(){
         {
             rand1=getRandomInt(3);
         }
-        console.log("Hi,rand"+selectSq1)
         switch(rand1) {
             case 0:
                 setShowResults(true);
