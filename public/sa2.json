@@ -76,9 +76,9 @@
           "question": "Самый крупный грызун из современных грызунов?",
           "answerOptions": [
             { "answer": "Дикобраз" },
-            { "answer": "Бобёр" },
+            { "answer": "Капибара", "isCorrect": true },
             { "answer": "Суслик" },
-            { "answer": "Капибара", "isCorrect": true }
+            { "answer": "Бобёр" }
           ],
           "help": "Самое милое название"
         },

@@ -18,7 +18,7 @@ const initialize  = (getState:any) => {
     return createAssistant({ getState });
 };
 // @ts-ignore
-selectSq1=1;
+globalThis.selectSq1=1;
 export function Que(){
     function Prom(){
         return new Promise(resolve => {
@@ -73,9 +73,6 @@ export function Que(){
             setColors12(COLORS.strgrey);
             setColors13(COLORS.strgrey);
             setColors14(COLORS.strgrey);
-
-            globalThis.selectSq1=1;
-            setColors1(COLORS.secgrey)
 
             setShowResults(true);
             setShowResults2(true);
@@ -153,13 +150,18 @@ export function Que(){
 
     function Fith(event,mass,answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp) {
         let rand1,isCorr;
+        document.getElementById("first").blur();
+        document.getElementById("second").blur();
+        document.getElementById("third").blur();
+        document.getElementById("fourth").blur();
+
         setShowResults(false);
         setShowResults2(false);
         setShowResults3(false);
         setShowResults4(false);
         setHelp(false);
 
-        for(let i=0;i<3;i++){
+        for(let i=0;i<4;i++){
             if(answers[i].isCorrect==true){
                 switch(i) {
                     case 0:
@@ -174,7 +176,7 @@ export function Que(){
                         setShowResults3(true);
                         isCorr=i;
                         break;
-                    case 3:
+                    default:
                         setShowResults4(true);
                         isCorr=i;
                         break;
@@ -187,32 +189,35 @@ export function Que(){
         {
             rand1=getRandomInt(3);
         }
+        console.log("Hi,rand"+selectSq1)
         switch(rand1) {
             case 0:
                 setShowResults(true);
                 // @ts-ignore
                 globalThis.selectSq1=1;
-                setColors1(COLORS.secgrey);
+                document.getElementById("first").focus()
                 break;
             case 1:
                 setShowResults2(true);
                 // @ts-ignore
                 globalThis.selectSq1=2;
-                setColors2(COLORS.secgrey);
+                document.getElementById("second").focus()
                 break;
             case 2:
                 setShowResults3(true);
                 // @ts-ignore
                 globalThis.selectSq1=3;
-                setColors3(COLORS.secgrey);
+                document.getElementById("third").focus()
                 break;
             case 3:
                 setShowResults4(true);
                 // @ts-ignore
                 globalThis.selectSq1=4;
-                setColors4(COLORS.secgrey);
+                document.getElementById("fourth").focus()
                 break;
         }
+        document.getElementById("50").blur();
+
         setShowResults55(false);
         setColors5(COLORS.strgrey);
     }
@@ -231,8 +236,11 @@ export function Que(){
             setStar(star);
             setShowResults55(true)
             globalThis.selectSq1=1;
-            setColors1(COLORS.secgrey);
+            setColors1(COLORS.strgrey);
             setColors7(COLORS.strgrey);
+            setColors2(COLORS.strgrey);
+            setColors3(COLORS.strgrey);
+            setColors4(COLORS.strgrey);
         }
         else{
             setToast(true);
@@ -643,7 +651,7 @@ export function Que(){
                         else{
                             // @ts-ignore
                             globalThis.selectSq1=3;
-                            document.getElementById("fourth").focus();
+                            document.getElementById("third").focus();
                             document.getElementById("first").blur();
                         }
                     }
@@ -760,27 +768,19 @@ export function Que(){
                         globalThis.selectSq1 = 3;
                         document.getElementById("help").blur();
                         document.getElementById("later").blur();
-                        document.getElementById("first").blur();
                         document.getElementById("third").focus();
-                        document.getElementById("fourth").blur();
-                    } else {
+                    }
+                    else {
                         globalThis.selectSq1 = 2;
                         document.getElementById("help").blur();
                         document.getElementById("later").blur();
-                        document.getElementById("50").blur();
                         document.getElementById("second").focus();
-                        document.getElementById("third").blur();
-                        document.getElementById("fourth").blur();
                     }
                 } else {
                     globalThis.selectSq1 = 1;
                     document.getElementById("help").blur();
                     document.getElementById("later").blur();
-                    document.getElementById("50").blur();
                     document.getElementById("first").focus();
-                    document.getElementById("second").blur();
-                    document.getElementById("third").blur();
-                    document.getElementById("fourth").blur();
                 }
             }
         }

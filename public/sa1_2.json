@@ -46,8 +46,8 @@
         "question": "Где находится ухо у кузнечика?",
         "answerOptions": [
           { "answer": "Голова" },
-          { "answer": "Усики" },
           { "answer": "Лапки" },
+          { "answer": "Усики" },
           { "answer": "Ноги", "isCorrect": true }
         ],
         "help": "Неожиданное место"

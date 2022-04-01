@@ -11,6 +11,9 @@ import ien from "../styles/Level.module.css";
 
 export function Win(){
     const router = useRouter();
+    useEffect(() => {
+        document.getElementById("StartQ").focus();
+    }, []);
     function useKey(key,cb){
         const callbackRef=useRef(cb);
         useEffect(()=>{
@@ -73,6 +76,7 @@ export function Win(){
         function handleEnter(){
             globalThis.triangle += 3;
             globalThis.hearts += 3;
+            globalThis.index=0;
             router.push('/level')
         }
         // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -98,7 +102,7 @@ export function Win(){
                 </div>
                 <div className={win.textQue}>Ты выиграл!</div>
                 <div className={lambert.textQue}>Получи награду</div>
-                <div className={win.rel5} style={{marginTop: 10}} onClick={ClickMe}>
+                <div className={win.rel5} style={{marginTop: 10}} onClick={ClickMe} id="StartQ">
                     <Button  style={{bottom: "10%"}} text={"Окей"} className={lambert.okButt}/>
                     <img src="/rect.png" className={win.bonusIcon}/>
                     <img src="/heart.png" className={win.bonusIcon2}/>

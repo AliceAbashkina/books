@@ -31,6 +31,7 @@ export function Fail(){
     if (indexVar.device == "mobile") {
         globalThis.hearts=5;
         globalThis.triangle=5;
+        globalThis.index=0;
         return (
             <div className={lambert.body}>
                 <div className={lambert.headers}>
@@ -61,6 +62,7 @@ export function Fail(){
         function handleEnter(){
             globalThis.hearts=5;
             globalThis.triangle=5;
+            globalThis.index=0;
             router.push('/');
         }
         // eslint-disable-next-line react-hooks/rules-of-hooks

@@ -94,6 +94,7 @@ export function Level() {
         }
     }
     function handleBackspace(){
+        globalThis.index=0;
         router.push('/cat');
     }
     function handleArrowUp(){

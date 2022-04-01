@@ -10,6 +10,9 @@ import * as indexVar from './index';
 import ien from "../styles/Level.module.css";
 
 export function Win(){
+    useEffect(() => {
+        document.getElementById("StartQ").focus();
+    }, []);
     const router = useRouter();
     function useKey(key,cb){
         const callbackRef=useRef(cb);
@@ -64,7 +67,9 @@ export function Win(){
     }
 
     else{
+
         function handleEnter(){
+            globalThis.index=0;
             router.push('/level')
         }
         // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -89,7 +94,7 @@ export function Win(){
                     <img src="/heart.png" className={lambert.Secondicon}/>
                 </div>
                 <div className={win.textQue}>Ты выиграл!</div>
-                <div className={win.rel5} style={{marginTop: 10}} onClick={ClickMe}>
+                <div className={win.rel5} style={{marginTop: 10}} id="StartQ" onClick={ClickMe}>
                     <Button  style={{bottom: "10%"}} text={"Окей"} className={lambert.okButt}/>
                 </div>
             </div>

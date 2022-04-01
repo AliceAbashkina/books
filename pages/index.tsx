@@ -5,10 +5,11 @@ import {useEffect, useRef, useState} from "react";
 import {detectDevice} from "@sberdevices/plasma-ui";
 import {AssistantAppState, createAssistant} from "@sberdevices/assistant-client";
 import {COLORS} from "../public/colors";
+import styled from "styled-components";
 
 
-let deviceKind=detectDevice();
-//let deviceKind='sds';
+//let deviceKind=detectDevice();
+let deviceKind='sds';
 console.log(deviceKind)
 
 export var device= deviceKind;
@@ -24,6 +25,8 @@ globalThis.selectSq=-1;
 globalThis.selectSq2=1;
 
 export default function Home(){
+
+
     function useKey(key,cb){
         const callbackRef=useRef(cb);
         useEffect(()=>{
@@ -41,6 +44,9 @@ export default function Home(){
         },[key]);
     }
     useKey("Enter",handleEnter);
+    useEffect(() => {
+        document.getElementById("Start").focus();
+    }, []);
 
     function handleEnter(){
         router.push('/cat');
@@ -123,7 +129,7 @@ export default function Home(){
                     </div>
                     <div className={zoltan.svet}>Ученье — свет, а неученье — тьма</div>
                 </div>
-                <div tabIndex={1} onClick={() => router.push('/cat')}>
+                <div tabIndex={1} id="Start" onClick={() => router.push('/cat')}>
                     <button className={zoltan.square}>
                         <div className={zoltan.play}>
                             <img src="/play.png" width={85} height={102}/>
