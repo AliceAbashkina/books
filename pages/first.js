@@ -28,6 +28,19 @@ const Body = styled.div `
       animation-fill-mode: forwards;
     `;
 
+const move_eye  = keyframes `
+     from { margin-left: 100%; } to { margin-left: 0; }  
+`
+
+const BooksObj = styled.img `
+    position: absolute;
+  height: 100px;
+  width: 100px;
+    -webkit-animation: 2s linear 0s infinite alternate ${move_eye};
+    animation: 2s linear 0s infinite running ${move_eye};
+    bottom:10px;
+    z-index: 0;
+  `
 
 export function Level() {
     const router = useRouter();
@@ -931,7 +944,7 @@ export function Level() {
                     <img className={shani.boy} src={'giphy.gif'} height={200} width={200}/>
                     : null}
                 {showResults11 ?
-                    <Image className={Books} src={'books.png'} style={{top: '80%'}} height={100} width={100}/>
+                    <BooksObj className={Books} src={'books.png'} style={{top: '80%'}} height={100} width={100}/>
                     : null}
                 {showResults12 ?
                     <div className={shani.Toast2}>
@@ -949,7 +962,7 @@ export function Level() {
         return (
             <Body >
                 {showResults11 ?
-                        <img className={Books} src={'books.png'} height={100} width={100} />
+                        <BooksObj className={Books} src={'books.png'} height={100} width={100} />
                     : null}
                 {showToast ?
                     <div className={imr.Toast}>
