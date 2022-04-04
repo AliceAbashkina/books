@@ -15,8 +15,8 @@ function Prom(){
     });
 }
 
-let deviceKind=detectDevice();
-//let deviceKind='sds';
+//let deviceKind=detectDevice();
+let deviceKind='sds';
 console.log(deviceKind)
 
 export var device= deviceKind;
