@@ -930,7 +930,7 @@ export function Level() {
                     <img className={shani.boy} src={'giphy.gif'} height={200} width={200}/>
                     : null}
                 {showResults11 ?
-                    <img className={Books} src={'books.png'} style={{top: '85%'}} height={100} width={100}/>
+                    <Image className={Books} src={'books.png'} style={{top: '85%'}} height={100} width={100}/>
                     : null}
                 {showResults12 ?
                     <div className={shani.Toast2}>
@@ -948,7 +948,7 @@ export function Level() {
         return (
             <Body >
                 {showResults11 ?
-                        <img className={Books} src={'books.png'} height={100} width={100} />
+                        <Image className={Books} src={'books.png'} height={100} width={100} />
                     : null}
                 {showToast ?
                     <div className={imr.Toast}>
