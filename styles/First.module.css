@@ -63,7 +63,7 @@
     position: absolute;
     -webkit-animation: 2s linear 0s infinite alternate move_eye;
     animation: 2s linear 0s infinite running move_eye;
-    bottom:60px;
+    bottom:30px;
     z-index: 0;
 }
 
@@ -71,7 +71,7 @@
     position: absolute;
     -webkit-animation: 2s linear 0s infinite alternate move_eye;
     animation: 2s linear 0s infinite paused move_eye;
-    bottom:60px;
+    bottom:30px;
     z-index: 0;
 }
 
