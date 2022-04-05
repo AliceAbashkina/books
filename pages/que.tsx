@@ -14,11 +14,13 @@ import {COLORS2} from "../public/colors";
 import styled from "styled-components";
 import * as indexVar from './index';
 
+// @ts-ignore
+globalThis.selectSq1=1;
+
 const initialize  = (getState:any) => {
     return createAssistant({ getState });
 };
-// @ts-ignore
-globalThis.selectSq1=1;
+
 export function Que(){
     function Prom(){
         return new Promise(resolve => {
@@ -206,6 +208,55 @@ export function Que(){
                 // @ts-ignore
                 globalThis.selectSq=4;
                 break;
+        }
+        if(rand1<isCorr){
+            switch(rand1) {
+                case 0:
+                    // @ts-ignore
+                    globalThis.selectSq=1;
+                    setColors1(COLORS.secgrey)
+                    break;
+                case 1:
+                    // @ts-ignore
+                    globalThis.selectSq=2;
+                    setColors2(COLORS.secgrey)
+                    break;
+                case 2:
+                    // @ts-ignore
+                    globalThis.selectSq=3;
+                    setColors3(COLORS.secgrey)
+                    break;
+                case 3:
+                    // @ts-ignore
+                    globalThis.selectSq=4;
+                    setColors4(COLORS.secgrey)
+                    break;
+            }
+        }
+        else{
+            globalThis.selectSq=isCorr;
+            switch(isCorr) {
+                case 0:
+                    // @ts-ignore
+                    globalThis.selectSq=1;
+                    setColors1(COLORS.secgrey)
+                    break;
+                case 1:
+                    // @ts-ignore
+                    globalThis.selectSq=2;
+                    setColors2(COLORS.secgrey)
+                    break;
+                case 2:
+                    // @ts-ignore
+                    globalThis.selectSq=3;
+                    setColors3(COLORS.secgrey)
+                    break;
+                case 3:
+                    // @ts-ignore
+                    globalThis.selectSq=4;
+                    setColors4(COLORS.secgrey)
+                    break;
+            }
         }
         setShowResults55(false);
         setColors5(COLORS2.strgrey);
@@ -619,6 +670,7 @@ export function Que(){
                 case 6:
                     if(showResults55==false){
                         document.getElementById("help").focus();
+                        setColors6(COLORS.secgrey);
                     }
                     else {
                         // @ts-ignore

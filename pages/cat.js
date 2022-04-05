@@ -14,8 +14,8 @@ import styled from "styled-components";
 export function Cat() {
     const Buttons = styled.div`
       &:focus {
-        outline: none;
-        box-shadow: 0px 0px 2px rebeccapurple;
+        background-color: #ffff00;
+        color: #23262f;
       }
 `;
 
