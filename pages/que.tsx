@@ -365,6 +365,11 @@ export function Que(){
                 setColors3(COLORS.strgrey);
                 setColors4(COLORS.strgrey);
             }
+            setColors11(COLORS.strgrey);
+            setColors7(COLORS.strgrey);
+            setColors12(COLORS.strgrey);
+            setColors13(COLORS.strgrey);
+            setColors14(COLORS.strgrey);
         }
         else{
             setToast(true);
