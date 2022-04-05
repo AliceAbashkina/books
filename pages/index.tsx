@@ -85,7 +85,7 @@ export default function Home(){
                         Smart
                     </div>
                     <div className={lutik.runner}>
-                        Runne
+                        Runner
                     </div>
                     <div className={lutik.svet}>Ученье — свет, а неученье — тьма</div>
                 </div>
