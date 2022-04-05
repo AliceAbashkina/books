@@ -456,6 +456,11 @@ export function Level() {
 
     function Fith(event,mass,answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp) {
         let rand1,isCorr;
+        document.getElementById("first").blur();
+        document.getElementById("second").blur();
+        document.getElementById("third").blur();
+        document.getElementById("fourth").blur();
+
         setShowResults(false);
         setShowResults2(false);
         setShowResults3(false);
@@ -491,36 +496,42 @@ export function Level() {
         {
             rand1=getRandomInt(3);
         }
+        document.getElementById("50").blur();
         switch(rand1) {
             case 0:
                 setShowResults(true);
                 // @ts-ignore
                 globalThis.selectSq=1;
                 document.getElementById("first").focus()
+                setColors1(COLORS2.vid);
                 break;
             case 1:
                 setShowResults2(true);
                 // @ts-ignore
                 globalThis.selectSq=2;
                 document.getElementById("second").focus()
+                setColors2(COLORS2.vid);
                 break;
             case 2:
                 setShowResults3(true);
                 // @ts-ignore
                 globalThis.selectSq=3;
                 document.getElementById("third").focus()
+                setColors3(COLORS2.vid);
                 break;
             case 3:
                 setShowResults4(true);
                 // @ts-ignore
                 globalThis.selectSq=4;
                 document.getElementById("fourth").focus()
+                setColors4(COLORS2.vid);
                 break;
         }
         document.getElementById("50").blur();
 
         setShowResults55(false);
         setColors5(COLORS2.strgrey);
+
     }
 
     function MobFith(event,mass,answers,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp) {
@@ -625,77 +636,104 @@ export function Level() {
     function handleArrowUp(){
         switch (selectSq) {
             case 6:
+                setColors6(COLORS2.strgrey);
                 if(showResults55==false){
+                    setColors6(COLORS2.vid);
                     document.getElementById("help").focus();
                 }
                 else {
                     globalThis.selectSq = 5;
+                    setColors5(COLORS2.vid);
                     document.getElementById("50").focus();
                     document.getElementById("help").blur();
                 }
                 break;
             case 7:
+                setColors7(COLORS2.strgrey);
                 if(showResults4==false){
                     if(showResults3==false){
                         globalThis.selectSq=2;
+                        setColors6(COLORS2.vid);
                         document.getElementById("second").focus();
                         document.getElementById("later").blur();
                     }
                     else{
                         globalThis.selectSq=3;
+                        setColors3(COLORS2.vid);
                         document.getElementById("third").focus();
                         document.getElementById("later").blur();
                     }
                 }
                 else {
                     globalThis.selectSq = 4;
+                    setColors4(COLORS2.vid);
                     document.getElementById("fourth").focus();
                     document.getElementById("later").blur();
                 }
                 break;
             case 4:
+                setColors4(COLORS2.strgrey);
                 if(showResults3==false){
                     if(showResults2==false){
                         globalThis.selectSq=1;
+                        setColors1(COLORS2.vid);
                         document.getElementById("first").focus();
                         document.getElementById("fourth").blur();
                     }
                     else{
                         globalThis.selectSq=2;
+                        setColors2(COLORS2.vid);
                         document.getElementById("second").focus();
                         document.getElementById("fourth").blur();
                     }
                 }
                 else {
                     globalThis.selectSq = 3;
+                    setColors3(COLORS2.vid);
                     document.getElementById("third").focus();
                     document.getElementById("fourth").blur();
                 }
                 break;
             case 3:
+                setColors3(COLORS2.strgrey);
                 if(showResults2==false){
                     if(showResults==false){
+                        setColors3(COLORS2.vid);
+                        globalThis.selectSq=3;
+                        document.getElementById("third").focus();
                     }
                     else{
+                        setColors1(COLORS2.vid);
                         globalThis.selectSq=1;
                         document.getElementById("first").focus();
                         document.getElementById("third").blur();
                     }
                 }
                 else {
+                    setColors2(COLORS2.vid);
                     globalThis.selectSq = 2;
                     document.getElementById("second").focus();
                     document.getElementById("third").blur();
                 }
                 break;
             case 2:
+                setColors2(COLORS2.strgrey);
                 if(showResults==false){
+                    setColors2(COLORS2.vid);
+                    globalThis.selectSq=2;
+                    document.getElementById("second").focus();
                 }
                 else {
                     globalThis.selectSq = 1;
+                    setColors1(COLORS2.vid);
                     document.getElementById("first").focus();
                     document.getElementById("second").blur();
                 }
+                break;
+            case 1:
+                setColors1(COLORS2.vid);
+                globalThis.selectSq1 = 1;
+                document.getElementById("first").focus();
                 break;
             default:
                 console.log('Ana');
@@ -705,65 +743,84 @@ export function Level() {
     function handleArrowDown(){
         switch (selectSq) {
             case 1:
+                setColors1(COLORS2.strgrey);
                 if(showResults2==false){
                     if(showResults3==false){
                         globalThis.selectSq=4;
+                        setColors4(COLORS2.vid);
                         document.getElementById("fourth").focus();
                         document.getElementById("first").blur();
                     }
                     else{
                         globalThis.selectSq=3;
+                        setColors3(COLORS2.vid);
                         document.getElementById("third").focus();
                         document.getElementById("first").blur();
                     }
                 }
                 else {
                     globalThis.selectSq = 2;
+                    setColors2(COLORS2.vid);
                     document.getElementById("second").focus();
                     document.getElementById("first").blur();
                 }
                 break;
             case 2:
+                setColors2(COLORS2.strgrey);
                 if(showResults3==false){
                     if(showResults4==false){
-                        globalThis.selectSq=1;
-                        document.getElementById("first").focus();
+                        globalThis.selectSq=7;
+                        setColors7(COLORS2.vid);
+                        document.getElementById("later").focus();
                         document.getElementById("second").blur();
                     }
                     else{
                         globalThis.selectSq=4;
+                        setColors4(COLORS2.vid);
                         document.getElementById("fourth").focus();
                         document.getElementById("second").blur();
                     }
                 }
                 else {
                     globalThis.selectSq = 3;
+                    setColors3(COLORS2.vid);
                     document.getElementById("third").focus();
                     document.getElementById("second").blur();
                 }
                 break;
             case 3:
+                setColors3(COLORS2.strgrey);
                 if(showResults4==false){
                     globalThis.selectSq = 7;
+                    setColors7(COLORS2.vid);
                     document.getElementById("later").focus();
                     document.getElementById("third").blur();
                 }
                 else {
                     globalThis.selectSq = 4;
+                    setColors4(COLORS2.vid);
                     document.getElementById("fourth").focus();
                     document.getElementById("third").blur();
                 }
                 break;
             case 4:
+                setColors4(COLORS2.strgrey);
                 globalThis.selectSq=7;
+                setColors7(COLORS2.vid);
                 document.getElementById("later").focus();
                 document.getElementById("fourth").blur();
                 break;
             case 5:
+                setColors5(COLORS2.strgrey);
                 globalThis.selectSq=6;
+                setColors6(COLORS2.vid);
                 document.getElementById("help").focus();
                 document.getElementById("50").blur();
                 break;
+            case 7:
+                setColors7(COLORS2.vid);
+                globalThis.selectSq1 = 7;
+                document.getElementById("later").focus();
             default:
                 console.log('Diva');
                 break;
@@ -771,8 +828,14 @@ export function Level() {
     }
     function handleArrowLeft(){
         if(selectSq!=6&&selectSq!=5) {
+            setColors1(COLORS2.strgrey)
+            setColors2(COLORS2.strgrey)
+            setColors3(COLORS2.strgrey)
+            setColors4(COLORS2.strgrey)
+            setColors7(COLORS2.strgrey)
             if(showResults55==false){
                 globalThis.selectSq= 6;
+                setColors6(COLORS2.vid)
                 if(showResults!=false){
                     document.getElementById("first").blur();
                 }
@@ -790,6 +853,7 @@ export function Level() {
             }
             else {
                 globalThis.selectSq = 5;
+                setColors5(COLORS2.vid)
                 document.getElementById("50").focus();
                 document.getElementById("help").blur();
                 document.getElementById("later").blur();
@@ -811,22 +875,27 @@ export function Level() {
     function handleArrowRight(){
         // @ts-ignore
         if(selectSq>4&&selectSq!=7) {
+            setColors5(COLORS2.strgrey)
+            setColors6(COLORS2.strgrey)
             if (showResults == false) {
                 if (showResults2 == false) {
                     // @ts-ignore
                     globalThis.selectSq = 3;
+                    setColors3(COLORS2.vid)
                     document.getElementById("help").blur();
                     document.getElementById("later").blur();
                     document.getElementById("third").focus();
                 }
                 else {
                     globalThis.selectSq = 2;
+                    setColors2(COLORS2.vid)
                     document.getElementById("help").blur();
                     document.getElementById("later").blur();
                     document.getElementById("second").focus();
                 }
             } else {
                 globalThis.selectSq = 1;
+                setColors1(COLORS2.vid)
                 document.getElementById("help").blur();
                 document.getElementById("later").blur();
                 document.getElementById("first").focus();

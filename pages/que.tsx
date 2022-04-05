@@ -303,30 +303,35 @@ export function Que(){
         {
             rand1=getRandomInt(3);
         }
+        document.getElementById("50").blur();
         switch(rand1) {
             case 0:
                 setShowResults(true);
                 // @ts-ignore
                 globalThis.selectSq1=1;
                 document.getElementById("first").focus()
+                setColors1(COLORS.secgrey);
                 break;
             case 1:
                 setShowResults2(true);
                 // @ts-ignore
                 globalThis.selectSq1=2;
                 document.getElementById("second").focus()
+                setColors2(COLORS.secgrey);
                 break;
             case 2:
                 setShowResults3(true);
                 // @ts-ignore
                 globalThis.selectSq1=3;
                 document.getElementById("third").focus()
+                setColors3(COLORS.secgrey);
                 break;
             case 3:
                 setShowResults4(true);
                 // @ts-ignore
                 globalThis.selectSq1=4;
                 document.getElementById("fourth").focus()
+                setColors4(COLORS.secgrey);
                 break;
         }
         document.getElementById("50").blur();
@@ -668,28 +673,34 @@ export function Que(){
             // @ts-ignore
             switch (selectSq1) {
                 case 6:
+                    setColors6(COLORS.strgrey);
                     if(showResults55==false){
-                        document.getElementById("help").focus();
                         setColors6(COLORS.secgrey);
+                        document.getElementById("help").focus();
                     }
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 5;
+                        setColors6(COLORS.strgrey);
+                        setColors5(COLORS.secgrey);
                         document.getElementById("50").focus();
                         document.getElementById("help").blur();
                     }
                     break;
                 case 7:
+                    setColors7(COLORS.strgrey);
                     if(showResults4==false){
                         if(showResults3==false){
                             // @ts-ignore
                             globalThis.selectSq1=2;
+                            setColors1(COLORS.secgrey);
                             document.getElementById("second").focus();
                             document.getElementById("later").blur();
                         }
                         else{
                             // @ts-ignore
                             globalThis.selectSq1=3;
+                            setColors3(COLORS.secgrey);
                             document.getElementById("third").focus();
                             document.getElementById("later").blur();
                         }
@@ -697,21 +708,25 @@ export function Que(){
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 4;
+                        setColors4(COLORS.secgrey);
                         document.getElementById("fourth").focus();
                         document.getElementById("later").blur();
                     }
                     break;
                 case 4:
+                    setColors4(COLORS.strgrey);
                     if(showResults3==false){
                         if(showResults2==false){
                             // @ts-ignore
                             globalThis.selectSq1=1;
+                            setColors1(COLORS.secgrey);
                             document.getElementById("first").focus();
                             document.getElementById("fourth").blur();
                         }
                         else{
                             // @ts-ignore
                             globalThis.selectSq1=2;
+                            setColors2(COLORS.secgrey);
                             document.getElementById("second").focus();
                             document.getElementById("fourth").blur();
                         }
@@ -719,17 +734,23 @@ export function Que(){
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 3;
+                        setColors3(COLORS.secgrey);
                         document.getElementById("third").focus();
                         document.getElementById("fourth").blur();
                     }
                     break;
                 case 3:
+                    setColors3(COLORS.strgrey);
                     if(showResults2==false){
                         if(showResults==false){
+                            globalThis.selectSq1=3;
+                            setColors3(COLORS.secgrey);
+                            document.getElementById("third").focus();
                         }
                         else{
                             // @ts-ignore
                             globalThis.selectSq1=1;
+                            setColors1(COLORS.secgrey);
                             document.getElementById("first").focus();
                             document.getElementById("third").blur();
                         }
@@ -737,19 +758,30 @@ export function Que(){
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 2;
+                        setColors2(COLORS.secgrey);
                         document.getElementById("second").focus();
                         document.getElementById("third").blur();
                     }
                     break;
                 case 2:
+                    setColors2(COLORS.strgrey);
                     if(showResults==false){
+                        globalThis.selectSq1=2;
+                        setColors2(COLORS.secgrey);
+                        document.getElementById("second").focus();
                     }
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 1;
+                        setColors1(COLORS.secgrey);
                         document.getElementById("first").focus();
                         document.getElementById("second").blur();
                     }
+                    break;
+                case 1:
+                    setColors1(COLORS.secgrey);
+                    globalThis.selectSq1 = 1;
+                    document.getElementById("first").focus();
                     break;
                 default:
                     console.log('Ana');
@@ -761,16 +793,19 @@ export function Que(){
             // @ts-ignore
             switch (selectSq1) {
                 case 1:
+                    setColors1(COLORS.strgrey);
                     if(showResults2==false){
                         if(showResults3==false){
                             // @ts-ignore
                             globalThis.selectSq1=4;
                             document.getElementById("fourth").focus();
                             document.getElementById("first").blur();
+                            setColors4(COLORS.secgrey)
                         }
                         else{
                             // @ts-ignore
                             globalThis.selectSq1=3;
+                            setColors3(COLORS.secgrey)
                             document.getElementById("third").focus();
                             document.getElementById("first").blur();
                         }
@@ -778,21 +813,25 @@ export function Que(){
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 2;
+                        setColors2(COLORS.secgrey)
                         document.getElementById("second").focus();
                         document.getElementById("first").blur();
                     }
                     break;
                 case 2:
+                    setColors2(COLORS.strgrey);
                     if(showResults3==false){
                         if(showResults4==false){
                             // @ts-ignore
-                            globalThis.selectSq1=1;
-                            document.getElementById("first").focus();
+                            globalThis.selectSq1=7;
+                            setColors7(COLORS.secgrey)
+                            document.getElementById("later").focus();
                             document.getElementById("second").blur();
                         }
                         else{
                             // @ts-ignore
                             globalThis.selectSq1=4;
+                            setColors4(COLORS.secgrey)
                             document.getElementById("fourth").focus();
                             document.getElementById("second").blur();
                         }
@@ -800,49 +839,68 @@ export function Que(){
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 3;
+                        setColors3(COLORS.secgrey)
                         document.getElementById("third").focus();
                         document.getElementById("second").blur();
                     }
                     break;
                 case 3:
+                    setColors3(COLORS.strgrey);
                     if(showResults4==false){
                         // @ts-ignore
                         globalThis.selectSq1 = 7;
+                        setColors7(COLORS.secgrey)
                         document.getElementById("later").focus();
                         document.getElementById("third").blur();
                     }
                     else {
                         // @ts-ignore
                         globalThis.selectSq1 = 4;
+                        setColors4(COLORS.secgrey)
                         document.getElementById("fourth").focus();
                         document.getElementById("third").blur();
                     }
                     break;
                 case 4:
+                    setColors4(COLORS.strgrey);
                     // @ts-ignore
                     globalThis.selectSq1=7;
+                    setColors7(COLORS.secgrey)
                     document.getElementById("later").focus();
                     document.getElementById("fourth").blur();
                     break;
                 case 5:
                     // @ts-ignore
+                    setColors5(COLORS.strgrey);
+                    setColors6(COLORS.secgrey)
                     globalThis.selectSq1=6;
                     document.getElementById("help").focus();
                     document.getElementById("50").blur();
                     break;
+                case 7:
+                    setColors7(COLORS.secgrey);
+                    globalThis.selectSq1 = 7;
+                    document.getElementById("later").focus();
                 default:
                     console.log('Diva');
                     break;
             }
             // @ts-ignore
             console.log(selectSq1);
+
         }
         // @ts-ignore
         function handleArrowLeft(){
             // @ts-ignore
             if(selectSq1!=6&&selectSq1!=5) {
+                setColors1(COLORS.strgrey)
+                setColors2(COLORS.strgrey)
+                setColors3(COLORS.strgrey)
+                setColors4(COLORS.strgrey)
+                setColors7(COLORS.strgrey)
                 if(showResults55==false){
                     globalThis.selectSq1 = 6;
+                    setColors6(COLORS.secgrey)
                     if(showResults!=false){
                         document.getElementById("first").blur();
                     }
@@ -860,6 +918,7 @@ export function Que(){
                 }
                 else {
                     globalThis.selectSq1 = 5;
+                    setColors5(COLORS.secgrey)
                     document.getElementById("50").focus();
                     document.getElementById("help").blur();
                     document.getElementById("later").blur();
@@ -882,22 +941,27 @@ export function Que(){
         function handleArrowRight(){
             // @ts-ignore
             if(selectSq1>4&&selectSq1!=7) {
+                setColors5(COLORS.strgrey)
+                setColors6(COLORS.strgrey)
                 if (showResults == false) {
                     if (showResults2 == false) {
                         // @ts-ignore
                         globalThis.selectSq1 = 3;
+                        setColors3(COLORS.secgrey)
                         document.getElementById("help").blur();
                         document.getElementById("later").blur();
                         document.getElementById("third").focus();
                     }
                     else {
                         globalThis.selectSq1 = 2;
+                        setColors2(COLORS.secgrey)
                         document.getElementById("help").blur();
                         document.getElementById("later").blur();
                         document.getElementById("second").focus();
                     }
                 } else {
                     globalThis.selectSq1 = 1;
+                    setColors1(COLORS.secgrey)
                     document.getElementById("help").blur();
                     document.getElementById("later").blur();
                     document.getElementById("first").focus();
