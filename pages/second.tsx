@@ -11,8 +11,13 @@ import imr from "../styles/Que_NM.module.css";
 import {useRouter} from "next/router";
 import * as indexVar from './index';
 // @ts-ignore
-selectSq2=1;
+globalThis.selectSq2=1;
+
 export function Second(){
+    useEffect(() => {
+        document.getElementById("first").focus();
+    }, []);
+
     function handleEnter(){
         if( // @ts-ignore
             selectSq2<3){
@@ -67,6 +72,7 @@ export function Second(){
             selectSq2) {
             case 1:
                 // @ts-ignore
+
                 globalThis.selectSq2=3;
                 document.getElementById("third").focus();
                 document.getElementById("first").blur();
@@ -95,7 +101,6 @@ export function Second(){
         }
     }
     function handleArrowRight(){
-
         switch (
             // @ts-ignore
             selectSq2) {

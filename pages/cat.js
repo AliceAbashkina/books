@@ -14,13 +14,13 @@ import styled from "styled-components";
 export function Cat() {
     const Buttons = styled.div`
       background-color: #502ba7;
-      &:focus {
-        background-color: #ffff00;
-        color: #23262f;
-      }
 `;
 
 const router = useRouter();
+    useEffect(() => {
+        document.getElementById("butt").focus();
+    }, []);
+
     function handleEnter(){
         router.push('/level');
         console.log("bruh");
@@ -43,7 +43,7 @@ const router = useRouter();
     useKey("ArrowRight",handleArrowRight);
     useKey("ArrowDown", handleArrowDown);
     useKey("ArrowDown", handleArrowUp);
-    1
+
     function useKey(key,cb){
         const callbackRef=useRef(cb);
         useEffect(()=>{
@@ -62,7 +62,7 @@ const router = useRouter();
     }
 
     const [index,setValue] = useState(0);
-    const massIm=["/dog.png","/travel.png"];
+    const massIm=["/dog.png","/mountin.png"];
 
     if (indexVar.device == "mobile") {
         return (
@@ -119,14 +119,6 @@ const router = useRouter();
                 <div tabIndex={-1} className={eskel.square}>
                     <div tabIndex={-1} className={eskel.textCat}>
                         {text[index]}
-                    </div>
-                </div>
-                <div  tabIndex={-1} className={eskel.Group}>
-                    <div tabIndex={-1} id={"left"} onClick={() => ClickLeft(event, index, setValue)} className={eskel.buttonArrow}>
-                        <Button tabIndex={-1}><IconArrowLeft color={white}/></Button>
-                    </div>
-                    <div tabIndex={-1}  id={"right"} onClick={() => ClickRight(event, index, setValue)} className={eskel.buttonArrow}>
-                        <Button tabIndex={-1}><IconArrowRight color={white}/></Button>
                     </div>
                 </div>
                 <Buttons className={eskel.okButtonDes} autoFocus id={"butt"} tabIndex={-1} onClick={() => router.push('/level')}>

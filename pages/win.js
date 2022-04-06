@@ -33,7 +33,7 @@ export function Win(){
     function ClickMe() {
         globalThis.triangle += 3;
         globalThis.hearts += 3;
-        router.push('/level')
+        router.push('/cat')
     }
 
     if (indexVar.device == "mobile") {
@@ -79,7 +79,7 @@ export function Win(){
             globalThis.triangle += 3;
             globalThis.hearts += 3;
             globalThis.index=0;
-            router.push('/level')
+            router.push('/cat')
         }
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("Enter",handleEnter);

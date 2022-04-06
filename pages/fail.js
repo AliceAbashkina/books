@@ -63,7 +63,7 @@ export function Fail(){
             globalThis.hearts=5;
             globalThis.triangle=5;
             globalThis.index=0;
-            router.push('/');
+            router.push('/cat');
         }
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("Enter",handleEnter);
