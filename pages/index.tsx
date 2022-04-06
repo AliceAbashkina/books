@@ -119,6 +119,7 @@ export default function Home(){
         );
     }
     else{
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
             document.getElementById("Start").focus();
         }, []);
