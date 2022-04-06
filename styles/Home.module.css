@@ -5,14 +5,14 @@
     font-family: Syo;
     font-style: normal;
     font-weight: 400;
-    src: url('/agencyfb_bold.ttf') format('truetype')
-    font-display: block;
+    src: url('/agencyfb_bold.ttf') format('truetype');
+    font-display: block
 }
 
 @font-face {
     font-family: MyInter;
     font-style: normal;
-    src: url('/InterMy.ttf') format('truetype')
+    src: url('/InterMy.ttf') format('truetype');
     font-display: block;
 }
 
@@ -20,7 +20,7 @@
     font-family: MyRubik;
     font-style: normal;
     font-weight: 400;
-    src: url('/RubikMy.ttf') format('truetype')
+    src: url('/RubikMy.ttf') format('truetype');
     font-display: block;
 }
 
