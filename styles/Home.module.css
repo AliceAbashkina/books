@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;700&family=Rubik:wght@700&display=swap');
 
-.wf-loading body {
-    visibility: hidden;
-}
 @font-face {
     font-family: Syo;
     font-style: normal;
     font-weight: 400;
     src: url('/agencyfb_bold.ttf') format('truetype')
+    font-display: block;
 }
 
 @font-face {
     font-family: MyInter;
     font-style: normal;
     src: url('/InterMy.ttf') format('truetype')
+    font-display: block;
 }
 
 @font-face {
@@ -22,6 +21,7 @@
     font-style: normal;
     font-weight: 400;
     src: url('/RubikMy.ttf') format('truetype')
+    font-display: block;
 }
 
 .con {
