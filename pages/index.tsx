@@ -49,9 +49,6 @@ export default function Home(){
         },[key]);
     }
     useKey("Enter",handleEnter);
-    useEffect(() => {
-        document.getElementById("Start").focus();
-    }, []);
 
     function handleEnter(){
         router.push('/cat');
@@ -122,6 +119,9 @@ export default function Home(){
         );
     }
     else{
+        useEffect(() => {
+            document.getElementById("Start").focus();
+        }, []);
         return(
             <div className={zoltan.bodys}>
                 <div className={zoltan.three}>
