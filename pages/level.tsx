@@ -15,9 +15,6 @@ import * as indexVar from "./index";
 globalThis.selectQ=1;
 
 export function Level() {
-    useEffect(() => {
-        document.getElementById("Mycon1").focus();
-    }, []);
     const [focusState1, setFocus1]= useState(true);
     const [focusState2, setFocus2]= useState(false);
     function squareQ1(){

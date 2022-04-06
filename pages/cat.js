@@ -17,9 +17,6 @@ export function Cat() {
 `;
 
 const router = useRouter();
-    useEffect(() => {
-        document.getElementById("butt").focus();
-    }, []);
 
     function handleEnter(){
         router.push('/level');
@@ -101,6 +98,10 @@ const router = useRouter();
         );
     }
     else {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useEffect(() => {
+            document.getElementById("butt").focus();
+        }, []);
         return(
             <div  tabIndex={-1} className={geralt.body} >
                 <Header
