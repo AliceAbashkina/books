@@ -198,7 +198,7 @@ export function Level() {
                 <div tabIndex={-1} className={imr.Toast}>
                     <Toast  text={"В следующей версии("} /> </div>
                 :null}
-            <Container1 id="Mycon1"  onClick={() =>squareQ1()} tabIndex={-1}>
+            <Container1 id={"Mycon1"}  onClick={() =>squareQ1()} tabIndex={-1}>
                 <div tabIndex={-1} className={ien.text1}>
                     Чем дальше бежишь, тем сложнее вопросы
                 </div>
@@ -215,7 +215,7 @@ export function Level() {
                 <img tabIndex={-1} src="/heart.png" className={vesemir.bonusIcon2}/>
             </Container1>
 
-            <Container2 id="Mycon2" className={vesemir.squareQ2} onClick={() =>squareQ2()} tabIndex={-1}>
+            <Container2 id={"Mycon2"} className={vesemir.squareQ2} onClick={() =>squareQ2()} tabIndex={-1}>
                 <div tabIndex={-1}className={ien.text21}>
                     Сложность по уровням
                 </div>
