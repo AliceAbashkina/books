@@ -1017,7 +1017,7 @@ export function Level() {
         return (
             <Body >
                 {showResults11 ?
-                        <Image className={Books} src={'books.png'} height={100} width={100} style={{top: '90%'}}/>
+                        <Image className={Books} src={'books.png'} height={100} width={100} style={{top: '85%'}}/>
                     : null}
                 {showToast ?
                     <div className={imr.Toast}>
