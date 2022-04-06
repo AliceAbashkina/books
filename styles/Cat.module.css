@@ -101,6 +101,7 @@
     left: 5%;
 
     z-index: 3;
+    background: #502ba7;
     box-shadow: -6px -6px 16px rgba(255, 255, 255, 0.1), 6px 9px 40px rgba(48, 49, 55, 0.54);
     border-radius: 64px;
 }
