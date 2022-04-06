@@ -23,6 +23,8 @@ const DocumentStyle = createGlobalStyle`
         outline: 0 none;
     }
 `;
+
+
 const ColorThemeStyle = createGlobalStyle(darkSber);
 
 export const GlobalStyle = () => {
