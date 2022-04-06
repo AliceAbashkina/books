@@ -14,10 +14,6 @@ import * as indexVar from './index';
 globalThis.selectSq2=1;
 
 export function Second(){
-    useEffect(() => {
-        document.getElementById("first").focus();
-    }, []);
-
     function handleEnter(){
         if( // @ts-ignore
             selectSq2<3){
@@ -350,6 +346,9 @@ export function Second(){
         );
     }
     else{
+        useEffect(() => {
+            document.getElementById("first").focus();
+        }, []);
         return(
             <div  tabIndex={-1} className={triss.body}>
                 { showHelp?

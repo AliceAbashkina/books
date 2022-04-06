@@ -112,122 +112,124 @@ export function Level() {
 
     if (indexVar.device == "mobile") {
         return(
-            <div className={ien.bqs}>
-                <div className={ien.backtext}>
-                    Тип забега
-                </div>
-                <Header
-                    back={true}
-                    className={ien.headers}
-                    onBackClick={() => router.push('/cat')}
-                >
-                </Header>
-                <div className={ien.fuck}>
-                    <div className={ien.texticon1}>
-                        {
-                            // @ts-ignore
-                            triangle}
-                    </div>
-                    <img src="/rect.png" className={ien.Firsticon}/>
-                    <div className={ien.texticon2}>
-                        {// @ts-ignore
-                            hearts}
-                    </div>
-                    <img src="/heart.png" className={ien.Secondicon}/>
-                </div>
-
-                <div className={ien.squareQ1}  onClick={() => router.push('/first')}>
-                    <div className={ien.text1}>
-                        Чем дальше бежишь, тем сложнее вопросы
-                    </div>
-                    <div className={ien.text2}>
-                        Беги, пока можешь
-                    </div>
-                    <div className={ien.text3}>
-                        На выживание
-                    </div>
-                    <div className={ien.bonus}>
-                        +3
-                    </div>
-                    <img src="/rect.png" className={ien.bonusIcon}/>
-                    <img src="/heart.png" className={ien.bonusIcon2}/>
-                </div>
-
-
-                <div className={ien.squareQ2}  onClick={() => router.push('/second')} >
-                    <div className={ien.text21}>
-                        Сложность по уровням
-                    </div>
-                    <div className={ien.text22}>
-                        Чем дальше, тем сложнее
-                    </div>
-                    <div className={ien.text23}>
-                        По уровням
-                    </div>
-                </div>
-
-
+        <div className={ien.bqs}>
+            <div className={ien.backtext}>
+                Тип забега
             </div>
-        );}
+            <Header
+                back={true}
+                className={ien.headers}
+                onBackClick={() => router.push('/cat')}
+            >
+            </Header>
+            <div className={ien.fuck}>
+                <div className={ien.texticon1}>
+                    {
+                        // @ts-ignore
+                        triangle}
+                </div>
+                <img src="/rect.png" className={ien.Firsticon}/>
+                <div className={ien.texticon2}>
+                    {// @ts-ignore
+                        hearts}
+                </div>
+                <img src="/heart.png" className={ien.Secondicon}/>
+            </div>
+
+            <div className={ien.squareQ1}  onClick={() => router.push('/first')}>
+                <div className={ien.text1}>
+                    Чем дальше бежишь, тем сложнее вопросы
+                </div>
+                <div className={ien.text2}>
+                    Беги, пока можешь
+                </div>
+                <div className={ien.text3}>
+                    На выживание
+                </div>
+                <div className={ien.bonus}>
+                    +3
+                </div>
+                <img src="/rect.png" className={ien.bonusIcon}/>
+                <img src="/heart.png" className={ien.bonusIcon2}/>
+            </div>
+
+
+            <div className={ien.squareQ2}  onClick={() => router.push('/second')} >
+                <div className={ien.text21}>
+                    Сложность по уровням
+                </div>
+                <div className={ien.text22}>
+                    Чем дальше, тем сложнее
+                </div>
+                <div className={ien.text23}>
+                    По уровням
+                </div>
+            </div>
+
+
+        </div>
+    );}
     else {
+        useEffect(() => {
+            document.getElementById("Mycon1").focus();
+        }, []);
         return (
-
             <div tabIndex={-1} className={ien.bqs} >
-                <div tabIndex={-1} className={ien.backtext}>
-                    Тип забега
+            <div tabIndex={-1} className={ien.backtext}>
+                Тип забега
+            </div>
+            <Header tabIndex={-1}
+                back={true}
+                className={ien.headers}
+                onBackClick={() => router.push('/cat')}
+            >
+            </Header>
+            <div tabIndex={-1} className={ien.fuck}>
+                <div tabIndex={-1} className={ien.texticon1}>
+                    { // @ts-ignore
+                        triangle}
                 </div>
-                <Header tabIndex={-1}
-                        back={true}
-                        className={ien.headers}
-                        onBackClick={() => router.push('/cat')}
-                >
-                </Header>
-                <div tabIndex={-1} className={ien.fuck}>
-                    <div tabIndex={-1} className={ien.texticon1}>
-                        { // @ts-ignore
-                            triangle}
-                    </div>
-                    <img tabIndex={-1} src="/rect.png" className={ien.Firsticon}/>
-                    <div tabIndex={-1} className={ien.texticon2}>
-                        {   // @ts-ignore
-                            hearts}
-                    </div>
-                    <img tabIndex={-1} src="/heart.png" className={ien.Secondicon}/>
+                <img tabIndex={-1} src="/rect.png" className={ien.Firsticon}/>
+                <div tabIndex={-1} className={ien.texticon2}>
+                    {   // @ts-ignore
+                        hearts}
                 </div>
-                { showHelp?
-                    <div tabIndex={-1} className={imr.Toast}>
-                        <Toast  text={"В следующей версии("} /> </div>
-                    :null}
-                <Container1 id="Mycon1"  onClick={() =>squareQ1()} tabIndex={-1}>
-                    <div tabIndex={-1} className={ien.text1}>
-                        Чем дальше бежишь, тем сложнее вопросы
-                    </div>
-                    <div tabIndex={-1} className={ien.text2}>
-                        Беги, пока можешь
-                    </div>
-                    <div tabIndex={-1} className={ien.text3}>
-                        На выживание
-                    </div>
-                    <div tabIndex={-1} className={ien.bonus}>
-                        +3
-                    </div>
-                    <img tabIndex={-1} src="/rect.png" className={vesemir.bonusIcon}/>
-                    <img tabIndex={-1} src="/heart.png" className={vesemir.bonusIcon2}/>
-                </Container1>
+                <img tabIndex={-1} src="/heart.png" className={ien.Secondicon}/>
+            </div>
+            { showHelp?
+                <div tabIndex={-1} className={imr.Toast}>
+                    <Toast  text={"В следующей версии("} /> </div>
+                :null}
+            <Container1 id="Mycon1"  onClick={() =>squareQ1()} tabIndex={-1}>
+                <div tabIndex={-1} className={ien.text1}>
+                    Чем дальше бежишь, тем сложнее вопросы
+                </div>
+                <div tabIndex={-1} className={ien.text2}>
+                    Беги, пока можешь
+                </div>
+                <div tabIndex={-1} className={ien.text3}>
+                    На выживание
+                </div>
+                <div tabIndex={-1} className={ien.bonus}>
+                    +3
+                </div>
+                <img tabIndex={-1} src="/rect.png" className={vesemir.bonusIcon}/>
+                <img tabIndex={-1} src="/heart.png" className={vesemir.bonusIcon2}/>
+            </Container1>
 
-                <Container2 id="Mycon2" className={vesemir.squareQ2} onClick={() =>squareQ2()} tabIndex={-1}>
-                    <div tabIndex={-1}className={ien.text21}>
-                        Сложность по уровням
-                    </div>
-                    <div tabIndex={-1} className={ien.text22}>
-                        Чем дальше, тем сложнее
-                    </div>
-                    <div  tabIndex={-1} className={ien.text23}>
-                        По уровням
-                    </div>
-                </Container2>
+            <Container2 id="Mycon2" className={vesemir.squareQ2} onClick={() =>squareQ2()} tabIndex={-1}>
+                <div tabIndex={-1}className={ien.text21}>
+                    Сложность по уровням
+                </div>
+                <div tabIndex={-1} className={ien.text22}>
+                    Чем дальше, тем сложнее
+                </div>
+                <div  tabIndex={-1} className={ien.text23}>
+                    По уровням
+                </div>
+            </Container2>
 
-            </div>);
+        </div>);
     }
 }
 
