@@ -32,14 +32,10 @@ const router = useRouter();
     }
 
     function handleArrowDown(){
-        document.getElementById("butt").focus();
-        document.getElementById("right").blur();
-        document.getElementById("left").blur();
+
     }
     function handleArrowUp(){
-        document.getElementById("butt").blur();
-        document.getElementById("right").focus();
-        document.getElementById("left").focus();
+
     }
     useKey("Enter",handleEnter);
     useKey("ArrowLeft",handleArrowLeft);
@@ -132,7 +128,7 @@ const router = useRouter();
                         <Button tabIndex={-1}><IconArrowRight color={white}/></Button>
                     </div>
                 </div>
-                <Buttons className={eskel.okButtonDes} id={"butt"} tabIndex={-1} onClick={() => router.push('/level')}>
+                <Buttons className={eskel.okButtonDes} autoFocus id={"butt"} tabIndex={-1} onClick={() => router.push('/level')}>
                     <div tabIndex={-1}><Button tabIndex={-1} className={eskel.buttonW} text="ВЫБРАТЬ"/></div>
                 </Buttons>
             </div>
