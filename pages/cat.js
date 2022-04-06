@@ -30,10 +30,23 @@ const router = useRouter();
     function handleArrowRight(){
         ClickRight(event, index, setValue)
     }
+
+    function handleArrowDown(){
+        document.getElementById("butt").focus();
+        document.getElementById("right").blur();
+        document.getElementById("left").blur();
+    }
+    function handleArrowUp(){
+        document.getElementById("butt").blur();
+        document.getElementById("right").focus();
+        document.getElementById("left").focus();
+    }
     useKey("Enter",handleEnter);
     useKey("ArrowLeft",handleArrowLeft);
     useKey("ArrowRight",handleArrowRight);
-
+    useKey("ArrowDown", handleArrowDown);
+    useKey("ArrowDown", handleArrowUp);
+    1
     function useKey(key,cb){
         const callbackRef=useRef(cb);
         useEffect(()=>{
@@ -112,14 +125,14 @@ const router = useRouter();
                     </div>
                 </div>
                 <div  tabIndex={-1} className={eskel.Group}>
-                    <div tabIndex={-1} onClick={() => ClickLeft(event, index, setValue)} className={eskel.buttonArrow}>
+                    <div tabIndex={-1} id={"left"} onClick={() => ClickLeft(event, index, setValue)} className={eskel.buttonArrow}>
                         <Button tabIndex={-1}><IconArrowLeft color={white}/></Button>
                     </div>
-                    <div tabIndex={-1} onClick={() => ClickRight(event, index, setValue)} className={eskel.buttonArrow}>
+                    <div tabIndex={-1}  id={"right"} onClick={() => ClickRight(event, index, setValue)} className={eskel.buttonArrow}>
                         <Button tabIndex={-1}><IconArrowRight color={white}/></Button>
                     </div>
                 </div>
-                <Buttons className={eskel.okButtonDes} autoFocus tabIndex={-1} onClick={() => router.push('/level')}>
+                <Buttons className={eskel.okButtonDes} id={"butt"} tabIndex={-1} onClick={() => router.push('/level')}>
                     <div tabIndex={-1}><Button tabIndex={-1} className={eskel.buttonW} text="ВЫБРАТЬ"/></div>
                 </Buttons>
             </div>
