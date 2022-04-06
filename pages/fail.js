@@ -68,27 +68,27 @@ export function Fail(){
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("Enter",handleEnter);
         return (
-            <div className={lambert.body}>
-                <div className={lambert.headers}>
+            <div tabIndex={-1} className={lambert.body}>
+                <div tabIndex={-1} className={lambert.headers}>
                     <Header
                         back={true}
                         onBackClick={() => router.push('/second')}
                     >
                     </Header>
                 </div>
-                <div className={lambert.fuck}>
-                    <div className={lambert.texticon1}>
+                <div tabIndex={-1} className={lambert.fuck}>
+                    <div tabIndex={-1} className={lambert.texticon1}>
                         {triangle}
                     </div>
-                    <img src="/rect.png" className={lambert.Firsticon}/>
-                    <div className={lambert.texticon2}>
+                    <img tabIndex={-1} src="/rect.png" className={lambert.Firsticon}/>
+                    <div tabIndex={-1} className={lambert.texticon2}>
                         {hearts}
                     </div>
-                    <img src="/heart.png" className={lambert.Secondicon}/>
+                    <img tabIndex={-1} src="/heart.png" className={lambert.Secondicon}/>
                 </div>
-                <div className={lambert.textFail}>Ты проиграл</div>
-                <div className={lambert.rel5} style={{marginTop: 10}} onClick={() => router.push('/')}>
-                    <Button text={"Окей"} className={lambert.okButt}/>
+                <div tabIndex={-1} autoFocus className={lambert.textFail}>Ты проиграл</div>
+                <div tabIndex={-1}  className={lambert.rel5} style={{marginTop: 10}} onClick={() => router.push('/')}>
+                    <Button tabIndex={-1} text={"Окей"} className={lambert.okButt}/>
                 </div>
             </div>
         );
