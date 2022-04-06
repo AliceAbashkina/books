@@ -1017,7 +1017,7 @@ export function Level() {
         return (
             <Body >
                 {showResults11 ?
-                        <Image className={Books} src={'books.png'} height={100} width={100} style={{top: '80%'}}/>
+                        <Image className={Books} src={'books.png'} height={100} width={100} style={{top: '90%'}}/>
                     : null}
                 {showToast ?
                     <div className={imr.Toast}>
@@ -1090,9 +1090,9 @@ export function Level() {
                             <Button text="50/50" className={ciri.fifthonfifth}></Button>
                         </FirstButt>
                         : null}
-                        <SecondButt id="help" tabIndex={-1} className={ciri.butt2}>
+                        <SecondButt id="help" tabIndex={-1} className={ciri.butt2} onClick={() => Help(event, setHelp, answers.help)}>
                             <Button text="Помощь" className={ciri.Help}
-                                    onClick={() => Help(event, setHelp, answers.help)}></Button>
+                                    ></Button>
                         </SecondButt>
 
                         <ThirdButt id="later"  tabIndex={-1} className={ciri.butt3}
