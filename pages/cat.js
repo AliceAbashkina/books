@@ -18,12 +18,6 @@ export function Cat() {
         color: #23262f;
       }
 `;
-    const ButtonZ = styled.button`
-      &:focus {
-        background-color: #ffff00;
-        color: #23262f;
-      }
-`;
 
 const router = useRouter();
     function handleEnter(){
@@ -135,7 +129,7 @@ const router = useRouter();
                     </div>
                 </div>
                 <Buttons className={eskel.okButtonDes} autoFocus id={"butt"} tabIndex={-1} onClick={() => router.push('/level')}>
-                    <div tabIndex={-1}><ButtonZ tabIndex={-1} className={eskel.buttonW} text="ВЫБРАТЬ"/></div>
+                    <div tabIndex={-1}><Button tabIndex={-1} className={eskel.buttonW} text="ВЫБРАТЬ"/></div>
                 </Buttons>
             </div>
         );

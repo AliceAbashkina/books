@@ -1106,17 +1106,17 @@ export function Level() {
                     </div>
                     : null}
                 {showResults13 ?
-                    <img className={ciri.boy} src={'giphy.gif'} height={200} width={200}/>
+                    <img tabIndex={-1} className={ciri.boy} src={'giphy.gif'} height={200} width={200}/>
                     : null}
 
                 {showResults12 ?
-                    <div className={ciri.Toast2}>
-                        <Toast text="Когда человек добежит до препятствия - появится вопрос. Готов(а)?"/></div>
+                    <div tabIndex={-1} className={ciri.Toast2}>
+                        <Toast tabIndex={-1} text="Когда человек добежит до препятствия - появится вопрос. Готов(а)?"/></div>
                     : null}
                 {showResults14 ?
-                    <div className={ciri.fckdivOk} style={{marginTop: 10}}
+                    <div tabIndex={-1} className={ciri.fckdivOk} style={{marginTop: 10}}
                          onClick={() => Start()}>
-                        <Button text={"Ok"} className={ciri.brOk}></Button>
+                        <Button tabIndex={-1} autoFocus text={"Ok"} className={ciri.brOk}></Button>
                     </div>
                     : null}
             </Body>
