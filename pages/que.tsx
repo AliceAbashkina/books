@@ -783,11 +783,6 @@ export function Que(){
                         document.getElementById("second").blur();
                     }
                     break;
-                case 1:
-                    setColors1(COLORS.secgrey);
-                    globalThis.selectSq1 = 1;
-                    document.getElementById("first").focus();
-                    break;
                 default:
                     console.log('Ana');
                     break;
@@ -882,10 +877,6 @@ export function Que(){
                     document.getElementById("help").focus();
                     document.getElementById("50").blur();
                     break;
-                case 7:
-                    setColors7(COLORS.secgrey);
-                    globalThis.selectSq1 = 7;
-                    document.getElementById("later").focus();
                 default:
                     console.log('Diva');
                     break;

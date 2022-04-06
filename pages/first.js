@@ -812,10 +812,6 @@ export function Level() {
                 document.getElementById("help").focus();
                 document.getElementById("50").blur();
                 break;
-            case 7:
-                setColors7(COLORS2.vid);
-                globalThis.selectSq1 = 7;
-                document.getElementById("later").focus();
             default:
                 console.log('Diva');
                 break;
