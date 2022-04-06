@@ -86,8 +86,8 @@ export function Fail(){
                     </div>
                     <img tabIndex={-1} src="/heart.png" className={lambert.Secondicon}/>
                 </div>
-                <div tabIndex={-1} autoFocus className={lambert.textFail}>Ты проиграл</div>
-                <div tabIndex={-1}  className={lambert.rel5} style={{marginTop: 10}} onClick={() => router.push('/')}>
+                <div tabIndex={-1}  className={lambert.textFail}>Ты проиграл</div>
+                <div tabIndex={-1} autoFocus className={lambert.rel5} style={{marginTop: 10}} onClick={() => router.push('/')}>
                     <Button tabIndex={-1} text={"Окей"} className={lambert.okButt}/>
                 </div>
             </div>
