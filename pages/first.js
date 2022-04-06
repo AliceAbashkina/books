@@ -928,7 +928,7 @@ export function Level() {
                         className={lambert.headers}
                     >
                     </Header>
-                <div className={ciri.TextBack}>Путешествия</div>
+                <div className={ciri.TextBack}>Животные</div>
                 {showResultsQ ?
                     <div className={lambert.textQue}>{way}</div>
                     : null}
