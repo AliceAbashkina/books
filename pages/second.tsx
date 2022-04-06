@@ -346,6 +346,7 @@ export function Second(){
         );
     }
     else{
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
             document.getElementById("first").focus();
         }, []);
