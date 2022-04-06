@@ -1052,7 +1052,7 @@ export function Level() {
                     <div className={imr.textQue}>{way}</div>
                     : null}
                 {showResults ?
-                    <Answer1 id="first" tabIndex={-1}
+                    <Answer1 id={"first"} tabIndex={-1}
                         onClick={() => clickMe(event, answers[0].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15)}
                         className={ciri.rel3}>
                         <Button id={[0].toString()} text={answers[0].answer} className={ciri.fckdiv}></Button>
@@ -1060,7 +1060,7 @@ export function Level() {
                     : null}
 
                 {showResults2 ?
-                    <Answer2 id="second" tabIndex={-1}
+                    <Answer2 id={"second"} tabIndex={-1}
                         onClick={() => clickMe(event, answers[1].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15)}
                         className={ciri.rel3}>
                         <Button id={[1].toString()} text={answers[1].answer} className={ciri.fckdiv}></Button>
@@ -1068,7 +1068,7 @@ export function Level() {
                     : null}
 
                 {showResults3 ?
-                    <Answer3 id="third" tabIndex={-1}
+                    <Answer3 id={"third"} tabIndex={-1}
                         onClick={() => clickMe(event, answers[2].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15)}
                         className={ciri.rel3}>
                         <Button id={[2].toString()} text={answers[2].answer} className={ciri.fckdiv}></Button>
@@ -1076,7 +1076,7 @@ export function Level() {
                     : null}
 
                 {showResults4 ?
-                    <Answer4 id="fourth" tabIndex={-1}
+                    <Answer4 id={"fourth"} tabIndex={-1}
                         onClick={() => clickMe(event, answers[3].isCorrect, value, setValue, setVal, mass, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp, setShowResults11, setShowResults12, setShowResults14, setBooks, setShowResults10, setShowResults13, setShowResults15)}
                         className={ciri.rel3}>
                         <Button id={[3].toString()} text={answers[3].answer} className={ciri.fckdiv}></Button>
@@ -1085,17 +1085,17 @@ export function Level() {
                 {showResults10 ?
                     <div className={ciri.threebutt}>
                         {showResults55 ?
-                        <FirstButt id="50" tabIndex={-1} className={imr.butt1}
+                        <FirstButt id={"50"} tabIndex={-1} className={imr.butt1}
                                    onClick={() => Fith(event, answers.mass, answers, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp)}>
                             <Button text="50/50" className={ciri.fifthonfifth}></Button>
                         </FirstButt>
                         : null}
-                        <SecondButt id="help" tabIndex={-1} className={ciri.butt2} onClick={() => Help(event, setHelp, answers.help)}>
+                        <SecondButt id={"help"} tabIndex={-1} className={ciri.butt2} onClick={() => Help(event, setHelp, answers.help)}>
                             <Button text="Помощь" className={ciri.Help}
                                     ></Button>
                         </SecondButt>
 
-                        <ThirdButt id="later"  tabIndex={-1} className={ciri.butt3}
+                        <ThirdButt id={"later"}  tabIndex={-1} className={ciri.butt3}
                                    onClick={() => Later(event, mass, setVal, setStar, star, setToast, setShowResults, setShowResults2, setShowResults3, setShowResults4, setHelp)}>
                             <div className={ciri.Later}>
                                 <Button text="Пропустить за 1" className={ciri.LaterButt}></Button>
