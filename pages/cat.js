@@ -35,11 +35,16 @@ const router = useRouter();
     function handleArrowUp(){
 
     }
+
+    function handleBackspace(){
+
+    }
     useKey("Enter",handleEnter);
     useKey("ArrowLeft",handleArrowLeft);
     useKey("ArrowRight",handleArrowRight);
     useKey("ArrowDown", handleArrowDown);
     useKey("ArrowDown", handleArrowUp);
+    useKey("Backspace", handleBackspace);
 
     function useKey(key,cb){
         const callbackRef=useRef(cb);
