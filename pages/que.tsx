@@ -1064,8 +1064,8 @@ export function Que(){
                         <Button  tabIndex={-1} text="50/50" className={imr.fifthonfifth} ></Button>
                     </FirstButt>
                     : null}
-                    <SecondButt id="help"  tabIndex={-1} className={imr.butt2}>
-                        <Button  tabIndex={-1} text="Помощь" className={imr.Help} onClick={() => Help(event,setHelp,answers.help)}></Button>
+                    <SecondButt id="help"  tabIndex={-1} className={imr.butt2} onClick={() => Help(event,setHelp,answers.help)}>
+                        <Button  tabIndex={-1} text="Помощь" className={imr.Help} ></Button>
                     </SecondButt>
 
                     <ThirdButt id="later"  tabIndex={-1} className={imr.butt3} onClick={() => Later(event,mass,setVal,setStar,star,setToast,setShowResults,setShowResults2,setShowResults3,setShowResults4,setHelp)}>
