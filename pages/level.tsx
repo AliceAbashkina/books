@@ -170,11 +170,8 @@ export function Level() {
         </div>
     );}
     else {
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useEffect(() => {
-            document.getElementById("Mycon1").focus();
-        }, []);
         return (
+
             <div tabIndex={-1} className={ien.bqs} >
             <div tabIndex={-1} className={ien.backtext}>
                 Тип забега
