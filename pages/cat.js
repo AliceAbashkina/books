@@ -13,6 +13,7 @@ import styled from "styled-components";
 
 export function Cat() {
     const Buttons = styled.div`
+      background-color: #502ba7;
       &:focus {
         background-color: #ffff00;
         color: #23262f;
