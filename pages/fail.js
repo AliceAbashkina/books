@@ -26,7 +26,9 @@ export function Fail(){
             return ()=>document.removeEventListener("keydown",handle)
         },[key]);
     }
-
+    useEffect(() => {
+        document.getElementById("Fail").focus();
+    }, []);
 
     if (indexVar.device == "mobile") {
         globalThis.hearts=5;
@@ -67,6 +69,8 @@ export function Fail(){
         }
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("Enter",handleEnter);
+
+
         return (
             <div tabIndex={-1} className={lambert.body}>
                 <div tabIndex={-1} className={lambert.headers}>
@@ -87,8 +91,8 @@ export function Fail(){
                     <img tabIndex={-1} src="/heart.png" className={lambert.Secondicon}/>
                 </div>
                 <div tabIndex={-1}  className={lambert.textFail}>Ты проиграл</div>
-                <div tabIndex={1} autoFocus className={lambert.rel5} style={{marginTop: 10}} onClick={() => router.push('/')}>
-                    <Button tabIndex={-1} text={"Окей"} className={lambert.okButt}/>
+                <div tabIndex={1}  className={lambert.rel5} style={{marginTop: 10}} onClick={() => router.push('/')} autoFocus id={"Fail"}>
+                    <Button tabIndex={-1} text={"Окей"} className={lambert.okButt} />
                 </div>
             </div>
         );
