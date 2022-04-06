@@ -26,9 +26,7 @@ export function Fail(){
             return ()=>document.removeEventListener("keydown",handle)
         },[key]);
     }
-    useEffect(() => {
-        document.getElementById("Fail").focus();
-    }, []);
+
 
     if (indexVar.device == "mobile") {
         globalThis.hearts=5;
@@ -69,7 +67,10 @@ export function Fail(){
         }
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useKey("Enter",handleEnter);
-
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useEffect(() => {
+            document.getElementById("Fail").focus();
+        }, []);
 
         return (
             <div tabIndex={-1} className={lambert.body}>
