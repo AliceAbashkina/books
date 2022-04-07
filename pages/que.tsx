@@ -558,13 +558,16 @@ export function Que(){
                 </Header>
             </div>
 
-            <div className={lambert.fuck}>
+            <div className={ien.fuck1}>
                 <div className={ien.texticon1Mob}>
-
-                    { // @ts-ignore
+                    {
+                        // @ts-ignore
                         triangle}
                 </div>
                 <img src="/rect.png" className={ien.FirstMobIc}/>
+            </div>
+
+            <div className={ien.fuck}>
                 <div className={ien.texticon2Mob}>
                     {// @ts-ignore
                         hearts}

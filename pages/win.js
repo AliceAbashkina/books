@@ -33,6 +33,7 @@ export function Win(){
     function ClickMe() {
         globalThis.triangle += 3;
         globalThis.hearts += 3;
+        globalThis.index=0;
         router.push('/cat')
     }
 
@@ -46,13 +47,19 @@ export function Win(){
                     >
                     </Header>
                 </div>
-                <div className={lambert.fuck}>
+                <div className={ien.fuck1}>
                     <div className={ien.texticon1Mob}>
-                        {triangle}
+                        {
+                            // @ts-ignore
+                            triangle}
                     </div>
                     <img src="/rect.png" className={ien.FirstMobIc}/>
+                </div>
+
+                <div className={ien.fuck}>
                     <div className={ien.texticon2Mob}>
-                        {hearts}
+                        {// @ts-ignore
+                            hearts}
                     </div>
                     <img src="/heart.png" className={ien.SecondMobIc}/>
                 </div>

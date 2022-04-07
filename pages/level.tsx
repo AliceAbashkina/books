@@ -122,13 +122,17 @@ export function Level() {
                 onBackClick={() => router.push('/cat')}
             >
             </Header>
-            <div className={ien.fuck}>
+
+            <div className={ien.fuck1}>
                 <div className={ien.texticon1Mob}>
                     {
                         // @ts-ignore
                         triangle}
                 </div>
                 <img src="/rect.png" className={ien.FirstMobIc}/>
+            </div>
+
+            <div className={ien.fuck}>
                 <div className={ien.texticon2Mob}>
                     {// @ts-ignore
                         hearts}

@@ -303,16 +303,18 @@ export function Second(){
                     >
                     </Header>
                 </div>
-                <div className={triss.fuck}>
+                <div className={ien.fuck1}>
                     <div className={ien.texticon1Mob}>
                         {
                             // @ts-ignore
                             triangle}
                     </div>
                     <img src="/rect.png" className={ien.FirstMobIc}/>
+                </div>
+
+                <div className={ien.fuck}>
                     <div className={ien.texticon2Mob}>
-                        {
-                            // @ts-ignore
+                        {// @ts-ignore
                             hearts}
                     </div>
                     <img src="/heart.png" className={ien.SecondMobIc}/>

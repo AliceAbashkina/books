@@ -215,6 +215,7 @@
     width: 16px;
     height: 24px;
 
+
     display: inline-block;
 }
 
@@ -281,7 +282,7 @@
     position: static;
     width: 15px;
     height: 31px;
-
+    margin-right: 20px;
     font-family: MyInter;
     font-style: normal;
     font-weight: 600;
@@ -300,7 +301,7 @@
     position: static;
     width: 15px;
     height: 31px;
-
+    margin-right: 20px;
     font-family: MyInter;
     font-style: normal;
     font-weight: 600;
@@ -355,5 +356,11 @@
 .fuck {
     position: absolute;
     right: 30px;
+    top: 10px;
+}
+
+.fuck1 {
+    position: absolute;
+    left: 50px;
     top: 10px;
 }
