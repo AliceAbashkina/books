@@ -10,6 +10,8 @@ import {useEffect, useRef, useState} from "react";
 import {useRouter} from "next/router";
 import * as indexVar from './index';
 import styled from "styled-components";
+import {COLORS} from "../public/colors";
+import {COLORS2} from "../public/colors";
 
 export function Cat() {
     const Buttons = styled.div`
@@ -17,7 +19,8 @@ export function Cat() {
 `;
 
 const router = useRouter();
-
+    const [Color1, setColors1]= useState(COLORS2.strgrey);
+    const [Color2, setColors2]= useState(COLORS2.strgrey);
     function handleEnter(){
         router.push('/level');
         console.log("bruh");
@@ -65,6 +68,38 @@ const router = useRouter();
 
     const [index,setValue] = useState(0);
     const massIm=["/dog.png","/mountin.png"];
+
+    function ClickLeft(event,index,setValue)
+    {
+        setColors2(COLORS2.strgrey)
+        setColors1(COLORS2.vid)
+        if(index==1){
+            index=0;
+            globalThis.index=0;
+            setValue(index);
+        }
+        else{
+            index++;
+            globalThis.index=index;
+            setValue(index);
+        }
+    }
+
+
+    function ClickRight(event,index,setValue){
+        setColors1(COLORS2.strgrey)
+        setColors2(COLORS2.vid)
+        if(index==0){
+            index=1;
+            globalThis.index=index;
+            setValue(index);
+        }
+        else{
+            index--;
+            globalThis.index=index;
+            setValue(index);
+        }
+    }
 
     if (indexVar.device == "mobile") {
         return (
@@ -127,41 +162,22 @@ const router = useRouter();
                         {text[index]}
                     </div>
                 </div>
+
                 <Buttons className={eskel.okButtonDes} autoFocus id={"butt"} tabIndex={-1} onClick={() => router.push('/level')}>
                     <div tabIndex={-1}><Button tabIndex={-1} className={eskel.buttonW} text="ВЫБРАТЬ"/></div>
                 </Buttons>
+                <div tabIndex={-1} className={geralt.arrow}>
+                    <div tabIndex={-1} className={eskel.buttonArrow}>
+                        <Button><IconArrowLeft color={Color1}/></Button>
+                    </div>
+                    <div tabIndex={-1} className={eskel.buttonArrow}>
+                        <Button><IconArrowRight color={Color2}/></Button>
+                    </div>
+                </div>
             </div>
         );
     }
 }
 
-function ClickLeft(event,index,setValue)
-{
-   if(index==1){
-       index=0;
-       globalThis.index=0;
-       setValue(index);
-   }
-   else{
-       index++;
-       globalThis.index=index;
-       setValue(index);
-   }
-    console.log(index);
-}
 
-
-function ClickRight(event,index,setValue){
-    if(index==0){
-        index=1;
-        globalThis.index=index;
-        setValue(index);
-    }
-    else{
-        index--;
-        globalThis.index=index;
-        setValue(index);
-    }
-    console.log(index);
-}
 export default Cat;
