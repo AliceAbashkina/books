@@ -13,6 +13,7 @@ import {COLORS} from "../public/colors";
 import {COLORS2} from "../public/colors";
 import styled from "styled-components";
 import * as indexVar from './index';
+import ien from "../styles/Level.module.css";
 
 // @ts-ignore
 globalThis.selectSq1=1;
@@ -558,17 +559,17 @@ export function Que(){
             </div>
 
             <div className={lambert.fuck}>
-                <div className={lambert.texticon1}>
+                <div className={ien.texticon1Mob}>
 
                     { // @ts-ignore
                         triangle}
                 </div>
-                <img src="/rect.png" className={lambert.Firsticon}/>
-                <div className={lambert.texticon2}>
+                <img src="/rect.png" className={ien.FirstMobIc}/>
+                <div className={ien.texticon2Mob}>
                     {// @ts-ignore
                         hearts}
                 </div>
-                <img src="/heart.png" className={lambert.Secondicon}/>
+                <img src="/heart.png" className={ien.SecondMobIc}/>
             </div>
 
             <div className={lambert.textQue}>{way}</div>

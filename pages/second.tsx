@@ -10,6 +10,7 @@ import styled from "styled-components";
 import imr from "../styles/Que_NM.module.css";
 import {useRouter} from "next/router";
 import * as indexVar from './index';
+import ien from "../styles/Level.module.css";
 // @ts-ignore
 globalThis.selectSq2=1;
 
@@ -303,18 +304,18 @@ export function Second(){
                     </Header>
                 </div>
                 <div className={triss.fuck}>
-                    <div className={triss.texticon1}>
+                    <div className={ien.texticon1Mob}>
                         {
                             // @ts-ignore
                             triangle}
                     </div>
-                    <img src="/rect.png" className={triss.Firsticon}/>
-                    <div className={triss.texticon2}>
+                    <img src="/rect.png" className={ien.FirstMobIc}/>
+                    <div className={ien.texticon2Mob}>
                         {
                             // @ts-ignore
                             hearts}
                     </div>
-                    <img src="/heart.png" className={triss.Secondicon}/>
+                    <img src="/heart.png" className={ien.SecondMobIc}/>
                 </div>
                 <div className={triss.rel}>
                     <div className={triss.square1} onClick={()=>ClickMobile(1)}>

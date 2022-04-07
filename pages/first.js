@@ -10,6 +10,7 @@ import imr from "../styles/Que_NM.module.css";
 import * as indexVar from './index';
 import {useRouter} from "next/router";
 import { keyframes } from 'styled-components'
+import ien from "../styles/Level.module.css";
 
 globalThis.selectSq=-1;
 
@@ -914,14 +915,14 @@ export function Level() {
                     : null}
 
                 <div className={lambert.fuck}>
-                    <div className={lambert.texticon1}>
+                    <div className={ien.texticon1Mob}>
                         {triangle}
                     </div>
-                    <img src="/rect.png" className={lambert.Firsticon}/>
-                    <div className={lambert.texticon2}>
+                    <img src="/rect.png" className={ien.FirstMobIc}/>
+                    <div className={ien.texticon2Mob}>
                         {hearts}
                     </div>
-                    <img src="/heart.png" className={lambert.Secondicon}/>
+                    <img src="/heart.png" className={ien.SecondMobIc}/>
                 </div>
                     <Header
                         back={false}

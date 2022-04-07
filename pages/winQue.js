@@ -31,7 +31,7 @@ export function Win(){
 
 
     function ClickMe() {
-        router.push('/level')
+        router.push('/cat')
     }
 
     if (indexVar.device == "mobile") {
@@ -45,14 +45,14 @@ export function Win(){
                     </Header>
                 </div>
                 <div className={lambert.fuck}>
-                    <div className={lambert.texticon1}>
+                    <div className={ien.texticon1Mob}>
                         {triangle}
                     </div>
-                    <img src="/rect.png" className={lambert.Firsticon}/>
-                    <div className={lambert.texticon2}>
+                    <img src="/rect.png" className={ien.FirstMobIc}/>
+                    <div className={ien.texticon2Mob}>
                         {hearts}
                     </div>
-                    <img src="/heart.png" className={lambert.Secondicon}/>
+                    <img src="/heart.png" className={ien.SecondMobIc}/>
                 </div>
                 <div className={win.textQue} style={{marginTop: 50}}>Ты выиграл!</div>
 

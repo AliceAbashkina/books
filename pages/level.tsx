@@ -123,17 +123,17 @@ export function Level() {
             >
             </Header>
             <div className={ien.fuck}>
-                <div className={ien.texticon1}>
+                <div className={ien.texticon1Mob}>
                     {
                         // @ts-ignore
                         triangle}
                 </div>
-                <img src="/rect.png" className={ien.Firsticon}/>
-                <div className={ien.texticon2}>
+                <img src="/rect.png" className={ien.FirstMobIc}/>
+                <div className={ien.texticon2Mob}>
                     {// @ts-ignore
                         hearts}
                 </div>
-                <img src="/heart.png" className={ien.Secondicon}/>
+                <img src="/heart.png" className={ien.SecondMobIc}/>
             </div>
 
             <div className={ien.squareQ1}  onClick={() => router.push('/first')}>

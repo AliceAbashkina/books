@@ -7,6 +7,7 @@ import lambert from "../styles/Que.module.css";
 import {useRouter} from "next/router";
 import {useEffect, useRef} from "react";
 import * as indexVar from './index';
+import ien from "../styles/Level.module.css";
 
 export function Fail(){
     const router = useRouter();
@@ -42,14 +43,14 @@ export function Fail(){
                     </Header>
                 </div>
                 <div className={lambert.fuck}>
-                    <div className={lambert.texticon1}>
+                    <div className={ien.texticon1Mob}>
                         {triangle}
                     </div>
-                    <img src="/rect.png" className={lambert.Firsticon}/>
-                    <div className={lambert.texticon2}>
+                    <img src="/rect.png" className={ien.FirstMobIc}/>
+                    <div className={ien.texticon2Mob}>
                         {hearts}
                     </div>
-                    <img src="/heart.png" className={lambert.Secondicon}/>
+                    <img src="/heart.png" className={ien.SecondMobIc}/>
                 </div>
                 <div className={lambert.textQue}>Ты проиграл</div>
                 <div className={lambert.rel3} style={{marginTop: 10}} onClick={() => router.push('/cat')}>
@@ -92,7 +93,7 @@ export function Fail(){
                     <img tabIndex={-1} src="/heart.png" className={lambert.Secondicon}/>
                 </div>
                 <div tabIndex={-1}  className={lambert.textFail}>Ты проиграл</div>
-                <div tabIndex={1}  className={lambert.rel5} style={{marginTop: 10}} onClick={() => router.push('/')} autoFocus id={"Fail"}>
+                <div tabIndex={1}  className={lambert.rel5} style={{marginTop: 10}} onClick={() => router.push('/cat')} autoFocus id={"Fail"}>
                     <Button tabIndex={-1} text={"Окей"} className={lambert.okButt} />
                 </div>
             </div>

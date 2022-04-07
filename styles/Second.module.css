@@ -182,7 +182,7 @@
     position: static;
     width: 16px;
     height: 24px;
-
+    margin-right: 15px;
     display: inline-block;
 }
 
@@ -190,7 +190,7 @@
     position: static;
     width: 27px;
     height: 24px;
-
+    margin-right: 15px;
     display: inline-block;
 
 }
@@ -200,7 +200,7 @@
     position: static;
     width: 15px;
     height: 31px;
-
+    margin-right: 15px;
     font-family: MyInter;
     font-style: normal;
     font-weight: 600;
@@ -219,7 +219,7 @@
     position: static;
     width: 15px;
     height: 31px;
-
+    margin-right: 15px;
     font-family: MyInter;
     font-style: normal;
     font-weight: 600;
