@@ -95,7 +95,7 @@ export function Level() {
     }
     function handleBackspace(){
         globalThis.index=0;
-        router.push('/cat');
+        router.push('/');
     }
     function handleArrowUp(){
         // @ts-ignore
