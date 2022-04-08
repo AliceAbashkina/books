@@ -1138,7 +1138,7 @@ export function Level() {
         );
     } else {
         return (
-            <Body >
+            <div className={ciri.bodyAnim} >
                 {showResults11 ?
                         <Image className={Books} src={'books.png'} height={100} width={100} style={{top: '85%'}}/>
                     : null}
@@ -1242,7 +1242,7 @@ export function Level() {
                         <Button tabIndex={-1} autoFocus text={"Ok"} className={ciri.brOk}></Button>
                     </div>
                     : null}
-            </Body>
+            </div>
         );
     }
 }

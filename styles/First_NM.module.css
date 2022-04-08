@@ -4,10 +4,12 @@
     height: 100%;
     width: 100%;
     background: url(../public/townie.png) repeat-x 0 100% fixed;
-    animation: city 30s linear infinite;
+    animation: city 20s linear infinite;
+    transition-property: background-position;
     background-size: cover;
     z-index: 3;
     overflow: hidden;
+    animation-fill-mode: forwards;
 }
 
 .bodyPaused{
@@ -315,8 +317,8 @@
     position: absolute;
     width: 16px;
     height: 24px;
-
-    top:25%;
+right: 10%;
+    top:22%;
 }
 
 .LaterButt{
