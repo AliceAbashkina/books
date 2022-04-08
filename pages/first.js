@@ -21,8 +21,8 @@ const Body = styled.div `
     height: 100%;
     width: 100%;
     background: url(/townie.png) repeat-x 0 100% fixed;
-    animation: ${city} 50s linear infinite;
-  -webkit-animation: ${city} 50s linear infinite;
+    animation: ${city} 100s linear infinite;
+  -webkit-animation: ${city} 100s linear infinite;
   transition-property: background-position;
   -webkit-transition-property: background-position;
     background-size: cover;
