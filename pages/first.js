@@ -14,11 +14,14 @@ import ien from "../styles/Level.module.css";
 
 globalThis.selectSq=-1;
 
-const city = keyframes `
+
+
+export function Level() {
+    const city = keyframes `
         from { background-position: 1920px 100%; }
         to { background-position: 0 100%, 0 0;}
     `
-const Body = styled.div `
+    const Body = styled.div `
     height: 100%;
     width: 100%;
     background: url(/townie.png) repeat-x 0 100% fixed;
@@ -31,8 +34,6 @@ const Body = styled.div `
     overflow: hidden;
       animation-fill-mode: forwards;
     `;
-
-export function Level() {
     const router = useRouter();
     function useKey(key,cb){
         const callbackRef=useRef(cb);
