@@ -163,7 +163,7 @@ const router = useRouter();
                     </div>
                 </div>
 
-                <Buttons className={eskel.okButtonDes} autoFocus id={"butt"} tabIndex={-1} onClick={() => router.push('/level')}>
+                <Buttons className={eskel.okButtonDes} autoFocus id={"butt"} tabIndex={1} onClick={() => router.push('/level')}>
                     <div tabIndex={-1}><Button tabIndex={-1} className={eskel.buttonW} text="ВЫБРАТЬ"/></div>
                 </Buttons>
                 <div tabIndex={-1} className={geralt.arrow}>

@@ -732,6 +732,10 @@ export function Level() {
                     document.getElementById("second").blur();
                 }
                 break;
+            case 1:
+                setColors1(COLORS2.strgrey);
+                    document.getElementById("first").blur();
+                break;
             default:
                 console.log('Ana');
                 break;
