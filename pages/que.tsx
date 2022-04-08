@@ -988,7 +988,7 @@ export function Que(){
                 }
             }
             else{
-                switch (selectSq) {
+                switch (selectSq1) {
                     case 5:
                         document.getElementById("50").blur();
                         setColors5(COLORS.strgrey);
