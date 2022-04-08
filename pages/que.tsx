@@ -520,6 +520,7 @@ export function Que(){
             help=tupik[0].animals[mass].help;
             break;
     }}
+    // @ts-ignore
     else if(level==2){
         // @ts-ignore
         switch (items[index]){
@@ -536,6 +537,7 @@ export function Que(){
         }
     }
     else{
+        // @ts-ignore
         switch (items[index]){
             case "Путешествия":
                 way=tupik3[0].travel[mass].question;
