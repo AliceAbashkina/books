@@ -75,7 +75,7 @@ export function Level() {
       `;
 
     useKey("Enter",handleEnter);
-    useKey("Backspace",handleBackspace);
+    useKey("Back",handleBackspace);
     useKey("ArrowUp",handleArrowUp);
     useKey("ArrowDown",handleArrowDown);
 
