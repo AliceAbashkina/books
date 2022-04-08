@@ -23,7 +23,9 @@ const Body = styled.div `
     width: 100%;
     background: url(/townie.png) repeat-x 0 100% fixed;
     animation: ${city} 20s linear infinite;
+  -webkit-animation: ${city} 20s linear infinite;
   transition-property: background-position;
+  -webkit-transition-property: background-position;
     background-size: cover;
     z-index: 3;
     overflow: hidden;
@@ -1138,7 +1140,7 @@ export function Level() {
         );
     } else {
         return (
-            <div className={ciri.bodyAnim} >
+            <Body >
                 {showResults11 ?
                         <Image className={Books} src={'books.png'} height={100} width={100} style={{top: '85%'}}/>
                     : null}
@@ -1242,7 +1244,7 @@ export function Level() {
                         <Button tabIndex={-1} autoFocus text={"Ok"} className={ciri.brOk}></Button>
                     </div>
                     : null}
-            </div>
+            </Body>
         );
     }
 }
