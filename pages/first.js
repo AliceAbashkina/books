@@ -736,6 +736,10 @@ export function Level() {
                 setColors1(COLORS2.strgrey);
                     document.getElementById("first").blur();
                 break;
+            case 5:
+                setColors5(COLORS2.strgrey);
+                document.getElementById("50").blur();
+                break;
             default:
                 console.log('Ana');
                 break;
@@ -817,6 +821,10 @@ export function Level() {
                 setColors6(COLORS2.vid);
                 document.getElementById("help").focus();
                 document.getElementById("50").blur();
+                break;
+            case 6:
+                setColors6(COLORS2.strgrey);
+                document.getElementById("help").blur();
                 break;
             default:
                 console.log('Diva');
