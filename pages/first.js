@@ -1141,7 +1141,7 @@ export function Level() {
         );
     } else {
         return (
-            <Body >
+            <Body tabIndex={-1}>
                 {showResults11 ?
                         <Image className={Books} src={'books.png'} height={100} width={100} style={{top: '85%'}}/>
                     : null}
@@ -1155,27 +1155,27 @@ export function Level() {
                         <Toast text={help}/></div>
                     : null}
 
-                <div className={lambert.fuck}>
-                    <div className={lambert.texticon1}>
+                <div tabIndex={-1} className={lambert.fuck}>
+                    <div  tabIndex={-1} className={lambert.texticon1}>
                         {triangle}
                     </div>
-                    <img src="/rect.png" className={lambert.Firsticon}/>
-                    <div className={lambert.texticon2}>
+                    <img tabIndex={-1} src="/rect.png" className={lambert.Firsticon}/>
+                    <div tabIndex={-1} className={lambert.texticon2}>
                         {hearts}
                     </div>
-                    <img src="/heart.png" className={lambert.Secondicon}/>
+                    <img tabIndex={-1} src="/heart.png" className={lambert.Secondicon}/>
                 </div>
 
-                <div className={lambert.headers}>
+                <div tabIndex={-1} className={lambert.headers}>
                     <Header
                         back={true}
                         onBackClick={() => router.push('/second')}
                     >
                     </Header>
                 </div>
-                <div className={ciri.TextBack}>Вопрос</div>
+                <div tabIndex={-1} className={ciri.TextBack}>Вопрос</div>
                 {showResults17 ?
-                    <div className={imr.textQue}>{way}</div>
+                    <div  tabIndex={-1} className={imr.textQue}>{way}</div>
                     : null}
                 {showResults ?
                     <Answer1 id={"first"} tabIndex={-1}
