@@ -109,7 +109,7 @@ export default function Home(){
                     <div onClick={() => router.push('/cat')} className={lutik.Div2}>
                         <button className={lutik.square}>
                             <div className={lutik.play}>
-                                <img src="/play.png" width={85} height={102}/>
+                                <img src="/play.png" width={'50%'} height={'30%'}/>
                             </div>
                             <div className={lutik.Go}>Начать</div>
                         </button>

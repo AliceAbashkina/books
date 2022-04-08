@@ -6,7 +6,7 @@
     font-style: normal;
     font-weight: 400;
     src: url('/agencyfb_bold.ttf') format('truetype');
-    font-display: block
+    font-display: block;
 }
 
 @font-face {
@@ -58,7 +58,7 @@
   font-family: Syo;
   font-style: normal;
   font-weight: bold;
-  font-size: 96px;
+  font-size: 26vw;
   line-height: 73px;
   color: #ECF1FF;
   z-index: 3;
@@ -72,7 +72,7 @@
   font-family: Syo;
   font-style: normal;
   font-weight: bold;
-  font-size: 100px;
+  font-size: 26vw;
   line-height: 76px;
   letter-spacing: -0.019em;
 
@@ -104,7 +104,7 @@
   font-family: MyInter;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 4.8vw;
   line-height: 22px;
   display: flex;
   align-items: flex-end;
@@ -166,8 +166,8 @@
 
 .play {
   position: absolute;
-  left: 35%;
-  top: 25%;
+  left: 20%;
+  top: 20%;
 }
 
 .border0 {
@@ -238,7 +238,7 @@
   width: 77px;
   height: 23px;
   left: 32%;
-  top: 60%;
+  top: 55%;
 
   font-family: MyRubik;
   font-style: normal;
