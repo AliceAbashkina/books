@@ -33,10 +33,10 @@ const router = useRouter();
     }
 
     function handleArrowDown(){
-
+        document.getElementById("butt").focus();
     }
     function handleArrowUp(){
-
+        document.getElementById("butt").focus();
     }
 
     function handleBackspace(){
@@ -168,10 +168,10 @@ const router = useRouter();
                 </Buttons>
                 <div tabIndex={-1} className={geralt.arrow}>
                     <div tabIndex={-1} className={eskel.buttonArrow}>
-                        <Button><IconArrowLeft color={Color1}/></Button>
+                        <Button tabIndex={-1}><IconArrowLeft color={Color1}/></Button>
                     </div>
                     <div tabIndex={-1} className={eskel.buttonArrow}>
-                        <Button><IconArrowRight color={Color2}/></Button>
+                        <Button tabIndex={-1} ><IconArrowRight color={Color2}/></Button>
                     </div>
                 </div>
             </div>
