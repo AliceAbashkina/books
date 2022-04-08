@@ -633,6 +633,7 @@ export function Level() {
     }
     function handleBackspace(){
         selectSq=-1;
+        globalThis.index=1;
         router.push('/level');
     }
     function handleArrowUp(){
