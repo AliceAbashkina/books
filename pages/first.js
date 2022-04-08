@@ -733,11 +733,9 @@ export function Level() {
                 }
                 break;
             case 1:
-                setColors1(COLORS2.strgrey);
                     document.getElementById("first").blur();
                 break;
             case 5:
-                setColors5(COLORS2.strgrey);
                 document.getElementById("50").blur();
                 break;
             default:
@@ -823,57 +821,67 @@ export function Level() {
                 document.getElementById("50").blur();
                 break;
             case 6:
-                setColors6(COLORS2.strgrey);
                 document.getElementById("help").blur();
+                break;
+            case 7:
+                document.getElementById("later").blur();
                 break;
             default:
                 console.log('Diva');
                 break;
         }
     }
-    function handleArrowLeft(){
-        if(selectSq!=6&&selectSq!=5) {
+    function handleArrowLeft() {
+        if (selectSq != 6 && selectSq != 5) {
             setColors1(COLORS2.strgrey)
             setColors2(COLORS2.strgrey)
             setColors3(COLORS2.strgrey)
             setColors4(COLORS2.strgrey)
             setColors7(COLORS2.strgrey)
-            if(showResults55==false){
-                globalThis.selectSq= 6;
+            if (showResults55 == false) {
+                globalThis.selectSq = 6;
                 setColors6(COLORS2.vid)
-                if(showResults!=false){
+                if (showResults != false) {
                     document.getElementById("first").blur();
                 }
-                if(showResults2!=false){
+                if (showResults2 != false) {
                     document.getElementById("second").blur();
                 }
-                if(showResults3!=false){
+                if (showResults3 != false) {
                     document.getElementById("third").blur();
                 }
-                if(showResults4!=false){
+                if (showResults4 != false) {
                     document.getElementById("fourth").blur();
                 }
                 document.getElementById("help").focus();
                 document.getElementById("later").blur();
-            }
-            else {
+            } else {
                 globalThis.selectSq = 5;
                 setColors5(COLORS2.vid)
-                document.getElementById("50").focus();
+                document.getElementById("50").blur();
                 document.getElementById("help").blur();
                 document.getElementById("later").blur();
-                if(showResults!=false){
+                if (showResults != false) {
                     document.getElementById("first").blur();
                 }
-                if(showResults2!=false){
+                if (showResults2 != false) {
                     document.getElementById("second").blur();
                 }
-                if(showResults3!=false){
+                if (showResults3 != false) {
                     document.getElementById("third").blur();
                 }
-                if(showResults4!=false){
+                if (showResults4 != false) {
                     document.getElementById("fourth").blur();
                 }
+            }
+        } else {
+            switch (selectSq) {
+                case 5:
+                    document.getElementById("50").blur();
+                    break;
+                case 6:
+                    document.getElementById("help").blur();
+                    break;
             }
         }
     }
@@ -906,7 +914,27 @@ export function Level() {
                 document.getElementById("first").focus();
             }
         }
+        else{
+            switch (selectSq) {
+                case 1:
+                    document.getElementById("first").blur();
+                    break;
+                case 2:
+                    document.getElementById("second").blur();
+                    break;
+                case 3:
+                    document.getElementById("third").blur();
+                    break;
+                case 4:
+                    document.getElementById("fourth").blur();
+                    break;
+                case 7:
+                    document.getElementById("later").blur();
+                    break;
+            }
+        }
     }
+
     useKey("Enter",handleEnter);
     useKey("Backspace",handleBackspace);
     useKey("ArrowUp",handleArrowUp);
