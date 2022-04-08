@@ -733,7 +733,10 @@ export function Level() {
                 }
                 break;
             case 1:
-                    document.getElementById("first").blur();
+                document.getElementById("first").blur();
+                globalThis.selectSq = 7;
+                setColors7(COLORS2.vid);
+                document.getElementById("later").focus();
                 break;
             case 5:
                 document.getElementById("50").blur();
