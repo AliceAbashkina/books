@@ -22,7 +22,6 @@ const Body = styled.div `
     width: 100%;
     background: url(/townie.png) repeat-x 0 100% fixed;
     animation: ${city} 25s linear infinite;
-  will-change: transform;
   -webkit-animation: ${city} 25s linear infinite;
   transition-property: background-position;
   -webkit-transition-property: background-position;
@@ -32,7 +31,14 @@ const Body = styled.div `
       animation-fill-mode: forwards;
     `;
 
-
+const Body2 = styled.div `
+    height: 100%;
+    width: 100%;
+    background: url(/townie.png) ;
+    background-size: cover;
+    z-index: 3;
+    overflow: hidden;
+    `;
 export function Level() {
 
     const router = useRouter();
@@ -1142,7 +1148,7 @@ export function Level() {
         );
     } else {
         return (
-            <Body tabIndex={-1}>
+            <Body2 tabIndex={-1}>
                 {showResults11 ?
                         <Image className={Books} src={'books.png'} height={100} width={100} style={{top: '85%'}}/>
                     : null}
@@ -1246,7 +1252,7 @@ export function Level() {
                         <Button tabIndex={-1} autoFocus text={"Ok"} className={ciri.brOk}></Button>
                     </div>
                     : null}
-            </Body>
+            </Body2>
         );
     }
 }
