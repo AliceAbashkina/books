@@ -787,6 +787,20 @@ export function Que(){
                         document.getElementById("second").blur();
                     }
                     break;
+                case 1:
+                    document.getElementById("first").blur();
+                    globalThis.selectSq1 = 7;
+                    setColors7(COLORS.secgrey);
+                    setColors1(COLORS.strgrey);
+                    document.getElementById("later").focus();
+                    break;
+                case 5:
+                    document.getElementById("50").blur();
+                    globalThis.selectSq1 = 6;
+                    setColors6(COLORS.secgrey);
+                    setColors5(COLORS.strgrey);
+                    document.getElementById("help").focus();
+                    break;
                 default:
                     console.log('Ana');
                     break;
@@ -881,6 +895,42 @@ export function Que(){
                     document.getElementById("help").focus();
                     document.getElementById("50").blur();
                     break;
+                case 6:
+                    setColors6(COLORS.strgrey);
+                    if(showResults55==false){
+                        document.getElementById("help").blur();
+                        globalThis.selectSq1=5;
+                        setColors5(COLORS.secgrey);
+                        document.getElementById("50").focus();
+                    }
+                    else {
+                        document.getElementById("help").blur();
+                        globalThis.selectSq1 = 7;
+                        setColors7(COLORS.secgrey);
+                        document.getElementById("later").focus();
+                    }
+                    break;
+                case 7:
+                    document.getElementById("later").blur();
+                    setColors7(COLORS.strgrey);
+                    if(showResults==false){
+                        if(showResults2==false){
+                            globalThis.selectSq1 = 3;
+                            setColors3(COLORS.secgrey);
+                            document.getElementById("third").focus();
+                        }
+                        else {
+                            globalThis.selectSq1 = 2;
+                            setColors2(COLORS.secgrey);
+                            document.getElementById("second").focus();
+                        }
+                    }
+                    else{
+                        globalThis.selectSq1 = 1;
+                        setColors1(COLORS.secgrey);
+                        document.getElementById("first").focus();
+                    }
+                    break;
                 default:
                     console.log('Diva');
                     break;
@@ -922,6 +972,7 @@ export function Que(){
                     document.getElementById("50").focus();
                     document.getElementById("help").blur();
                     document.getElementById("later").blur();
+                    document.getElementById("first").blur();
                     if(showResults!=false){
                         document.getElementById("first").blur();
                     }
@@ -936,6 +987,52 @@ export function Que(){
                     }
                 }
             }
+            else{
+                switch (selectSq) {
+                    case 5:
+                        document.getElementById("50").blur();
+                        setColors5(COLORS.strgrey);
+                        if(showResults==false){
+                            if(showResults2==false){
+                                globalThis.selectSq1 = 3;
+                                setColors3(COLORS.secgrey);
+                                document.getElementById("third").focus();
+                            }
+                            else {
+                                globalThis.selectSq1 = 2;
+                                setColors2(COLORS.secgrey);
+                                document.getElementById("second").focus();
+                            }
+                        }
+                        else{
+                            globalThis.selectSq1 = 1;
+                            setColors1(COLORS.secgrey);
+                            document.getElementById("first").focus();
+                        }
+                        break;
+                    case 6:
+                        document.getElementById("help").blur();
+                        setColors6(COLORS.strgrey);
+                        if(showResults==false){
+                            if(showResults2==false){
+                                globalThis.selectSq1 = 3;
+                                setColors3(COLORS.secgrey);
+                                document.getElementById("third").focus();
+                            }
+                            else {
+                                globalThis.selectSq1 = 2;
+                                setColors2(COLORS.secgrey);
+                                document.getElementById("second").focus();
+                            }
+                        }
+                        else{
+                            globalThis.selectSq1 = 1;
+                            setColors1(COLORS.secgrey);
+                            document.getElementById("first").focus();
+                        }
+                        break;
+                }
+            }
         }
         // @ts-ignore
         function handleArrowRight(){
@@ -943,6 +1040,7 @@ export function Que(){
             if(selectSq1>4&&selectSq1!=7) {
                 setColors5(COLORS.strgrey)
                 setColors6(COLORS.strgrey)
+                document.getElementById("later").blur();
                 if (showResults == false) {
                     if (showResults2 == false) {
                         // @ts-ignore
@@ -966,6 +1064,33 @@ export function Que(){
                     document.getElementById("later").blur();
                     document.getElementById("first").focus();
                 }
+            }
+            else{
+                switch (selectSq1) {
+                    case 1:
+                        document.getElementById("first").blur();
+                        setColors1(COLORS.strgrey)
+                        break;
+                    case 2:
+                        document.getElementById("second").blur();
+                        setColors2(COLORS.strgrey)
+                        break;
+                    case 3:
+                        document.getElementById("third").blur();
+                        setColors3(COLORS.strgrey)
+                        break;
+                    case 4:
+                        document.getElementById("fourth").blur();
+                        setColors4(COLORS.strgrey)
+                        break;
+                    case 7:
+                        document.getElementById("later").blur();
+                        setColors7(COLORS.strgrey)
+                        break;
+                }
+                globalThis.selectSq1 = 6;
+                setColors6(COLORS.secgrey)
+                document.getElementById("help").focus();
             }
         }
         // eslint-disable-next-line react-hooks/rules-of-hooks
