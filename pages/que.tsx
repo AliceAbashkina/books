@@ -988,6 +988,7 @@ export function Que(){
                 }
             }
             else{
+                // @ts-ignore
                 switch (selectSq1) {
                     case 5:
                         document.getElementById("50").blur();
