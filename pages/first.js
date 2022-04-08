@@ -48,8 +48,8 @@ export function Level() {
                     callbackRef.current(event);
                 }
             }
-            document.addEventListener("keypress",handle);
-            return ()=>document.removeEventListener("keypress",handle)
+            document.addEventListener("keyup",handle);
+            return ()=>document.removeEventListener("keyup",handle)
         },[key]);
     }
 
