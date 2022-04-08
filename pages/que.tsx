@@ -1067,6 +1067,7 @@ export function Que(){
                 }
             }
             else{
+                // @ts-ignore
                 switch (selectSq1) {
                     case 1:
                         document.getElementById("first").blur();
