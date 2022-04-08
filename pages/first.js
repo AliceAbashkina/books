@@ -638,7 +638,7 @@ export function Level() {
     function handleArrowUp(){
         switch (selectSq) {
             case 6:
-                setColors6(COLORS2.strgrey);
+                setColors6(COLORS.strgrey);
                 if(showResults55==false){
                     setColors6(COLORS2.vid);
                     document.getElementById("help").focus();
@@ -655,7 +655,7 @@ export function Level() {
                 if(showResults4==false){
                     if(showResults3==false){
                         globalThis.selectSq=2;
-                        setColors6(COLORS2.vid);
+                        setColors1(COLORS2.vid);
                         document.getElementById("second").focus();
                         document.getElementById("later").blur();
                     }
