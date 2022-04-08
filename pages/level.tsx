@@ -146,6 +146,7 @@ export function Level() {
                 <img src="/heart.png" className={ien.SecondMobIc}/>
             </div>
 
+            <div className={ien.rel}>
             <div className={ien.squareQ1}  onClick={() => router.push('/first')}>
                 <div className={ien.text1}>
                     Чем дальше бежишь, тем сложнее вопросы
@@ -175,7 +176,7 @@ export function Level() {
                     По уровням
                 </div>
             </div>
-
+            </div>
 
         </div>
     );}

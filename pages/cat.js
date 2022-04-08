@@ -113,7 +113,7 @@ const router = useRouter();
                 </Header>
                 <div className={geralt.Group}>
                     <div className={geralt.ImageCat}>
-                        <img src={massIm[index]} width={400} height={400}></img>
+                        <img src={massIm[index]} width={'100%'} height={'100%'}></img>
                     </div>
                     <div className={geralt.nameCat}>
                         {items[index]}

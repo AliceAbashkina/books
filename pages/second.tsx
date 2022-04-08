@@ -321,28 +321,24 @@ export function Second(){
                 </div>
                 <div className={triss.rel}>
                     <div className={triss.square1} onClick={()=>ClickMobile(1)}>
-                        <img src="/fsquare.png" width={118} height={118}/>
+                        <div />
                         <div className={triss.text1}>1</div>
                     </div>
                     <div className={triss.square2} onClick={()=>ClickMobile(2)}>
-                        <img src="/fsquare.png" width={118} height={118}/>
+                        <div />
                         <div className={triss.text2}>2</div>
                     </div>
                     <div className={triss.square3} onClick={()=>ClickMobile(3)}>
-                        <img src="/fsquare.png" width={118} height={118}/>
-                        <div className={triss.text3}>3</div>
+                        <div />                        <div className={triss.text3}>3</div>
                     </div>
                     <div className={triss.square4} onClick={()=>ClickMobile(-1)}>
-                        <img src="/fsquare.png" width={118} height={118}/>
-                        <div className={triss.text4}>4</div>
+                        <div />                        <div className={triss.text4}>4</div>
                     </div>
                     <div className={triss.square5} onClick={()=>ClickMobile(-1)}>
-                        <img src="/fsquare.png" width={118} height={118}/>
-                        <div className={triss.text5}>5</div>
+                        <div />                        <div className={triss.text5}>5</div>
                     </div>
                     <div className={triss.square6} onClick={()=>ClickMobile(-1)}>
-                        <img src="/fsquare.png" width={118} height={118}/>
-                        <div className={triss.text6}>6</div>
+                        <div />                        <div className={triss.text6}>6</div>
                     </div>
                 </div>
             </div>

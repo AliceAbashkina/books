@@ -31,7 +31,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 100%;
     line-height: 36px;
     /* identical to box height, or 150% */
     width: 100%;
@@ -46,11 +46,11 @@
 
 .squareQ1 {
     position: relative;
-    width: 330px;
-    height: 240px;
+    width: 90%;
+    height: 35%;
     margin-left: auto;
     margin-right: auto;
-    top: 112px;
+    top: 10%;
     outline: #00DDE0;
 
     background: rgba(255, 255, 255, 0.15);
@@ -74,11 +74,11 @@
 
 .squareQ2 {
     position: relative;
-    width: 330px;
-    height: 240px;
+    width: 90%;
+    top: 15%;
+    height: 35%;
     margin-left: auto;
     margin-right: auto;
-    top: 140px;
     background: rgba(255, 255, 255, 0.15);
     border-radius: 13px;
 }
@@ -212,7 +212,7 @@
 
 .FirstMobIc {
     position: static;
-    width: 16px;
+    width: 30%;
     height: 24px;
 
 
@@ -232,7 +232,7 @@
 
 .SecondMobIc {
     position: static;
-    width: 27px;
+    width: 40%;
     height: 24px;
 
     display: inline-block;
@@ -363,4 +363,10 @@
     position: absolute;
     left: 50px;
     top: 10px;
+}
+
+.rel {
+    position: relative;
+    height: 100%;
+    width: 100%;
 }

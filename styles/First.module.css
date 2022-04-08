@@ -139,7 +139,7 @@
     position: absolute;
     top:10%;
     width: 50%;
-    height: 30%;
+    height: 35%;
     left:25%;
     background: rgba(255, 255, 255, 1);
     border-radius: 54px;
@@ -202,7 +202,7 @@
 
 .rel3 {
     position: relative;
-    height: 40px;
+    height: 6%;
     width: 90%;
     top:23%;
 
@@ -277,7 +277,7 @@
     border-radius: 54px;
 
     width: 134px;
-    height: 50px;
+    height: 6%;
 
     top: 64%;
     margin-left: 5%;
@@ -290,7 +290,7 @@
     border-radius: 54px;
 
     width: 40%;
-    height: 48px;
+    height: 6%;
 
     top: 64%;
     right: 5%;
@@ -303,7 +303,7 @@
     border-radius: 54px;
 
     width: 90%;
-    height: 50px;
+    height: 6%;
 
     top: 73%;
     left:5%;

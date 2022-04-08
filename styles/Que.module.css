@@ -148,7 +148,7 @@
 
 .rel3 {
     position: relative;
-    height: 40px;
+    height: 6%;
     width: 90%;
     top:23%;
 
@@ -201,9 +201,9 @@
     border-radius: 54px;
 
     width: 134px;
-    height: 50px;
+    height: 6%;
 
-    top: 64%;
+    top: 68%;
     margin-left: 5%;
 }
 
@@ -214,9 +214,8 @@
     border-radius: 54px;
 
     width: 40%;
-    height: 48px;
-
-    top: 64%;
+    height: 6%;
+    top: 68%;
     right: 5%;
 }
 
@@ -227,9 +226,8 @@
     border-radius: 54px;
 
     width: 90%;
-    height: 50px;
-
-    top: 73%;
+    height: 6%;
+    top: 78%;
     left:5%;
 }
 
