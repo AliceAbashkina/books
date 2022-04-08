@@ -75,7 +75,7 @@ export function Level() {
       `;
 
     useKey("Enter",handleEnter);
-    useKey("Back",handleBackspace);
+    useKey("Backspace",handleBackspace);
     useKey("ArrowUp",handleArrowUp);
     useKey("ArrowDown",handleArrowDown);
 
@@ -95,7 +95,7 @@ export function Level() {
     }
     function handleBackspace(){
         globalThis.index=0;
-        router.push('/');
+        router.push('/cat');
     }
     function handleArrowUp(){
         // @ts-ignore
@@ -110,6 +110,12 @@ export function Level() {
         document.getElementById("Mycon2").focus();
     }
 
+    function Back(){
+        // @ts-ignore
+        globalThis.index=0;
+        router.push('/cat')
+    }
+
     if (indexVar.device == "mobile") {
         return(
         <div className={ien.bqs}>
@@ -119,7 +125,7 @@ export function Level() {
             <Header
                 back={true}
                 className={ien.headers}
-                onBackClick={() => router.push('/cat')}
+                onBackClick={Back}
             >
             </Header>
 

@@ -67,6 +67,7 @@ const router = useRouter();
     }
 
     const [index,setValue] = useState(0);
+
     const massIm=["/dog.png","/mountin.png"];
 
     function ClickLeft(event,index,setValue)
@@ -141,6 +142,7 @@ const router = useRouter();
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
             document.getElementById("butt").focus();
+            global.This=setValue(index);
         }, []);
         return(
             <div  tabIndex={-1} className={geralt.body} >
