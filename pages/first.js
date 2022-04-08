@@ -736,10 +736,15 @@ export function Level() {
                 document.getElementById("first").blur();
                 globalThis.selectSq = 7;
                 setColors7(COLORS2.vid);
+                setColors1(COLORS2.strgrey);
                 document.getElementById("later").focus();
                 break;
             case 5:
                 document.getElementById("50").blur();
+                globalThis.selectSq = 6;
+                setColors6(COLORS2.vid);
+                setColors5(COLORS2.strgrey);
+                document.getElementById("help").focus();
                 break;
             default:
                 console.log('Ana');
@@ -824,10 +829,40 @@ export function Level() {
                 document.getElementById("50").blur();
                 break;
             case 6:
-                document.getElementById("help").blur();
+                setColors6(COLORS2.strgrey);
+                if(showResults55==false){
+                    document.getElementById("help").blur();
+                    globalThis.selectSq=5;
+                    setColors5(COLORS2.vid);
+                    document.getElementById("50").focus();
+                }
+                else {
+                    document.getElementById("help").blur();
+                    globalThis.selectSq = 7;
+                    setColors7(COLORS2.vid);
+                    document.getElementById("later").focus();
+                }
                 break;
             case 7:
                 document.getElementById("later").blur();
+                setColors7(COLORS2.strgrey);
+                if(showResults==false){
+                    if(showResults2==false){
+                        globalThis.selectSq = 3;
+                        setColors3(COLORS2.vid);
+                        document.getElementById("third").focus();
+                    }
+                    else {
+                        globalThis.selectSq = 2;
+                        setColors2(COLORS2.vid);
+                        document.getElementById("second").focus();
+                    }
+                }
+                else{
+                    globalThis.selectSq = 1;
+                    setColors1(COLORS2.vid);
+                    document.getElementById("first").focus();
+                }
                 break;
             default:
                 console.log('Diva');
@@ -881,9 +916,45 @@ export function Level() {
             switch (selectSq) {
                 case 5:
                     document.getElementById("50").blur();
+                    setColors5(COLORS2.strgrey);
+                    if(showResults==false){
+                        if(showResults2==false){
+                            globalThis.selectSq = 3;
+                            setColors3(COLORS2.vid);
+                            document.getElementById("third").focus();
+                        }
+                        else {
+                            globalThis.selectSq = 2;
+                            setColors2(COLORS2.vid);
+                            document.getElementById("second").focus();
+                        }
+                    }
+                    else{
+                        globalThis.selectSq = 1;
+                        setColors1(COLORS2.vid);
+                        document.getElementById("first").focus();
+                    }
                     break;
                 case 6:
                     document.getElementById("help").blur();
+                    setColors6(COLORS2.strgrey);
+                    if(showResults==false){
+                        if(showResults2==false){
+                            globalThis.selectSq = 3;
+                            setColors3(COLORS2.vid);
+                            document.getElementById("third").focus();
+                        }
+                        else {
+                            globalThis.selectSq = 2;
+                            setColors2(COLORS2.vid);
+                            document.getElementById("second").focus();
+                        }
+                    }
+                    else{
+                        globalThis.selectSq = 1;
+                        setColors1(COLORS2.vid);
+                        document.getElementById("first").focus();
+                    }
                     break;
             }
         }
@@ -921,20 +992,28 @@ export function Level() {
             switch (selectSq) {
                 case 1:
                     document.getElementById("first").blur();
+                    setColors1(COLORS2.strgrey)
                     break;
                 case 2:
                     document.getElementById("second").blur();
+                    setColors2(COLORS2.strgrey)
                     break;
                 case 3:
                     document.getElementById("third").blur();
+                    setColors3(COLORS2.strgrey)
                     break;
                 case 4:
                     document.getElementById("fourth").blur();
+                    setColors4(COLORS2.strgrey)
                     break;
                 case 7:
                     document.getElementById("later").blur();
+                    setColors7(COLORS2.strgrey)
                     break;
             }
+            globalThis.selectSq = 6;
+            setColors6(COLORS2.vid)
+            document.getElementById("help").blur();
         }
     }
 
