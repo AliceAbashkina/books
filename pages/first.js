@@ -1070,7 +1070,7 @@ export function Level() {
                         className={lambert.headers}
                     >
                     </Header>
-                <div className={ciri.TextBack}>Вопрос</div>
+                <div className={shani.TextBack}>Вопрос</div>
                 {showResultsQ ?
                     <div className={lambert.textQue}>{way}</div>
                     : null}
@@ -1129,7 +1129,7 @@ export function Level() {
                     </div>
                     : null}
                 {showResults13 ?
-                    <img className={shani.boy} src={'giphy.gif'} height={200} width={200}/>
+                    <img className={shani.boy} src={'giphy.gif'} height={'40%'} width={'57%'}/>
                     : null}
                 {showResults11 ?
                     <Image className={Books} src={'books.png'} style={{top: '85%'}} height={100} width={100}/>

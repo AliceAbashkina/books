@@ -23,7 +23,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 6vw;
     line-height: 36px;
     /* identical to box height, or 150% */
     width: 100%;
@@ -107,7 +107,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 6vw;
     line-height: 36px;
     /* or 150% */
 
@@ -158,7 +158,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 6vw;
     line-height: 36px;
     /* or 23px */
 
@@ -184,7 +184,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 5vw;
     line-height: 36px;
     /* identical to box height, or 200% */
 

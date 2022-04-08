@@ -31,7 +31,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 140%;
+    font-size: 6vw;
     line-height: 36px;
     /* identical to box height, or 150% */
     width: 100%;
@@ -124,14 +124,14 @@
 .text3 {
     position: absolute;
     width: 175px;
-    height: 36px;
+    height: 40px;
     left: 23px;
     top: 70%;
 
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 6vw;
     line-height: 36px;
     /* identical to box height, or 150% */
 
@@ -184,7 +184,7 @@
 
 .text23 {
     position: absolute;
-    width: 141px;
+    width: 50%;
     height: 36px;
     left: 23px;
     top: 70%;
@@ -192,7 +192,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 6vw;
     line-height: 36px;
 
     text-align: center;
@@ -203,7 +203,7 @@
 
 .Firsticon {
     position: static;
-    width: 16px;
+    width: 50%;
     height: 24px;
     margin-right: 15px;
 

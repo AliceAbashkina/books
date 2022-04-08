@@ -36,7 +36,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 6vw;
     line-height: 36px;
     /* identical to box height, or 150% */
     width: 100%;
@@ -52,7 +52,7 @@
 .boy {
     position: absolute;
     bottom:40px;
-    z-index: 2;
+    z-index: 0;
 }
 
 .meow{
@@ -87,7 +87,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 6vw;
     line-height: 36px;
     /* or 150% */
 
@@ -119,7 +119,7 @@
     font-family: Inter;
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 5vw;
     /* identical to box height, or 200% */
 
     text-align: center;
@@ -147,7 +147,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 5vw;
     /* identical to box height, or 200% */
 
     text-align: center;
@@ -161,7 +161,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 6vw;
     line-height: 36px;
     /* identical to box height, or 150% */
     width: 100%;
@@ -185,7 +185,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 6vw;
     line-height: 36px;
     /* or 150% */
 
@@ -212,7 +212,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 6vw;
     line-height: 36px;
     /* or 23px */
 
@@ -239,7 +239,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 6vw;
 }
 
 .fckdiv{
@@ -260,7 +260,7 @@
     font-family: MyInter;
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 5vw;
     line-height: 36px;
     /* identical to box height, or 200% */
 
@@ -279,7 +279,7 @@
     width: 134px;
     height: 6%;
 
-    top: 64%;
+    top: 69%;
     margin-left: 5%;
 }
 
@@ -292,7 +292,7 @@
     width: 40%;
     height: 6%;
 
-    top: 64%;
+    top: 69%;
     right: 5%;
 }
 
@@ -305,17 +305,17 @@
     width: 90%;
     height: 6%;
 
-    top: 73%;
+    top: 79%;
     left:5%;
 }
 
 .fifthonfifth{
-    top:20%;
+    top:0%;
 
 }
 
 .Help{
-    top:20%;
+    top:0%;
 }
 
 .Later{
@@ -328,14 +328,14 @@
 
 .romb {
     position: absolute;
-    width: 16px;
+    width: 5%;
     height: 24px;
 
-    top:25%;
+    top:5%;
 }
 
 .LaterButt{
-    top: 80%;
+    top: 0%;
 }
 
 .basetimer {

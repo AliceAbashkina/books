@@ -31,7 +31,7 @@
 .backtext{
     position: absolute;
 
-    font-size: 24px;
+    font-size: 6vw;
     line-height: 36px;
     /* identical to box height, or 150% */
     width: 100%;
@@ -50,7 +50,7 @@
     width: 100%;
     top: 50%;
 
-    font-size: 24px;
+    font-size: 6vw;
     line-height: 36px;
     font-weight: bold;
 
@@ -90,7 +90,7 @@
 .okButtonDes{
     position: absolute;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 5vw;
     line-height: 130%;
     width: 90%;
     height: 5%;

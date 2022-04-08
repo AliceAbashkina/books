@@ -10,6 +10,8 @@ import styled from "styled-components";
 import imr from "../styles/Que_NM.module.css";
 import {useRouter} from "next/router";
 import * as indexVar from './index';
+import shani from "../styles/First.module.css";
+
 import ien from "../styles/Level.module.css";
 // @ts-ignore
 globalThis.selectSq2=1;
@@ -295,7 +297,7 @@ export function Second(){
                     <div className={triss.Toast}>
                         <Toast text={"В следующей версии"} /> </div>
                     :null}
-                <div className={triss.TextBack}>Уровень</div>
+                <div className={shani.TextBack}>Уровень</div>
                 <div className={triss.BackHead}>
                     <Header
                         back={true}
