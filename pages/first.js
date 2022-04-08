@@ -896,9 +896,10 @@ export function Level() {
             } else {
                 globalThis.selectSq = 5;
                 setColors5(COLORS2.vid)
-                document.getElementById("50").blur();
+                document.getElementById("50").focus();
                 document.getElementById("help").blur();
                 document.getElementById("later").blur();
+                document.getElementById("first").blur();
                 if (showResults != false) {
                     document.getElementById("first").blur();
                 }
@@ -964,6 +965,7 @@ export function Level() {
         if(selectSq>4&&selectSq!=7) {
             setColors5(COLORS2.strgrey)
             setColors6(COLORS2.strgrey)
+            document.getElementById("later").blur();
             if (showResults == false) {
                 if (showResults2 == false) {
                     // @ts-ignore
@@ -1013,7 +1015,7 @@ export function Level() {
             }
             globalThis.selectSq = 6;
             setColors6(COLORS2.vid)
-            document.getElementById("help").blur();
+            document.getElementById("help").focus();
         }
     }
 
