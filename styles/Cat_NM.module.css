@@ -68,6 +68,28 @@
     margin-inline: 100px;
 }
 
+.backtext{
+    position: absolute;
+
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+    width: 100%;
+    top:10px;
+
+    text-align: center;
+    letter-spacing: -0.011em;
+    font-weight: bold;
+
+    color: #ECF1FF;
+}
+
 .buttonW{
     top: 10px;
+}
+
+.arrow {
+    position: absolute;
+    width: 100%;
+    top: 70%;
 }

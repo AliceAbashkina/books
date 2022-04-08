@@ -19,7 +19,7 @@ globalThis.selectSq2=1;
 export function Second(){
     function handleEnter(){
         if( // @ts-ignore
-            selectSq2<3){
+            selectSq2<4){
             Enter( // @ts-ignore
                 selectSq2);
         }

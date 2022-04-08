@@ -151,7 +151,7 @@ const router = useRouter();
                     back={false}
                     tabIndex={-1}
                 >
-                    <div tabIndex={-1} className={geralt.backtext}>Выбери категорию</div>
+                    <div tabIndex={-1} className={eskel.backtext}>Выбери категорию</div>
                 </Header>
                 <div tabIndex={-1} className={eskel.ImageCat}>
                     <img tabIndex={-1} src={massIm[index]} width={600} height={600}></img>
@@ -168,7 +168,7 @@ const router = useRouter();
                 <Buttons className={eskel.okButtonDes} autoFocus id={"butt"} tabIndex={1} onClick={() => router.push('/level')}>
                     <div tabIndex={-1}><Button tabIndex={-1} className={eskel.buttonW} text="ВЫБРАТЬ"/></div>
                 </Buttons>
-                <div tabIndex={-1} className={geralt.arrow}>
+                <div tabIndex={-1} className={eskel.arrow}>
                     <div tabIndex={-1} className={eskel.buttonArrow}>
                         <Button tabIndex={-1}><IconArrowLeft color={Color1}/></Button>
                     </div>

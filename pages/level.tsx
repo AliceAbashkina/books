@@ -11,6 +11,7 @@ import {useRouter} from "next/router";
 import {useEffect, useRef, useState} from "react";
 import styled from "styled-components";
 import * as indexVar from "./index";
+import lambert from "../styles/Que.module.css";
 
 globalThis.selectQ=1;
 
@@ -187,7 +188,7 @@ export function Level() {
         }, []);
         return (
             <div tabIndex={-1} className={ien.bqs} >
-            <div tabIndex={-1} className={ien.backtext}>
+            <div tabIndex={-1} className={vesemir.backtext}>
                 Тип забега
             </div>
             <Header tabIndex={-1}
@@ -201,12 +202,12 @@ export function Level() {
                     { // @ts-ignore
                         triangle}
                 </div>
-                <img tabIndex={-1} src="/rect.png" className={ien.Firsticon}/>
+                <img tabIndex={-1} src="/rect.png" className={lambert.Firsticon}/>
                 <div tabIndex={-1} className={ien.texticon2}>
                     {   // @ts-ignore
                         hearts}
                 </div>
-                <img tabIndex={-1} src="/heart.png" className={ien.Secondicon}/>
+                <img tabIndex={-1} src="/heart.png" className={lambert.Secondicon}/>
             </div>
             { showHelp?
                 <div tabIndex={-1} className={imr.Toast}>
@@ -219,7 +220,7 @@ export function Level() {
                 <div tabIndex={-1} className={ien.text2}>
                     Беги, пока можешь
                 </div>
-                <div tabIndex={-1} className={ien.text3}>
+                <div tabIndex={-1} className={vesemir.text3}>
                     На выживание
                 </div>
                 <div tabIndex={-1} className={ien.bonus}>
@@ -236,7 +237,7 @@ export function Level() {
                 <div tabIndex={-1} className={ien.text22}>
                     Чем дальше, тем сложнее
                 </div>
-                <div  tabIndex={-1} className={ien.text23}>
+                <div  tabIndex={-1} className={vesemir.text23}>
                     По уровням
                 </div>
             </Container2>
