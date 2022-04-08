@@ -7,6 +7,7 @@ import imr from "../styles/Que_NM.module.css";
 import {useRouter} from "next/router";
 import tupik from "../public/sa.json";
 import tupik2 from "../public/sa1_2.json";
+import tupik3 from "../public/tup3.json";
 import {useEffect, useReducer, useRef, useState} from "react";
 import {createAssistant} from "@sberdevices/assistant-client";
 import {COLORS} from "../public/colors";
@@ -519,7 +520,7 @@ export function Que(){
             help=tupik[0].animals[mass].help;
             break;
     }}
-    else{
+    else if(level==2){
         // @ts-ignore
         switch (items[index]){
             case "Путешествия":
@@ -531,6 +532,20 @@ export function Que(){
                 way=tupik2[0].animals[mass].question;
                 answers=tupik2[0].animals[mass].answerOptions;
                 help=tupik2[0].animals[mass].help;
+                break;
+        }
+    }
+    else{
+        switch (items[index]){
+            case "Путешествия":
+                way=tupik3[0].travel[mass].question;
+                answers=tupik3[0].travel[mass].answerOptions;
+                help=tupik3[0].travel[mass].help;
+                break;
+            case "Животные":
+                way=tupik3[0].animals[mass].question;
+                answers=tupik3[0].animals[mass].answerOptions;
+                help=tupik3[0].animals[mass].help;
                 break;
         }
     }

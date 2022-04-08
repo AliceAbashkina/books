@@ -328,7 +328,7 @@ export function Second(){
                         <img src="/fsquare.png" width={118} height={118}/>
                         <div className={triss.text2}>2</div>
                     </div>
-                    <div className={triss.square3} onClick={()=>ClickMobile(-1)}>
+                    <div className={triss.square3} onClick={()=>ClickMobile(3)}>
                         <img src="/fsquare.png" width={118} height={118}/>
                         <div className={triss.text3}>3</div>
                     </div>
@@ -390,7 +390,7 @@ export function Second(){
                     <Square2  tabIndex={-1} className={fri.square2} id="second" onClick={()=>Enter(2)}>
                         <div  tabIndex={-1} className={fri.text2}>2</div>
                     </Square2>
-                    <Square3  tabIndex={-1} className={fri.square3} id="third" onClick={()=>Fail(setHelp)}>
+                    <Square3  tabIndex={-1} className={fri.square3} id="third" onClick={()=>Enter(3)}>
                         <div  tabIndex={-1} className={fri.text3}>3</div>
                     </Square3>
                     <Square4  tabIndex={-1} className={fri.square4} id="fourth" onClick={()=>Fail(setHelp)}>
