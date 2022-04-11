@@ -34,8 +34,9 @@ const Body = styled.div `
 const Body2 = styled.div `
     height: 100%;
     width: 100%;
-    background: url(/townie.png) ;
+  background: url(/townie.png) repeat-x 0 100% fixed;
     background-size: cover;
+  
     z-index: 3;
     overflow: hidden;
     `;
