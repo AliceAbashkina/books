@@ -12,6 +12,7 @@ import {useEffect, useRef, useState} from "react";
 import styled from "styled-components";
 import * as indexVar from "./index";
 import lambert from "../styles/Que.module.css";
+import triss from "../styles/Second.module.css";
 
 globalThis.selectQ=1;
 
@@ -123,13 +124,13 @@ export function Level() {
             <div className={ien.backtext}>
                 Тип забега
             </div>
+            <div  className={triss.BackHead}>
             <Header
                 back={true}
-                className={ien.headers}
-                onBackClick={Back}
+                onBackClick={() => router.push('/cat')}
             >
             </Header>
-
+            </div>
             <div className={ien.fuck1}>
                 <div className={ien.texticon1Mob}>
                     {

@@ -66,7 +66,7 @@ const router = useRouter();
         },[key]);
     }
 
-    const [index,setValue] = useState(0);
+    const [index,setValue] = useState(globalThis.index);
 
     const massIm=["/dog.png","/mountin.png"];
 
