@@ -67,6 +67,20 @@
     border-radius: 13px;
 }
 
+.squareQ1S {
+    position: relative;
+    width: 90%;
+    height: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    outline: #00DDE0;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(126.885px);
+    border-radius: 13px;
+}
+
+
 .squareQ12 {
     position: relative;
     width: 330px;
@@ -78,6 +92,17 @@
 
     background: rgba(200, 0, 215, 0.5);
     backdrop-filter: blur(126.885px);
+    border-radius: 13px;
+}
+
+.squareQ2S {
+    position: relative;
+    width: 90%;
+    top: 5%;
+    height: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 13px;
 }
 
@@ -378,4 +403,16 @@
     position: relative;
     height: 100%;
     width: 100%;
+}
+
+.relS {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.fuckS {
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }

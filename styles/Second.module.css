@@ -23,6 +23,20 @@
     text-align: center;
 }
 
+.BackHeadS {
+    font-family: MyInter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 6vw;
+    line-height: 36px;
+    color: #ecf1ff;
+    top: 10px;
+
+    width: 100%;
+    left: 50%;
+    text-align: center;
+}
+
 .TextBack {
     position: absolute;
     font-family: MyInter;

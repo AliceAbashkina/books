@@ -124,7 +124,7 @@ export function Level() {
             <div className={ien.backtext}>
                 Тип забега
             </div>
-            <div  className={triss.BackHead}>
+            <div  className={triss.BackHeadS}>
             <Header
                 back={true}
                 onBackClick={() => router.push('/cat')}
@@ -140,7 +140,7 @@ export function Level() {
                 <img src="/rect.png" className={ien.FirstMobIc}/>
             </div>
 
-            <div className={ien.fuck}>
+            <div className={ien.fuckS}>
                 <div className={ien.texticon2Mob}>
                     {// @ts-ignore
                         hearts}
@@ -148,8 +148,8 @@ export function Level() {
                 <img src="/heart.png" className={ien.SecondMobIc}/>
             </div>
 
-            <div className={ien.rel}>
-            <div className={ien.squareQ1}  onClick={() => router.push('/first')}>
+            <div className={ien.relS}>
+            <div className={ien.squareQ1S}  onClick={() => router.push('/first')}>
                 <div className={ien.text1}>
                     Чем дальше бежишь, тем сложнее вопросы
                 </div>
@@ -167,7 +167,7 @@ export function Level() {
             </div>
 
 
-            <div className={ien.squareQ2}  onClick={() => router.push('/second')} >
+            <div className={ien.squareQ2S}  onClick={() => router.push('/second')} >
                 <div className={ien.text21}>
                     Сложность по уровням
                 </div>
