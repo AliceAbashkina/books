@@ -157,8 +157,8 @@
 
 .square{
   position: relative;
-  width: 280px;
-  height: 300px;
+  width: 70vw;
+  height: 80vw;
   margin-right:auto;
   background-color: #FFFF00;
   z-index: 5;
@@ -166,8 +166,8 @@
 
 .play {
   position: absolute;
-  left: 20%;
-  top: 20%;
+  left: 35%;
+  top: 15%;
 }
 
 .border0 {
@@ -243,7 +243,7 @@
   font-family: MyRubik;
   font-style: normal;
   font-weight: 900;
-  font-size: 18px;
+  font-size: 5vw;
   line-height: 130%;
   /* or 23px */
 

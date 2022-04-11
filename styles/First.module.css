@@ -396,3 +396,10 @@
     font-weight: bold;
     font-size: 50px;
 }
+
+.brOk {
+    width: 100%;
+    line-height: 36px;
+    align-items: center;
+    justify-content: center;
+}

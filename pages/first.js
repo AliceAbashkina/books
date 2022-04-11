@@ -1139,9 +1139,9 @@ export function Level() {
                         <Toast text="Когда человек добежит до препятствия - появится вопрос. Готов(а)?"/></div>
                     : null}
                 {showResults14 ?
-                    <div className={ciri.fckdivOk} style={{marginTop: 40}}
+                    <div className={ciri.fckdivOk} style={{marginTop: 20}}
                          onClick={() => Start()}>
-                        <Button text={"Ok"} className={ciri.brOk}></Button>
+                        <Button text={"Ok"} className={shani.brOk}></Button>
                     </div>
                     : null}
             </Body>
