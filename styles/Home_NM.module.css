@@ -159,13 +159,13 @@
     position: absolute;
 
     left: 50px;
-    margin-top: 65px;
+    margin-top: 55px;
     z-index: 2;
 }
 
 .rec21{
     position: absolute;
     margin-left: -140px;
-    top: 1px;
+    top: -30px;
     z-index: 2;
 }
